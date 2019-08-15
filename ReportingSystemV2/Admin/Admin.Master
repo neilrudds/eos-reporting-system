@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="ReportingSystemV2.Admin.Admin" %>
+
+<asp:Content ID="AdminContent" ContentPlaceHolderID="MainContent" runat="server">
+    <br />
+    <%--Page Side Nav - Not for smaller devices--%>
+    <div class="col-sm-3 col-md-2 hidden-xs sidebar">
+        <div class="slimScroll">
+            <ul id="menu" class="nav">
+                <li class="nav-header">Data Structures</li>
+                <li><a href="ColumnProperties.aspx">Column Properties</a></li>
+                <li><a href="ContractTypes.aspx">Contracts</a></li>
+                <li><a href="MeterTypes.aspx">Energy Meters</a></li>
+                <li><a href="MeterCategories.aspx">Energy Meter Categories</a></li>
+                <li><a href="EngineTypes.aspx">Engines</a></li>
+                <li><a href="GasTypes.aspx">Gas</a></li>
+                <li class="nav-header">History</li>
+                <li><a href="HistoryConfig.aspx">Configuration</a></li>
+                <li><a href="HistoryMapping.aspx">Mapping</a></li>
+                <li class="nav-header">MQTT</li>
+                <li><a href="MQTTConfig.aspx">Configuration</a></li>
+                <li class="active"><a href="MQTTMonitor.aspx">Monitor</a></li>
+                <li class="nav-header">SQL</li>
+                <li><a href="SQLConfig.aspx">Configuration</a></li>
+                <li><a href="SQLProcesses.aspx">Processes</a></li>
+                <li><a href="LogsSystem.aspx">System Log</a></li>
+                <li><a href="LogsUser.aspx">User Log</a></li>
+                <li class="nav-header">Users & Roles</li>
+                <li><a href="AccountManageRoles.aspx">Roles</a></li>
+                <li><a href="AccountManageUsers.aspx">Users</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-sm-9 col-md-10 col-xs-12 content">
+
+        <legend><%: Page.Title %> 
+            <asp:ContentPlaceHolder ID="AdministrationHeadingContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </legend>
+
+        <div class="container-fluid">
+
+            <%--Error message--%>
+            <div id="alert_placeholder"></div>
+
+            <%--Main Content--%>
+            <asp:ContentPlaceHolder ID="AdministrationSubContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+    </div>
+</asp:Content>

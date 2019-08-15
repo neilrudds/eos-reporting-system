@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 8.875" name="DataClasses1">
+  <DataContextMoniker Name="/ReportingSystemDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bb852e4a-94b0-4b1a-b171-d656611f8428" isExpanded="false" absoluteBounds="4.875, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/HL_Log" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ddd6c067-3585-4f04-aa0a-85b5c267b74f" absoluteBounds="4.8900000000000006, 1.71, 1.9700000000000002, 47.363240559895829" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1544453-3157-46bc-8430-51f260f9f138" isExpanded="false" absoluteBounds="4.875, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/BB_LiveAlarm" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2cfba4da-1697-4e16-9d08-995ff733fdb9" absoluteBounds="4.8900000000000006, 4.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="862e7c46-5483-47db-b33a-da6300909d56" isExpanded="false" absoluteBounds="4.875, 4.375, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/BB_LiveData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f2930df9-8a37-43b2-93cb-3ed75745b21a" absoluteBounds="4.89, 4.835, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d32ca646-4aab-4d7a-9bd7-4b7b95f5a92f" absoluteBounds="9.5, 0.5, 2, 7.7322412109375005">
+      <DataClassMoniker Name="/ReportingSystemDataContext/HL_Log_Charts" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46286355-1c9f-4366-9890-783003196f34" absoluteBounds="9.515, 0.96, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="181bf8e5-d941-4436-ab4b-744d762cc469" isExpanded="false" absoluteBounds="2.75, 5.625, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/ComAp_Wildcard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d7f1ce1-210b-4066-8dba-d8e259f49237" absoluteBounds="2.7649999999999997, 6.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="95058439-e7a9-440a-9439-440bbdde75e0" isExpanded="false" absoluteBounds="0.5, 6.875, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/DataBaseLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="09261197-4a5e-448f-ba79-90de91eee417" absoluteBounds="0.51499999999999968, 7.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1fc9081c-8d7a-4ba8-be4c-2726f19d4f7d" isExpanded="false" absoluteBounds="7, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/HL_Event" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46276d70-ee88-4a00-9e8e-d94494068e75" absoluteBounds="7.0150000000000006, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7 : 1.475); (6.875 : 1.475)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ReportingSystemDataContext/HL_Event/HL_Event_HL_Log" />
+      <nodes>
+        <classShapeMoniker Id="1fc9081c-8d7a-4ba8-be4c-2726f19d4f7d" />
+        <classShapeMoniker Id="bb852e4a-94b0-4b1a-b171-d656611f8428" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9 : 1.475); (9.5 : 1.475)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ReportingSystemDataContext/HL_Event/HL_Event_HL_Log_Charts" />
+      <nodes>
+        <classShapeMoniker Id="1fc9081c-8d7a-4ba8-be4c-2726f19d4f7d" />
+        <classShapeMoniker Id="d32ca646-4aab-4d7a-9bd7-4b7b95f5a92f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e2a604ac-efc8-4a67-85a3-942e2e6b3643" isExpanded="false" absoluteBounds="2.75, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/EnergyMeters_Mapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df700021-cb64-4149-814d-44a8e1498274" absoluteBounds="2.7650000000000006, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dbcfd890-477b-4124-8809-c99892822b44" isExpanded="false" absoluteBounds="4.875, 2.5, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/LoadTime" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e61c7dc0-6c9c-4bdb-9446-7863d4b1b4c4" absoluteBounds="4.89, 2.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="007415bd-4042-4209-8139-d04b093d72ab" isExpanded="false" absoluteBounds="4.875, 3.125, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/GensetComment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13d5e448-3ef2-495d-9899-bdab880f9951" absoluteBounds="4.8900000000000006, 3.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4b0bc2b7-9090-463c-bfcc-64128f9b8d54" isExpanded="false" absoluteBounds="2.75, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/GensetLocation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="869ac984-91ad-491f-b810-1cea8d689b93" absoluteBounds="2.7649999999999997, 6.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8436b1df-e4e1-4137-8c79-9d694df674f9" isExpanded="false" absoluteBounds="0.5, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/ComAp_Header" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ad109f66-056a-4dcd-ad3c-dcc447c136c2" absoluteBounds="0.51499999999999968, 6.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a329180e-c14f-47b0-b691-53bb01d980db" isExpanded="false" absoluteBounds="4.875, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/Exempt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10a68d78-9198-4ee9-bf82-47ea5e3d6bbf" absoluteBounds="4.89, 2.335, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f0d2f79-7513-47ff-bf5e-0ce0e7d2213b" absoluteBounds="0.5, 1.25, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ReportingSystemDataContext/HL_Location" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0feaae08-8345-4754-b032-01be0aacf24f" absoluteBounds="0.51499999999999968, 1.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.25); (2.875 : 0.875); (4.5 : 0.875); (4.875 : 1.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ReportingSystemDataContext/HL_Location/HL_Location_HL_Log" />
+      <nodes>
+        <classShapeMoniker Id="0f0d2f79-7513-47ff-bf5e-0ce0e7d2213b" />
+        <classShapeMoniker Id="bb852e4a-94b0-4b1a-b171-d656611f8428" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 2.4125); (6.85416666666667 : 2.4125 : JumpStart); (7.02083333333333 : 2.4125 : JumpEnd); (9.5 : 2.4125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ReportingSystemDataContext/HL_Location/HL_Location_HL_Log_Charts" />
+      <nodes>
+        <classShapeMoniker Id="0f0d2f79-7513-47ff-bf5e-0ce0e7d2213b" />
+        <classShapeMoniker Id="d32ca646-4aab-4d7a-9bd7-4b7b95f5a92f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="48bc1b54-03ee-44a7-bd2b-87b50efcc040" isExpanded="false" absoluteBounds="2.75, 4.375, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/ConfigEfficiency" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e37d5df-f44e-4e2e-b9bc-fabf8d5a5555" absoluteBounds="2.7649999999999997, 4.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc23d79a-2ae1-4211-9405-cf86b537747f" isExpanded="false" absoluteBounds="4.875, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/sms_Mapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b0161d87-4803-4007-80cd-b49c7970c3e9" absoluteBounds="4.89, 6.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58bdec38-255f-4b78-9bc5-ca95f7f02612" isExpanded="false" absoluteBounds="4.875, 6.875, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/BB_SMSLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6c7ecee-948b-4d06-b6f3-b25f99032417" absoluteBounds="4.89, 7.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="155931f8-e301-4c43-a2df-5a292356a125" isExpanded="false" absoluteBounds="4.875, 7.5, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/Update_Control" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c86fb58f-bd06-4176-ac8b-c4e65f87c0f7" absoluteBounds="4.89, 7.9600000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc8a6772-2095-48c1-9025-950ddbbef0e1" isExpanded="false" absoluteBounds="7, 2.5, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/LogUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="888495a7-c9f2-40fa-b568-57a4a8e1e6af" absoluteBounds="7.015, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="92ce9e8f-9911-4e76-99e4-44b7a58bea5c" isExpanded="false" absoluteBounds="7, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/LogSystem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a03610cf-7648-4dbf-8317-de52e463d373" absoluteBounds="7.015, 2.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bfe1471a-b4a4-4191-8f49-1f3ceca64054" isExpanded="false" absoluteBounds="2.75, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/EngineType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6430222d-fd8f-47ed-83a7-60d0888653ea" absoluteBounds="2.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5dbb42ff-a5b9-4036-854e-35f441573dff" isExpanded="false" absoluteBounds="7, 3.125, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/GasType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eddc18af-c0f9-49fa-b0bb-d0b5e010628b" absoluteBounds="7.015, 3.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="db8a4592-e1da-4cf4-8c1c-d0385ac5fc1e" isExpanded="false" absoluteBounds="7, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/GasTypes_Mapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f71cea9a-d74e-4369-b685-139183c1ebdf" absoluteBounds="7.015, 4.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 3.98240397135417); (1.5 : 4.04490397135417); (2.6875 : 4.04490397135417); (2.6875 : 3.6875); (6.90625 : 3.6875); (6.90625 : 3.975); (7 : 3.975)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ReportingSystemDataContext/HL_Location/HL_Location_GasTypes_Mapping" />
+      <nodes>
+        <classShapeMoniker Id="0f0d2f79-7513-47ff-bf5e-0ce0e7d2213b" />
+        <classShapeMoniker Id="db8a4592-e1da-4cf4-8c1c-d0385ac5fc1e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.59375 : 3.75); (8.59375 : 3.575)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ReportingSystemDataContext/GasTypes_Mapping/GasTypes_Mapping_GasType" />
+      <nodes>
+        <classShapeMoniker Id="db8a4592-e1da-4cf4-8c1c-d0385ac5fc1e" />
+        <classShapeMoniker Id="5dbb42ff-a5b9-4036-854e-35f441573dff" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="43b0f399-8e1b-4f03-89dd-62792c7d0f37" isExpanded="false" absoluteBounds="7, 4.375, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/ContractType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3beda613-9a6c-4acf-9ace-78b208293b22" absoluteBounds="7.015, 4.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea85f681-cdf6-4766-be73-4069f45c2915" isExpanded="false" absoluteBounds="2.75, 6.875, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/ContractInformation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9b42217-f8c1-478a-b3ff-3fed382fb81c" absoluteBounds="2.765, 7.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dafe56d8-b2db-4f19-9e56-0add529ba9d4" isExpanded="false" absoluteBounds="4.875, 5.625, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/ColumnName" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f695b5ea-1761-4114-9cc5-2fff2fd1750a" absoluteBounds="4.89, 6.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="95683bf1-7426-441c-950c-5982736eb1f1" absoluteBounds="2.75, 5, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/ReportingSystemDataContext/ConfigReport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d2c1b86-aaeb-41aa-a0be-cfa9864447f5" absoluteBounds="2.7649999999999997, 5.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="54f933c1-64dd-462b-bb16-c761d6d094f7" isExpanded="false" absoluteBounds="7, 5, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/EnergyMeters_Types_Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b4e53393-d345-4869-991e-9c6d316c7da2" absoluteBounds="7.0150000000000006, 5.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b5fb1410-c825-42de-8c82-77296dff4438" isExpanded="false" absoluteBounds="2.75, 2.5, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/EnergyMeters_Type" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d43dbc26-4189-485f-b226-8fb2d9828153" absoluteBounds="2.7649999999999997, 2.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19e8f3a2-7f15-43bf-a3e9-0cb130fd2248" isExpanded="false" absoluteBounds="7, 5.625, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/EnergyMeters_Mapping_Serial" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b64e994a-a9d2-4699-b41e-55f83988e641" absoluteBounds="7.015, 6.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="126bf8ee-655a-4040-b13d-0da23d414f40" isExpanded="false" absoluteBounds="7, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/EnergyMeters_MakeModel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7faae40-49f1-490e-b155-efad43a7b0fe" absoluteBounds="7.015, 6.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="281ff9a8-b0f9-4b15-bfe3-ae14c713d32d" isExpanded="false" absoluteBounds="2.75, 3.125, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/GasMeters_Mapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b09e52c-8cae-422e-ac4c-383537156956" absoluteBounds="2.7649999999999997, 3.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b374c51-597c-4058-b360-82461915020a" isExpanded="false" absoluteBounds="2.75, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/Blackbox" />
+      <nestedChildShapes>
+        <elementListCompartment Id="34ae1ef8-88da-49a8-80e3-9a152679b52c" absoluteBounds="2.7649999999999997, 1.71, 1.9700000000000002, 20.4410400390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="330389fb-a5ab-4edc-a5ed-4bbbd3c780e2" isExpanded="false" absoluteBounds="2.75, 8.125, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/IdentityRoleFunction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e280092d-1bc9-41f2-9cb6-693fb659289a" absoluteBounds="2.7649999999999997, 8.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7ca52051-fb5a-48c3-9b40-0234ff0038ed" isExpanded="false" absoluteBounds="4.875, 8.125, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/IdentityRoleFunctionAccess" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a173a36-f5a9-47aa-92e1-bde8f17e4f64" absoluteBounds="4.89, 8.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b4f681e2-047c-472a-a19d-50c7184d327f" isExpanded="false" absoluteBounds="7, 8.125, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/Blackboxes_Status" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95676bf9-8058-4d6a-a535-7622330631e5" absoluteBounds="7.015, 8.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.75 : 1.7); (3.75 : 1.8125); (6.9375 : 1.8125); (6.9375 : 8.35); (7 : 8.35)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ReportingSystemDataContext/Blackbox/Blackbox_Blackboxes_Status" />
+      <nodes>
+        <classShapeMoniker Id="0b374c51-597c-4058-b360-82461915020a" />
+        <classShapeMoniker Id="b4f681e2-047c-472a-a19d-50c7184d327f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2a767f42-dd30-420b-a16b-edf96d8b47f1" isExpanded="false" absoluteBounds="0.5, 5.625, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/ComAp_BinaryTypes_Mapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a78ea982-9ae4-4bd3-b3f2-f391f401a585" absoluteBounds="0.51499999999999968, 6.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b69aaad1-d783-43fd-a7e3-47462a4897a1" isExpanded="false" absoluteBounds="0.5, 5, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/ComAp_BinaryType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e03700b-0a51-485e-bfb5-6ae3d2f82a74" absoluteBounds="0.51499999999999968, 5.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="31e6b769-ad6e-42c6-953c-f400e2e121b2" isExpanded="false" absoluteBounds="7, 7.5, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/EnergyMeters_LG_E650" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12f8f87c-2183-4294-8deb-47825775260d" absoluteBounds="7.015, 7.9600000000000009, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="299fb720-5351-4249-8b20-c196b702595a" isExpanded="false" absoluteBounds="7, 6.875, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/EnergyMeters_Diris_A20" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30a3043d-df63-4d4a-b4e3-b82e29d07612" absoluteBounds="7.015, 7.335, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aab71fb9-c1e7-4d68-93b0-93dc35d458c4" isExpanded="false" absoluteBounds="2.75, 7.5, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/EnergyMeter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a158d5c-a854-433c-8d36-6b0fcdc2384b" absoluteBounds="2.765, 7.9600000000000009, 1.9700000000000002, 11.402872721354166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e92f864-ad72-4d4f-88a2-9eb63101c59d" isExpanded="false" absoluteBounds="4.875, 5, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/GasMeter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="48556f36-781a-447c-a315-bfa6efbfd8ca" absoluteBounds="4.89, 5.46, 1.9700000000000002, 13.133585611979166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2a52b7b8-9f15-40d1-a339-2a7ed69044e4" isExpanded="false" absoluteBounds="7, 0.625, 2, 0.45">
+      <DataClassMoniker Name="/ReportingSystemDataContext/GeneratorAvailability" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a4786b1-fd71-4fb5-9c44-8fc6e8293fad" absoluteBounds="7.015, 1.085, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

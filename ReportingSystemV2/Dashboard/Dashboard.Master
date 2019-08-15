@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Dashboard.Master.cs" Inherits="ReportingSystemV2.Dashboard.Dashboard" %>
+
+<asp:Content ID="DashboardContent" ContentPlaceHolderID="MainContent" runat="server">
+
+    <%--Side Nav--%>
+    <div class="col-sm-3 col-md-2 hidden-xs sidebar">
+        <div class="slimScroll">
+        <ul id="menu" class="nav">
+            <li class="active"><a href="/Dashboard/GensetOverview.aspx">Overview</a></li>
+            <li class="nav-header">Your Sites</li>
+            <asp:ListView ID="categoryList"
+                ItemType="ReportingSystemV2.HL_Location"
+                runat="server"
+                SelectMethod="GetSites">
+                <ItemTemplate>
+                    <li class="panel" style="margin: 0px;">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#menu" data-target="#DDL-nav<%#: Item.ID %>"><%#: Item.SITENAME %></a>
+                        <ul class="collapse" id="DDL-nav<%#: Item.ID %>" style="height: auto;">
+                            <asp:HiddenField runat="server" ID="SiteName" Value="<%# Item.SITENAME %>" />
+                            <asp:ListView ID="categoryList"
+                                ItemType="ReportingSystemV2.HL_Location"
+                                runat="server"
+                                SelectMethod="GetSiteGenerators">
+                                <ItemTemplate>
+                                    <li><a href="/Dashboard/GensetControl.aspx?id=<%#: Item.ID %>"><%#: Item.GENSETNAME %></a></li>
+                                </ItemTemplate>
+                            </asp:ListView>
+                        </ul>
+                    </li>
+                </ItemTemplate>
+            </asp:ListView>
+        </ul>
+            </div>
+    </div>
+
+    <%--Mobile Side Nav--%>
+    <div class="container hidden-sm hidden-md hidden-lg">
+        <div id="wrapper">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">Your Sites</a>
+                    </li>
+                    <asp:ListView ID="ListView1"
+                        ItemType="ReportingSystemV2.HL_Location"
+                        runat="server"
+                        SelectMethod="GetGenerators">
+                        <ItemTemplate>
+                            <li>
+                                <a href="/Dashboard/GensetControl.aspx?id=<%#: Item.ID %>">
+                                    <%#: Item.GENSETNAME %>
+                                </a>
+                            </li>
+                        </ItemTemplate>
+                    </asp:ListView>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <%--Sub Page Content--%>
+    <div class="col-sm-9 col-md-10 col-xs-12 content">
+        <% if (!System.IO.Path.GetFileName(Request.Path).Contains("GensetOverview") && (!HttpContext.Current.Request.Url.AbsolutePath.ToLower().Contains("default"))) // Hide the Sub Nav
+           { %>
+        <%--Sub Nav Bar--%>
+        <nav id="SubNav" class="navbar navbar-default hidden-xs" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a id="lbl_subnavBrand" runat="server" class="navbar-brand" href="#"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li id="SubNav_Overview"><a href="GensetControl.aspx?id=<%#:IdLocation %>">Control</a></li>
+                        <li id="liChartsDDL" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button">Charts<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="GensetCharting.aspx?id=<%#:IdLocation %>">Active</a></li>
+                                <li><a href="GensetCharts.aspx?id=<%#:IdLocation %>">Historical</a></li>
+                            </ul>
+                        </li>
+
+                        <li id="liHistoryDDL" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button">History<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu" id="myList" runat="server">
+                                <asp:Literal runat="server" ID="litDropDown"></asp:Literal>
+                            </ul>
+                        </li>
+
+                        <li><a href="GensetMap.aspx?id=<%#:IdLocation %>">Map</a></li>
+                        <li><a href="GensetNotes.aspx?id=<%#:IdLocation %>">Notes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <% } %>
+
+        <%--Error message--%>
+        <div id="alert_placeholder"></div>
+
+        <asp:ContentPlaceHolder ID="DashboardSubContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </div>
+</asp:Content>

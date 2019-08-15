@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GlobalReports.master.cs" Inherits="ReportingSystemV2.GlobalReports.GlobalReports" %>
+
+<%@ Register Src="~/DateRangeSelect.ascx" TagPrefix="uc" TagName="DateRangeSelect" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+    <br />
+    <div class="container-fluid">
+
+        <legend><%: Page.Title %></legend>
+
+        <%--Error message--%>
+        <div id="alert_placeholder"></div>
+
+        <asp:Panel runat="server" ID="ToolbarPanel">
+            <div class="row container-fluid">
+                <div class="pull-left">
+                    <asp:ContentPlaceHolder ID="ReportingToolbarButtonsLeft" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="pull-right btn-toolbar">
+                    <asp:ContentPlaceHolder ID="ReportingToolbarButtonsRight" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <uc:DateRangeSelect runat="server" ID="DateRangeSelect" />
+                </div>
+            </div>
+        </asp:Panel>
+
+        <asp:ContentPlaceHolder ID="GlobalReportingSubContent" runat="server"></asp:ContentPlaceHolder>
+
+    </div>
+</asp:Content>
+

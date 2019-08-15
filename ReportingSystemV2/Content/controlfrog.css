@@ -1,0 +1,67 @@
+/** MODULE: Gauge **/
+.cf-gauge .val-current {
+  position: absolute;
+    top: 35px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    font-family: 'Amaranth', sans-serif; }
+.cf-gauge .val-min {
+  position: absolute;
+  left: 10%;
+  bottom: 30%;
+  font-size: 0.6em; }
+.cf-gauge .val-max {
+  position: absolute;
+  right: 10%;
+  bottom: 30%;
+  font-size: 0.6em; }
+.cf-gauge canvas {
+  margin-top: -10px;
+}
+
+/* Gauge media queries */
+@media (min-width: 768px) {
+  .cf-gauge canvas {
+    margin-top: 0px;
+  }
+  .cf-gauge .val-min, .cf-gauge .val-max {
+    bottom: 35%; }
+
+  .col-sm-6 .inner .cf-gauge .val-min, .col-sm-6 .inner .cf-gauge .val-max {
+    bottom: 30%; }
+  .col-sm-6 .inner .cf-gauge canvas {
+    margin-top: -10px; }
+  .col-sm-6 .col-sm-4 .cf-gauge .val-min, .col-sm-6 .col-sm-4 .cf-gauge .val-max {
+    bottom: 30%; }
+  .col-sm-6 .col-sm-12 .col-sm-6 .cf-gauge .val-min, .col-sm-6 .col-sm-12 .col-sm-6 .cf-gauge .val-max {
+    bottom: 35%; } }
+@media (min-width: 992px) {
+  .cf-gauge .val-max, .cf-gauge .val-min {
+    font-size: 0.8em; }
+
+  .col-sm-6 .cf-gauge .val-min, .col-sm-6 .cf-gauge .val-max {
+    bottom: 45%; }
+  .col-sm-6 .inner .cf-gauge .val-min, .col-sm-6 .inner .cf-gauge .val-max {
+    bottom: 30%; } }
+@media (min-width: 1200px) {
+  .col-sm-6 .col-sm-4 .cf-gauge .val-max, .col-sm-6 .col-sm-4 .cf-gauge .val-min {
+    bottom: 35%; } }
+@media (min-width: 1400px) {
+  .col-sm-6 .col-sm-4 .cf-gauge .val-max, .col-sm-6 .col-sm-4 .cf-gauge .val-min {
+    bottom: 40%; }
+
+  .col-sm-6 .col-sm-12 .col-sm-6 .cf-gauge .val-max, .col-sm-6 .col-sm-12 .col-sm-6 .cf-gauge .val-min {
+    bottom: 45%; }
+
+  .col-sm-3 .cf-gauge .val-max, .col-sm-3 .cf-gauge .val-min {
+    bottom: 39%; } }
+@media (min-width: 1600px) {
+  .col-sm-6 .inner .cf-gauge .val-max, .col-sm-6 .inner .cf-gauge .val-min {
+    bottom: 25%; }
+
+  .col-sm-6 .col-sm-12 .col-sm-6 .cf-gauge .val-max, .col-sm-6 .col-sm-12 .col-sm-6 .cf-gauge .val-min {
+    bottom: 40%; } }

@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CPanel.master.cs" Inherits="ReportingSystemV2.CPanel.CPanel" %>
+
+<asp:Content ID="CPanelContent" ContentPlaceHolderID="MainContent" runat="server">
+    <br />
+    <%--Page Side Nav - Not for smaller devices--%>
+    <div class="col-sm-3 col-md-2 hidden-xs sidebar">
+        <div class="slimScroll">
+            <ul id="menu" class="nav">
+                <li class="nav-header">Database</li>
+                <li><a href="DBStatus.aspx">Status</a></li>
+                <li class="nav-header">Datalogger</li>
+                <li><a href="AddUnit.aspx">Add New Unit</a></li>
+                <li><a href="ManageDataloggers.aspx">Management</a></li>
+                <li class="nav-header">Service</li>
+                <li><a href="SMS.aspx">SMS</a></li>
+                <li><a href="SMSGroups.aspx">SMS Groups </a></li>
+                <li><a href="SMSLogs.aspx">SMS Logs</a></li>
+                <li class="nav-header">Site Management</li>
+                <li><a href="ManageGenerators.aspx">Generators</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-sm-9 col-md-10 col-xs-12 content">
+
+        <legend><%: Page.Title %></legend>
+
+        <%--Error message--%>
+        <div id="alert_placeholder"></div>
+
+        <asp:ContentPlaceHolder ID="CPanelSubContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+    </div>
+</asp:Content>

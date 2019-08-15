@@ -1,0 +1,45 @@
+﻿/*.loading{
+	background:url('../img/loading.gif') no-repeat 50% 50%;
+	min-height:30px;
+	min-width:30px;
+}
+.overlay{
+	background-color:#FFF;
+	position:absolute;
+	display:none;
+	z-index:2000;
+	opacity:0.7;
+	filter:Alpha(Opacity=70);
+}*/
+/*.page-loader{
+	position:absolute;
+	display:none;
+	margin:-15px 0 0 -15px; 
+	height:30px;
+	width:30px;
+	z-index:2001;
+}*/
+
+/*Negative half the width and height of the loader so it can be correctly centered*/
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #FFF;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    z-index: 2;
+}
+.loading {
+    background:url('/img/img-spinner-large.gif') no-repeat 50% 50%;
+    width: 57px;
+    height: 57px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin: -28px 0 0 -25px;
+    z-index: 3;
+}

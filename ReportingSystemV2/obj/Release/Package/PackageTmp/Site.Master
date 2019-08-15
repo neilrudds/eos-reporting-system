@@ -1,0 +1,229 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ReportingSystemV2.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Edina | <%: Page.Title %></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="Content/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="Content/favicon/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="Content/favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="Content/favicon/manifest.json">
+	<link rel="mask-icon" href="Content/favicon/safari-pinned-tab.svg" color="#faba05">
+	<link rel="shortcut icon" href="Content/favicon/favicon.ico">
+	<meta name="msapplication-config" content="Content/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#faba05">
+
+    <!-- Custom CSS -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="Content/simple-sidebar.css" rel="stylesheet">
+    <link href="Content/main.css" rel="stylesheet" />
+    <link href="Content/controlfrog.css" rel="stylesheet" />
+    <link href="Content/animate.css" rel="stylesheet" />
+    <link href="Scripts/libs/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Scripts/Acc-Wizard/acc-wizard.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet" />
+    <link href="Content/UpdatePanelStyles.css" rel="stylesheet" />
+    <link href="Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="Content/slimscroll.css" rel="stylesheet" />
+    <%--Page header content holder--%>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+
+    <%--Hover dropdown for navbar--%>
+    <style type='text/css'>
+        ul.nav li.dropdown:hover ul.dropdown-menu {
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+    <form runat="server">
+        <ajax:ToolkitScriptManager ID="DefaultScriptManager" runat="server" EnablePartialRendering="true" EnablePageMethods="true">
+            <Services>
+                <asp:ServiceReference Path="MyServices.asmx" />
+            </Services>
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <%--<asp:ScriptReference Name="MsAjaxBundle" />--%>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--<asp:ScriptReference Path="~/Scripts/libs/jquery.slimscroll.min.js" />--%>
+                <asp:ScriptReference Path="~/Scripts/UpdatePanelLoaders.js" />
+                <asp:ScriptReference Path="~/Scripts/slimscroll.js" />
+                <asp:ScriptReference Path="~/Scripts/Edina/Navlinks.js" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </ajax:ToolkitScriptManager>
+
+        <%--If user is logged in - show the main navbar--%>
+        <% if (!System.IO.Path.GetFileName(Request.Path).Contains("Login"))
+           { %>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="#menu-toggle" data-target=".navbar-collapse" style="height: 2.4em;">
+                        <span class="glyphicon glyphicon-map-marker" style="color: #fff; vertical-align: top"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/" title="Edina Operations System">
+                        <img style="max-width: 100px; margin-top: -7px;" src="/img/main-logo.png">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav">
+                                <%--Dynamic Menu--%>
+                                <li id="liDashboard"><a runat="server" href="~/"><span class="fa fa-dashboard"></span>Dashboard</a></li>
+                                <li id="liReporting" class="dropdown"><a runat="server" href="~/Reporting/ReportingOverview.aspx"><span class="fa fa-line-chart"></span>Reporting<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/GlobalReports/Downtime.aspx">Downtime</a></li>
+                                        <li><a href="/GlobalReports/Statistics.aspx">Statistics</a></li>
+                                        <li><a href="/GlobalReports/Filter.aspx?Table=Shutdowns">Shutdowns</a></li>
+                                    </ul>
+                                </li>
+                                <li id="liCPanel"><a runat="server" href="~/CPanel/CPanel.aspx"><span class="fa fa-cogs"></span>Control Panel</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="Admin,SysAdmin,Gravity">
+                                <ContentTemplate>
+                                    <ul class="nav navbar-nav">
+                                        <%--Dynamic Menu--%>
+                                        <li id="liDashboard"><a runat="server" href="~/"><span class="fa fa-dashboard"></span>Dashboard</a></li>
+                                        <li id="liReporting" class="dropdown"><a runat="server" href="~/Reporting/ReportingOverview.aspx"><span class="fa fa-line-chart"></span>Reporting<b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/GlobalReports/Downtime.aspx">Downtime</a></li>
+                                                <li><a href="/GlobalReports/Statistics.aspx">Statistics</a></li>
+                                                <li><a href="/GlobalReports/Filter.aspx?Table=Shutdowns">Shutdowns</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="liCPanel"><a runat="server" href="~/CPanel/CPanel.aspx"><span class="fa fa-cogs"></span>Control Panel</a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                        <li>
+                                            <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                        </li>
+                                        <li id="liAdmin"><a runat="server" href="~/Admin/Admin"><span class="fa fa-wrench"></span></a></li>
+                                    </ul>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+        <br />
+        <br />
+
+        <script type="text/javascript">
+            // JS error message function
+            bootstrap_alert = function () { }
+            bootstrap_alert.warning = function (csstype, subject, message) {
+                $('#alert_placeholder').html('<div class="error-notice"><div class="edina-error ' + csstype + '"><strong>' + subject + ' ' + '</strong>' + message + '</div></div>')
+            }
+            bootstrap_alert.clear = function () {
+                $('#alert_placeholder').empty()
+            }
+        </script>
+
+        <%--Main Page Content--%>
+        <div class="container-fluid">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+
+    <%--Scripts at the end for faster loading--%>
+    <script src="//code.highcharts.com/stock/highstock.js"></script>
+    <script src="//code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="//code.highcharts.com/modules/no-data-to-display.js"></script>
+    <%--<script type="text/javascript" src="Scripts/highcharts-more.js"></script>--%>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+    
+    <!-- Menu Toggle Script -->
+    <script>
+        //For the mobile navbar toggle
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+
+        //For the main navber scrollbar
+        //$(function () {
+        //    $().slimScroll({
+        //        height: 'auto',
+        //        alwaysVisible: true,
+        //        allowPageScroll: true
+        //    });
+        //});
+
+        window.onload = function(){
+            //if(!navigator.userAgent.match('Macintosh')){
+                var element = document.querySelectorAll('.slimScroll');
+
+                // Apply slim scroll plugin
+                var one = new slimScroll(element[0], {
+                    'wrapperClass': 'scroll-wrapper unselectable mac',
+                    'scrollBarContainerClass': 'scrollBarContainer',
+                    'scrollBarContainerSpecialClass': 'animate',
+                    'scrollBarClass': 'scroll',
+                    'keepFocus': true
+                });
+                   
+                // resize example
+                // To make the resizing work, set the height of the container in PERCENTAGE
+                window.onresize = function(){
+                    one.resetValues();
+                }
+            }
+        //    else{
+        //        document.write("For Mac users, this custom slimscroll styles will not be applied");
+        //    }
+        //}
+
+        $(document).ready(function () {
+            updateNavBarActiveLinks();
+        });
+    </script>
+</body>
+</html>

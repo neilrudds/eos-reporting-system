@@ -1,0 +1,1656 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ReportingSystemProd" Class="ReportingSystemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=edina-datastore-prod-01.database.windows.net;Initial Catalog=ReportingSystemProd;Persist Security Info=True;User ID=kevin_creategravity;Encrypt=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ReportingSystemProdConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HL_Logs" Member="HL_Logs">
+    <Type Name="HL_Log">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Time_Stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Event" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EVENT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="RPM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pwr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gfrq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ig1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ig2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ig3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BOUT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LTHWrT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LTHWfT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OilB4F" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CCpres" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OilLev" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ActPfi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExPlim" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ActDem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CH4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OilT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AirInT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RecAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JWTout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JWTin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JWGKin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Demand" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="kWhour" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Runhrs" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Numstr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NumUns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Servic" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TotalD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DnTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Q" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LChr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mfrq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vm1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vm2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vm3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vm12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vm23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vm31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pmns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Qmns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MPF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MVS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SRO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VRO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UBat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPUT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JWTTin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Runho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Numst" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ActPwr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DPowr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Amb" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GasP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ActP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HeatMe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Chille" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GasMet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SBO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DemandkW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="H2S" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NKOutT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HeatFlo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HeatRtn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThrPos" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hrsx1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="kVarho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI11" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BO1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BO3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[100thmwh]" Member="_100thmwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[10thm3]" Member="_10thm3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GasVol" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SHBI1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SHBO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hrsx10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SteamP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JkTout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JKTin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JKGKin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TEMv" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VPI1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MLChr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExhAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OilB4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThrPoB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExhATu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LoadR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OilP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Wtmp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Flev" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SWtmp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GroKwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BO4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EngRPM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LTHW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DT_Processed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Bfrq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HtWtrV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IcOut" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GasBpr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExtKW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="setNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TEMLod" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SBI3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tank" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SBI4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SBO1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JWTemp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TWTemp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SBI1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaxVec" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DemkW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="groskwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExDman" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AirP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Runhrsnull" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[D+]" Member="D_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="U" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="V" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="W" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Run Hrs x10000]" Member="Run_Hrs_x10000" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[VPIO BOUT1]" Member="VPIO_BOUT1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Bus freq]" Member="Bus_freq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Actual pwr Fil]" Member="Actual_pwr_Fil" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Spply Vlts Tem]" Member="Spply_Vlts_Tem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HWFl" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HWRet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nkout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lthwflo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GFlwRte" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GFlwM3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="kVAr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GasFlo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Heat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Plimit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="kVAHrs" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OilPres" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Spare" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[GK Outlet Temp]" Member="GK_Outlet_Temp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThroPos" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[kWh Pulse]" Member="kWh_Pulse" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TotDnT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BrgAt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BrgBt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="L1temp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="L2temp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="L3temp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ICrout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JWrout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NetkW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IM3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThrPosB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HWFlo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HWRtn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VPIOBO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="kVArhour" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GasFl" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LTHWFl" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OilBF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HtMet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChMet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CustHt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VPIO1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VPIO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VPIO3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BO5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BO6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BO7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BO8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OLFS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OLFS2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OLFS3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ILFS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ILFS2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ILFS3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[PulseCounter 2]" Member="PulseCounter_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ch42" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DnTiime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="grosskwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AI37" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LdDem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DisO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FdrA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FdrB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExATu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExhBTu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SHBOUT1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SHBIN2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Demand KW]" Member="Demand_KW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Hrs Run x1]" Member="Hrs_Run_x1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GasInPres" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Run Hrs X1000]" Member="Run_Hrs_X1000" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="HL_Event_HL_Log" Member="HL_Event" ThisKey="ID_Event" OtherKey="ID" Type="HL_Event" IsForeignKey="true" />
+      <Association Name="HL_Location_HL_Log" Member="HL_Location" ThisKey="ID_Location" OtherKey="ID" Type="HL_Location" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BB_LiveAlarms" Member="BB_LiveAlarms">
+    <Type Name="BB_LiveAlarm">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="chp_LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="chp_Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="chp_Alarm1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm11" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm13" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm14" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm15" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm16" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm17" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="chp_Alarm18" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BB_LiveData" Member="BB_LiveDatas">
+    <Type Name="BB_LiveData">
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LD_LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LD_EngineState" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_BreakerState" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_ControllerMode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_Power" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_DemandPower" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_MainsFrequency" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_PowerFactor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_LoadChar" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_BattVoltage" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_KWHours" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_RunHours" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_NumStarts" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_RPM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_GenV1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_GenV2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_GenV3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_MainsV1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_MainsV2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_MainsV3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_CylTempAvg" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_CylTempMax" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LD_CylTempMin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HL_Logs" Member="HL_Log_Charts">
+    <Type Name="HL_Log_Charts">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Time_Stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Event" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EVENT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="RPM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pwr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gfrq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ig1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ig2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ig3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BOUT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ActPwr" Type="System.String" CanBeNull="false" />
+      <Column Name="ActDem" Type="System.String" CanBeNull="false" />
+      <Column Name="Runhrs" Type="System.String" CanBeNull="false" />
+      <Column Name="kWhour" Type="System.String" CanBeNull="false" />
+      <Column Name="Vm1" Type="System.String" CanBeNull="false" />
+      <Column Name="Vm2" Type="System.String" CanBeNull="false" />
+      <Column Name="Vm3" Type="System.String" CanBeNull="false" />
+      <Column Name="UBat" Type="System.String" CanBeNull="false" />
+      <Column Name="OilB4F" Type="System.String" CanBeNull="false" />
+      <Column Name="Wtmp" Type="System.String" CanBeNull="false" />
+      <Association Name="HL_Event_HL_Log_Charts" Member="HL_Event" ThisKey="ID_Event" OtherKey="ID" Type="HL_Event" IsForeignKey="true" />
+      <Association Name="HL_Location_HL_Log_Charts" Member="HL_Location" ThisKey="ID_Location" OtherKey="ID" Type="HL_Location" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ComAp_Wildcard" Member="ComAp_Wildcards">
+    <Type Name="ComAp_Wildcard">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_Header" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommsObj_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CommsObj_Dim" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CommsObj_Type" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CommsObj_Len" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommsObj_Dec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommsObj_Ofs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommsObj_Obj" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Approved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DataBaseLog" Member="DataBaseLogs">
+    <Type Name="DataBaseLog">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Time_Stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="UserAction" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HL_Events" Member="HL_Events">
+    <Type Name="HL_Event">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REASON" Type="System.String" DbType="NVarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="HL_Event_HL_Log" Member="HL_Logs" ThisKey="ID" OtherKey="ID_Event" Type="HL_Log" />
+      <Association Name="HL_Event_HL_Log_Charts" Member="HL_Log_Charts" ThisKey="ID" OtherKey="ID_Event" Type="HL_Log_Charts" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnergyMeters_Mapping" Member="EnergyMeters_Mappings">
+    <Type Name="EnergyMeters_Mapping">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Modbus_Addr" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoadTimes" Member="LoadTimes">
+    <Type Name="LoadTime">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDStart" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDFullLoad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DtStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DtFullLoad" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeDifference" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsExempt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Reason" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Exclude" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OrigDtStart" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OrigDtFullLoad" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NewTimeDifference" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Custom" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GensetComments" Member="GensetComments">
+    <Type Name="GensetComment">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="CommentDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Flag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GensetLocations" Member="GensetLocations">
+    <Type Name="GensetLocation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Latitude" Type="System.Decimal" DbType="Decimal(18,6) NOT NULL" CanBeNull="false" />
+      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(18,6) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ComAp_Headers" Member="ComAp_Headers">
+    <Type Name="ComAp_Header">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="History_Header" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="History_Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Fixed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Required" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Exempts" Member="Exempts">
+    <Type Name="Exempt">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDDown" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDUp" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DtDown" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DtUp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeDifference" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsExempt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Reason" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="OrigDtUp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NewDtUp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NewTimeDifference" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Custom" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsExcluded" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HL_Locations" Member="HL_Locations">
+    <Type Name="HL_Location">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GENSET_SN" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="GENSETNAME" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SITENAME" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ContractInformation" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LASTUPDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BLACKBOX_SN" Type="System.String" DbType="NVarChar(9)" CanBeNull="true" />
+      <Column Name="ID_SMS_Group" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GensetEnabled" Storage="_showMonitor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_EngineType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HL_Location_HL_Log" Member="HL_Logs" ThisKey="ID" OtherKey="ID_Location" Type="HL_Log" />
+      <Association Name="HL_Location_HL_Log_Charts" Member="HL_Log_Charts" ThisKey="ID" OtherKey="ID_Location" Type="HL_Log_Charts" />
+      <Association Name="HL_Location_GasTypes_Mapping" Member="GasTypes_Mappings" ThisKey="ID" OtherKey="ID_Location" Type="GasTypes_Mapping" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ConfigEfficiency" Member="ConfigEfficiencies">
+    <Type Name="ConfigEfficiency">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdLocation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GasVolumeColumnName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="GasCalorificValue" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IsGasVolumeCorrected" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sms_Mapping" Member="sms_Mappings">
+    <Type Name="sms_Mapping">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SMS_Group" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SMS_Recipient" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BB_SMSLog" Member="BB_SMSLogs">
+    <Type Name="BB_SMSLog">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SMS_SendTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SMS_Recipient" Type="System.String" DbType="NVarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="SMS_Content" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Update_Control" Member="Update_Controls">
+    <Type Name="Update_Control">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LogUser" Member="LogUsers">
+    <Type Name="LogUser">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Time_Stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="UserAction" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LogSystem" Member="LogSystems">
+    <Type Name="LogSystem">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Time_Stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Action" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ActionPage" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EngineTypes" Member="EngineTypes">
+    <Type Name="EngineType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Make" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cylinders" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaximumOutput" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GasTypes" Member="GasTypes">
+    <Type Name="GasType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Gas_Type" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="GasTypes_Mapping_GasType" Member="GasTypes_Mapping" ThisKey="ID" OtherKey="ID_GasType" Type="GasTypes_Mapping" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GasTypes_Mapping" Member="GasTypes_Mappings">
+    <Type Name="GasTypes_Mapping">
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_GasType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="GasTypes_Mapping_GasType" Member="GasTypes" ThisKey="ID_GasType" OtherKey="ID" Type="GasType" />
+      <Association Name="HL_Location_GasTypes_Mapping" Member="HL_Location" ThisKey="ID_Location" OtherKey="ID" Type="HL_Location" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContractTypes" Member="ContractTypes">
+    <Type Name="ContractType">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Contract_Type" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContractInformation" Member="ContractInformations">
+    <Type Name="ContractInformation">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContractType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ContractOutput" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContractAvailability" Type="System.Decimal" DbType="Decimal(6,4)" CanBeNull="true" />
+      <Column Name="DutyCycle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ContractLength" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContractStartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InitialRunHrs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InitialKwHours" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_ContractType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ColumnNames" Member="ColumnNames">
+    <Type Name="ColumnName">
+      <Column Name="ColumnLabel" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HeaderId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IsInstantaneousPlot" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsCumulativePlot" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsCommon" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ColumnUnits" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ColumnHtmlColor" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="IsAvailableInReports" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ConfigReport" Member="ConfigReports">
+    <Type Name="ConfigReport">
+      <Column Name="IdLocation" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ShowEfficiency" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ShowUptime" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TrendChartArray" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AvailabilityBasedOnUnitUnavailableFlag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnergyMeters_Types_Categories" Member="EnergyMeters_Types_Categories">
+    <Type Name="EnergyMeters_Types_Category">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Category_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnergyMeters_Types" Member="EnergyMeters_Types">
+    <Type Name="EnergyMeters_Type">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Meter_Type" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Meter_Category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnergyMeters_Mapping_Serial" Member="EnergyMeters_Mapping_Serials">
+    <Type Name="EnergyMeters_Mapping_Serial">
+      <Column Name="Serial" Type="System.String" DbType="NChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_MakeModel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnergyMeters_MakeModel" Member="EnergyMeters_MakeModels">
+    <Type Name="EnergyMeters_MakeModel">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Make" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DataTableName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GasMeters_Mapping" Member="GasMeters_Mappings">
+    <Type Name="GasMeters_Mapping">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Modbus_Addr" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Blackboxes" Member="Blackboxes">
+    <Type Name="Blackbox">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BB_SerialNo" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="BB_Model" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BB_MobileNo" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="BB_MobileNetworkName" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_LastPingTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ST_Latitude" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ST_Longitude" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ST_LastStatusUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ST_GSMSignalLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_BatteryChargeLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_PowerSupplyType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_TimeSinceLastResetSeconds" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_ComapLinkPresent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ST_SentSMSCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_RestartsCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_AlertActivations" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_State" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_ConnectedControllersCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SiteName" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="CFG_GensetName01" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="CFG_GensetName02" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="CFG_GensetName03" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="CFG_GensetName04" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="CFG_GensetName05" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="CFG_GensetName06" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="CFG_GensetName07" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="CFG_GensetName08" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="CFG_GensetSN01" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="CFG_GensetSN02" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="CFG_GensetSN03" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="CFG_GensetSN04" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="CFG_GensetSN05" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="CFG_GensetSN06" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="CFG_GensetSN07" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="CFG_GensetSN08" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="CFG_FTPPrefix" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="CFG_PortNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_BaudRate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CFG_EthernetModuleEn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CFG_FirstControllerAddr" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr01" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr03" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr04" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr05" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr06" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr07" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr08" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SMAddr01" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SMAddr02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SMAddr03" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SMAddr04" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SMAddr05" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SMAddr06" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SMAddr07" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SMAddr08" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_GMAddr01" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_GMAddr02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_GMAddr03" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_GMAddr04" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_CommsObjFilePath" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CFG_CommsObjNameStr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CFG_CommsObjDimStr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CFG_CommsObjTypeStr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CFG_CommsObjLenStr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CFG_CommsObjDecStr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CFG_CommsObjOfsStr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CFG_CommsObjObjStr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CFG_HistoryColNameStr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CFG_HistoryColIDsStr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CFG_HistoryColTypeStr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CFG_DevMode" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CFG_AddOnCallNo01" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="CFG_AddOnCallNo02" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="CFG_AddOnCallNo03" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="CFG_AddOnCallNo04" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="CFG_AddOnCallNo05" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="CFG_GenStatEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CFG_AdminEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CFG_ModbusSlaveEn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CFG_STORWarnEn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CFG_RegDemand" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_RegCylTempAvg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_RegCylTempMax" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_RegCylTempMin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CFG_LG_E650_SN01" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="CFG_LG_E650_SN02" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="CFG_LG_E650_SN03" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="CFG_LG_E650_SN04" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="CFG_LG_PortNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_RegRSG40Gas_Instantaneous" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_RegRSG40Gas_Totalizer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_DirAddr01" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_DirAddr02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_DirAddr03" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_DirAddr04" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_Dir_A20_SN01" Type="System.String" DbType="NChar(12)" CanBeNull="true" />
+      <Column Name="CFG_Dir_A20_SN02" Type="System.String" DbType="NChar(12)" CanBeNull="true" />
+      <Column Name="CFG_Dir_A20_SN03" Type="System.String" DbType="NChar(12)" CanBeNull="true" />
+      <Column Name="CFG_Dir_A20_SN04" Type="System.String" DbType="NChar(12)" CanBeNull="true" />
+      <Column Name="CFG_RSG40_GasEn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CFG_MaxRecordsPerFile" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Blackbox_Blackboxes_Status" Member="Blackboxes_Status" ThisKey="ID" OtherKey="ID_Blackbox" Type="Blackboxes_Status" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IdentityRoleFunctions" Member="IdentityRoleFunctions">
+    <Type Name="IdentityRoleFunction">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FunctionName" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IdentityRoleFunctionAccess" Member="IdentityRoleFunctionAccesses">
+    <Type Name="IdentityRoleFunctionAccess">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="FunctionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Blackboxes_Status" Member="Blackboxes_Status">
+    <Type Name="Blackboxes_Status">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Blackbox" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ST_GSMSignalLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ST_BatteryChargeLevel" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ST_PowerSupplyType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ST_TimeSinceLastResetSeconds" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ST_ComapLinkPresent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ST_RestartsCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Blackbox_Blackboxes_Status" Member="Blackbox" ThisKey="ID_Blackbox" OtherKey="ID" Type="Blackbox" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ComAp_BinaryTypes_Mapping" Member="ComAp_BinaryTypes_Mappings">
+    <Type Name="ComAp_BinaryTypes_Mapping">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Blackbox" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ColumnName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_BinaryType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ComAp_BinaryTypes" Member="ComAp_BinaryTypes">
+    <Type Name="ComAp_BinaryType">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Blackbox" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Tooltip" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnergyMeters_LG_E650" Member="EnergyMeters_LG_E650s">
+    <Type Name="EnergyMeters_LG_E650">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Serial" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="F_F" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="[0_9_1]" Member="_0_9_1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="[0_9_2]" Member="_0_9_2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="[1_2_0]" Member="_1_2_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[2_2_0]" Member="_2_2_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[3_2_0]" Member="_3_2_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[4_2_0]" Member="_4_2_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1_6_0]" Member="_1_6_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[2_6_0]" Member="_2_6_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[3_6_0]" Member="_3_6_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[4_6_0]" Member="_4_6_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1_8_1]" Member="_1_8_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[2_8_1]" Member="_2_8_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[3_8_1]" Member="_3_8_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[4_8_1]" Member="_4_8_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[0_4_2]" Member="_0_4_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[32_7]" Member="_32_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[52_7]" Member="_52_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[72_7]" Member="_72_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1-1:32_36_0]" Member="_1_1_32_36_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1-1:52_36_0]" Member="_1_1_52_36_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1-1:72_36_0]" Member="_1_1_72_36_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1-1:32_32_0]" Member="_1_1_32_32_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1-1:52_32_0]" Member="_1_1_52_32_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1-1:72_32_0]" Member="_1_1_72_32_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[16_7_0]" Member="_16_7_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[36_7_0]" Member="_36_7_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[56_7_0]" Member="_56_7_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1_8_0]" Member="_1_8_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnergyMeters_Diris_A20" Member="EnergyMeters_Diris_A20s">
+    <Type Name="EnergyMeters_Diris_A20">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Serial" Type="System.String" DbType="NChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="[I-1]" Member="I_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[I-2]" Member="I_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[I-3]" Member="I_3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[I-N]" Member="I_N" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="V12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="V23" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="V31" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[V1-N]" Member="V1_N" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[V2-N]" Member="V2_N" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[V3-N]" Member="V3_N" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="F" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Q" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="S" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PF" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="W" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Wr" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnergyMeters" Member="EnergyMeters">
+    <Type Name="EnergyMeter">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Power_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FlowVol_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempWarm_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempCold_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Power_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FlowVol_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempWarm_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempCold_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Power_3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy_3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FlowVol_3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempWarm_3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempCold_3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Power_4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy_4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FlowVol_4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempWarm_4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempCold_4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Power_5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy_5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FlowVol_5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempWarm_5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempCold_5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Power_6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy_6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FlowVol_6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempWarm_6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempCold_6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Power_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FlowVol_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempWarm_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempCold_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Power_8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy_8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FlowVol_8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempWarm_8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempCold_8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Power_9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy_9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FlowVol_9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempWarm_9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempCold_9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Power_11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy_11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FlowVol_11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempWarm_11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempCold_11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Power_16" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy_16" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FlowVol_16" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempWarm_16" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempCold_16" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GasMeters" Member="GasMeters">
+    <Type Name="GasMeter">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MassFlow_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_15" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_15" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_16" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_16" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_17" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_17" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_18" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_18" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_19" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_19" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_20" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_20" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_21" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_21" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_22" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_22" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_23" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_23" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_24" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_24" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_25" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_25" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_26" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_26" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_27" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_27" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_28" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_28" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_29" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_29" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_30" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_30" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_31" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_31" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow_32" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser_32" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GeneratorAvailability" Member="GeneratorAvailabilities">
+    <Type Name="GeneratorAvailability">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdLocation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUnavailable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdAvailable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DtUnavailable" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DtAvailable" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeDifference" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsExempt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Reason" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Exclude" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OrigDtUnavailable" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OrigDtAvailable" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NewTimeDifference" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Custom" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.ed_Genset_GetActualkWhProducedById" Method="ed_Genset_GetActualkWhProducedById">
+    <Parameter Name="ID_LOCATION" Parameter="iD_LOCATION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="STARTDATE" Parameter="sTARTDATE" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ENDDATE" Parameter="eNDDATE" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="ed_Genset_GetActualkWhProducedByIdResult">
+      <Column Name="kWh" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Genset_GetTotalHoursRunById" Method="ed_Genset_GetTotalHoursRunById">
+    <Parameter Name="ID_LOCATION" Parameter="iD_LOCATION" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ed_Genset_GetTotalHoursRunByIdResult">
+      <Column Name="Hrs" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Genset_GetTotalkWhProducedById" Method="ed_Genset_GetTotalkWhProducedById">
+    <Parameter Name="ID_LOCATION" Parameter="iD_LOCATION" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ed_Genset_GetTotalkWhProducedByIdResult">
+      <Column Name="kWh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Genset_GetActualHoursRunById" Method="ed_Genset_GetActualHoursRunById">
+    <Parameter Name="ID_LOCATION" Parameter="iD_LOCATION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="STARTDATE" Parameter="sTARTDATE" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ENDDATE" Parameter="eNDDATE" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="ed_Genset_GetActualHoursRunByIdResult">
+      <Column Name="Hrs" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Genset_Add" Method="ed_Genset_Add">
+    <Parameter Name="GensetSN" Parameter="gensetSN" Type="System.String" DbType="NVarChar(8)" />
+    <Parameter Name="GensetName" Parameter="gensetName" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="SiteName" Parameter="siteName" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="BB_SerialNo" Parameter="bB_SerialNo" Type="System.String" DbType="NVarChar(9)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Blackbox_Add" Method="ed_Blackbox_Add">
+    <Parameter Name="BB_SerialNo" Parameter="bB_SerialNo" Type="System.String" DbType="NVarChar(9)" />
+    <Parameter Name="BB_Model" Parameter="bB_Model" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_ConnectedControllersCount" Parameter="cFG_ConnectedControllersCount" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_SiteName" Parameter="cFG_SiteName" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="CFG_GensetName01" Parameter="cFG_GensetName01" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="CFG_GensetName02" Parameter="cFG_GensetName02" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="CFG_GensetName03" Parameter="cFG_GensetName03" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="CFG_GensetName04" Parameter="cFG_GensetName04" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="CFG_GensetName05" Parameter="cFG_GensetName05" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="CFG_GensetName06" Parameter="cFG_GensetName06" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="CFG_GensetName07" Parameter="cFG_GensetName07" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="CFG_GensetName08" Parameter="cFG_GensetName08" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="CFG_GensetSN01" Parameter="cFG_GensetSN01" Type="System.String" DbType="NVarChar(8)" />
+    <Parameter Name="CFG_GensetSN02" Parameter="cFG_GensetSN02" Type="System.String" DbType="NVarChar(8)" />
+    <Parameter Name="CFG_GensetSN03" Parameter="cFG_GensetSN03" Type="System.String" DbType="NVarChar(8)" />
+    <Parameter Name="CFG_GensetSN04" Parameter="cFG_GensetSN04" Type="System.String" DbType="NVarChar(8)" />
+    <Parameter Name="CFG_GensetSN05" Parameter="cFG_GensetSN05" Type="System.String" DbType="NVarChar(8)" />
+    <Parameter Name="CFG_GensetSN06" Parameter="cFG_GensetSN06" Type="System.String" DbType="NVarChar(8)" />
+    <Parameter Name="CFG_GensetSN07" Parameter="cFG_GensetSN07" Type="System.String" DbType="NVarChar(8)" />
+    <Parameter Name="CFG_GensetSN08" Parameter="cFG_GensetSN08" Type="System.String" DbType="NVarChar(8)" />
+    <Parameter Name="CFG_FTPPrefix" Parameter="cFG_FTPPrefix" Type="System.String" DbType="NVarChar(5)" />
+    <Parameter Name="CFG_PortNo" Parameter="cFG_PortNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_BaudRate" Parameter="cFG_BaudRate" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="CFG_EthernetModuleEn" Parameter="cFG_EthernetModuleEn" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CFG_FirstControllerAddr" Parameter="cFG_FirstControllerAddr" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_HMAddr01" Parameter="cFG_HMAddr01" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_HMAddr02" Parameter="cFG_HMAddr02" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_HMAddr03" Parameter="cFG_HMAddr03" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_HMAddr04" Parameter="cFG_HMAddr04" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_HMAddr05" Parameter="cFG_HMAddr05" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_HMAddr06" Parameter="cFG_HMAddr06" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_HMAddr07" Parameter="cFG_HMAddr07" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_HMAddr08" Parameter="cFG_HMAddr08" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_SMAddr01" Parameter="cFG_SMAddr01" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_SMAddr02" Parameter="cFG_SMAddr02" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_SMAddr03" Parameter="cFG_SMAddr03" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_SMAddr04" Parameter="cFG_SMAddr04" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_SMAddr05" Parameter="cFG_SMAddr05" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_SMAddr06" Parameter="cFG_SMAddr06" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_SMAddr07" Parameter="cFG_SMAddr07" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_SMAddr08" Parameter="cFG_SMAddr08" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_GMAddr01" Parameter="cFG_GMAddr01" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_GMAddr02" Parameter="cFG_GMAddr02" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_GMAddr03" Parameter="cFG_GMAddr03" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_GMAddr04" Parameter="cFG_GMAddr04" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_CommsObjFilePath" Parameter="cFG_CommsObjFilePath" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="CFG_CommsObjNameStr" Parameter="cFG_CommsObjNameStr" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CFG_CommsObjDimStr" Parameter="cFG_CommsObjDimStr" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CFG_CommsObjTypeStr" Parameter="cFG_CommsObjTypeStr" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CFG_CommsObjLenStr" Parameter="cFG_CommsObjLenStr" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CFG_CommsObjDecStr" Parameter="cFG_CommsObjDecStr" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CFG_CommsObjOfsStr" Parameter="cFG_CommsObjOfsStr" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CFG_CommsObjObjStr" Parameter="cFG_CommsObjObjStr" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CFG_HistoryColNameStr" Parameter="cFG_HistoryColNameStr" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CFG_HistoryColIDsStr" Parameter="cFG_HistoryColIDsStr" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CFG_HistoryColTypeStr" Parameter="cFG_HistoryColTypeStr" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CFG_DevMode" Parameter="cFG_DevMode" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CFG_AddOnCallNo01" Parameter="cFG_AddOnCallNo01" Type="System.String" DbType="NChar(11)" />
+    <Parameter Name="CFG_AddOnCallNo02" Parameter="cFG_AddOnCallNo02" Type="System.String" DbType="NChar(11)" />
+    <Parameter Name="CFG_AddOnCallNo03" Parameter="cFG_AddOnCallNo03" Type="System.String" DbType="NChar(11)" />
+    <Parameter Name="CFG_AddOnCallNo04" Parameter="cFG_AddOnCallNo04" Type="System.String" DbType="NChar(11)" />
+    <Parameter Name="CFG_AddOnCallNo05" Parameter="cFG_AddOnCallNo05" Type="System.String" DbType="NChar(11)" />
+    <Parameter Name="CFG_GenStatEmail" Parameter="cFG_GenStatEmail" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CFG_AdminEmail" Parameter="cFG_AdminEmail" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CFG_ModbusSlaveEn" Parameter="cFG_ModbusSlaveEn" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CFG_STORWarnEn" Parameter="cFG_STORWarnEn" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CFG_RegDemand" Parameter="cFG_RegDemand" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_RegCylTempAvg" Parameter="cFG_RegCylTempAvg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_RegCylTempMax" Parameter="cFG_RegCylTempMax" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CFG_RegCylTempMin" Parameter="cFG_RegCylTempMin" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CreatedBy" Parameter="createdBy" Type="System.String" DbType="NVarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_IdentityRole_AddPage" Method="ed_IdentityRole_AddPage">
+    <Parameter Name="FilePageName" Parameter="filePageName" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RoleId" Parameter="roleId" Type="System.String" DbType="NVarChar(128)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_EnergyMeters_GetMapCountById" Method="ed_EnergyMeters_GetMapCountById">
+    <Parameter Name="ID_Location" Parameter="iD_Location" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_Type" Parameter="iD_Type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Modbus_Addr" Parameter="modbus_Addr" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ed_EnergyMeters_GetMapCountByIdResult">
+      <Column Name="RecordCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Exempts_GetWithReasonById" Method="ed_Exempts_GetWithReasonById">
+    <Parameter Name="location" Type="System.Int32" DbType="Int" />
+    <Parameter Name="begin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="end" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="ed_Exempts_GetWithReasonByIdResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_LOCATION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDDOWN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDUP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DTDOWN" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DTUP" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TIMEDIFFERENCE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ISEXEMPT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ISEXCLUDED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DETAILS" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="YesNo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="REASON" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Exempts_GetById" Method="ed_Exempts_GetById">
+    <Parameter Name="location" Type="System.Int32" DbType="Int" />
+    <Parameter Name="begin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="end" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="ed_Exempts_GetByIdResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_LOCATION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDDOWN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDUP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DTDOWN" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DTUP" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TIMEDIFFERENCE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ISEXEMPT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ISEXCLUDED" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="YesNo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Exempts_Get" Method="ed_Exempts_Get">
+    <Parameter Name="begin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="end" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="ed_Exempts_GetResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_LOCATION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDDOWN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDUP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DTDOWN" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DTUP" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TIMEDIFFERENCE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ISEXEMPT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="YesNo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Exempts_GetWithReason" Method="ed_Exempts_GetWithReason">
+    <Parameter Name="begin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="end" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="ed_Exempts_GetWithReasonResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Genset" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDDOWN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDUP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DTDOWN" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DTUP" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TIMEDIFFERENCE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ISEXEMPT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsExcluded" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DETAILS" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="YesNo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="REASON" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Exempts_GetWithReasonAndGensetName" Method="ed_Exempts_GetWithReasonAndGensetName">
+    <Parameter Name="begin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="end" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IdLocation" Parameter="idLocation" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ed_Exempts_GetWithReasonAndGensetNameResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Genset" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="IDDOWN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDUP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DTDOWN" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DTUP" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TIMEDIFFERENCE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ISEXEMPT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DETAILS" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="YesNo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="REASON" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_LoadTimes_GetById" Method="ed_LoadTimes_GetById">
+    <Parameter Name="location" Type="System.Int32" DbType="Int" />
+    <Parameter Name="begin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="end" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="ed_LoadTimes_GetByIdResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDStart" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDFullLoad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DtStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DtFullLoad" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeDifference" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsExempt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="YesNo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Exclude" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_LoadTimes_GetByIdPdf" Method="ed_LoadTimes_GetByIdPdf">
+    <Parameter Name="location" Type="System.Int32" DbType="Int" />
+    <Parameter Name="begin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="end" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="ed_LoadTimes_GetByIdPdfResult">
+      <Column Name="Start" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="[Full Load]" Member="Full_Load" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="[Duration(min)]" Member="Duration_min_" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Is Exempt?]" Member="Is_Exempt_" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Genset_GetEvents" Method="ed_Genset_GetEvents">
+    <Parameter Name="IDLOC" Parameter="iDLOC" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DTDOWN" Parameter="dTDOWN" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DTUP" Parameter="dTUP" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="ed_Genset_GetEventsResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TIME_STAMP" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="REASON" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EVENT" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_History_GetColumnNames" Method="ed_History_GetColumnNames">
+    <ElementType Name="ed_History_GetColumnNamesResult">
+      <Column Name="COLUMN_NAME" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_ComapHeaders_Get" Method="ed_ComapHeaders_Get">
+    <ElementType Name="ed_ComapHeaders_GetResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="History_Header" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="History_Description" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Fixed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Required" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_ComapWildcard_Get" Method="ed_ComapWildcard_Get">
+    <ElementType Name="ed_ComapWildcard_GetResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_Header" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CommsObj_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CommsObj_Dim" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CommsObj_Type" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CommsObj_Len" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommsObj_Dec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommsObj_Ofs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommsObj_Obj" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Approved" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Blackbox_Get" Method="ed_Blackbox_Get">
+    <ElementType Name="ed_Blackbox_GetResult">
+      <Column Name="BB_SerialNo" Type="System.String" DbType="NVarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="BB_Model" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SiteName" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="ST_LastStatusUpdateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ST_GSMSignalLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_BatteryChargeLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_TimeSinceLastResetSeconds" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ST_ComapLinkPresent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CFG_HMAddr01" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr03" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr04" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr05" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr06" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr07" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_HMAddr08" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SMAddr01" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SMAddr02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SMAddr03" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_SMAddr04" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_GMAddr01" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_GMAddr02" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_PortNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CFG_BaudRate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CFG_EthernetModuleEn" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CFG_AdminEmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Exempts_GetUpDownTimes" Method="ed_Exempts_GetUpDownTimes">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ed_Exempts_GetUpDownTimesResult">
+      <Column Name="DTDOWN" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DTUP" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_LoadTime_GetUpDownTimes" Method="ed_LoadTime_GetUpDownTimes">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ed_LoadTime_GetUpDownTimesResult">
+      <Column Name="DtStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DtFullLoad" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Genset_GetShowEfficencyInReport" Method="ed_Genset_GetShowEfficencyInReport">
+    <Parameter Name="location" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ed_Genset_GetShowEfficencyInReportResult">
+      <Column Name="perfShowInReport" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Genset_GetPrimaryGensetIdByGensetId" Method="ed_Genset_GetPrimaryGensetIdByGensetId">
+    <Parameter Name="ID_Location" Parameter="iD_Location" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ed_Genset_GetPrimaryGensetIdByGensetIdResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Genset_GetkWhPerDayByIdGraph" Method="ed_Genset_GetkWhPerDayByIdGraph">
+    <Parameter Name="BEGIN" Parameter="bEGIN" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="END" Parameter="eND" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ed_Genset_GetkWhPerDayByIdGraphResult">
+      <Column Name="KWHOUR" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TIME_STAMP" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Genset_GetRunHoursPerDayByIdGraph" Method="ed_Genset_GetRunHoursPerDayByIdGraph">
+    <Parameter Name="BEGIN" Parameter="bEGIN" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="END" Parameter="eND" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ed_Genset_GetRunHoursPerDayByIdGraphResult">
+      <Column Name="RUNHO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TIME_STAMP" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_ComapWildcard_Insert" Method="ed_ComapWildcard_Insert">
+    <Parameter Name="id_Header" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CommsObj_Name" Parameter="commsObj_Name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CommsObj_Dim" Parameter="commsObj_Dim" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="CommsObj_Type" Parameter="commsObj_Type" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="CommsObj_Len" Parameter="commsObj_Len" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CommsObj_Dec" Parameter="commsObj_Dec" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CommsObj_Ofs" Parameter="commsObj_Ofs" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CommsObj_Obj" Parameter="commsObj_Obj" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_GensetNote_Insert" Method="ed_GensetNote_Insert">
+    <Parameter Name="ID_Location" Parameter="iD_Location" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserId" Parameter="userId" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="comment" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="flag" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_IdentityRole_DeletePage" Method="ed_IdentityRole_DeletePage">
+    <Parameter Name="FilePageName" Parameter="filePageName" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="RoleId" Parameter="roleId" Type="System.String" DbType="NVarChar(128)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Exempts_Reset" Method="ed_Exempts_Reset">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_LoadTimes_Reset" Method="ed_LoadTimes_Reset">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Exempts_Insert" Method="ed_Exempts_Insert">
+    <Parameter Name="idlocation" Type="System.Int32" DbType="Int" />
+    <Parameter Name="dtdown" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="dtup" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="reason" Type="System.String" DbType="NVarChar(18)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Exempts_UpdateDetailsById" Method="ed_Exempts_UpdateDetailsById">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DETAILS" Parameter="dETAILS" Type="System.String" DbType="NVarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_LoadTimes_UpdateDetailsById" Method="ed_LoadTimes_UpdateDetailsById">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DETAILS" Parameter="dETAILS" Type="System.String" DbType="NVarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_DB_GetRunningProcesses" Method="ed_DB_GetRunningProcesses">
+    <ElementType Name="ed_DB_GetRunningProcessesResult">
+      <Column Name="spid" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="batch_duration" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="program_name" Type="System.String" DbType="NChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="hostname" Type="System.String" DbType="NChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="loginame" Type="System.String" DbType="NChar(128) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_EnergyMeters_UpdateMapping" Method="ed_EnergyMeters_UpdateMapping">
+    <Parameter Name="ID_Location" Parameter="iD_Location" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_Type" Parameter="iD_Type" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Modbus_Addr" Parameter="modbus_Addr" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Exempts_Update" Method="ed_Exempts_Update">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NEWDT" Parameter="nEWDT" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DIFF" Parameter="dIFF" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REASON" Parameter="rEASON" Type="System.String" DbType="NVarChar(18)" />
+    <Parameter Name="DTUPDOWN" Parameter="dTUPDOWN" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Exempts_UpdateIsExcludedById" Method="ed_Exempts_UpdateIsExcludedById">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsExcluded" Parameter="isExcluded" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Exempts_UpdateIsExemptById" Method="ed_Exempts_UpdateIsExemptById">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ISEXEMPT" Parameter="iSEXEMPT" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_LoadTimes_UpdateIsExemptById" Method="ed_LoadTimes_UpdateIsExemptById">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsExempt" Parameter="isExempt" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_LoadTimes_UpdateIsExcludedById" Method="ed_LoadTimes_UpdateIsExcludedById">
+    <Parameter Name="ID_LoadTime" Parameter="iD_LoadTime" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Exclude" Parameter="exclude" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_LoadTimes_Update" Method="ed_LoadTimes_Update">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NEWDT" Parameter="nEWDT" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DIFF" Parameter="dIFF" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REASON" Parameter="rEASON" Type="System.String" DbType="NVarChar(18)" />
+    <Parameter Name="DTUPDOWN" Parameter="dTUPDOWN" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_ComapBinaryDefinition_Insert" Method="ed_ComapBinaryDefinition_Insert">
+    <Parameter Name="ID_Blackbox" Parameter="iD_Blackbox" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type" Parameter="type" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="Tooltip" Parameter="tooltip" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_ComapBinaryMap_Insert" Method="ed_ComapBinaryMap_Insert">
+    <Parameter Name="ID_Blackbox" Parameter="iD_Blackbox" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ColumnName" Parameter="columnName" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="BinaryType" Parameter="binaryType" Type="System.String" DbType="NVarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Genset_GetHistoryById" Method="ed_Genset_GetHistoryById">
+    <Parameter Name="location" Type="System.Int32" DbType="Int" />
+    <Parameter Name="begin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="end" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="ed_Genset_GetHistoryByIdResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Time_stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Genset" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Reason" Type="System.String" DbType="NVarChar(18)" CanBeNull="true" />
+      <Column Name="EVENT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="RPM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pwr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Q" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LChr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Runhrs" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Runho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Runhrsnull" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Hrsx1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="kWhour" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GroKwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExtKW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="groskwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NetkW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="grosskwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ActPfi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ActPwr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ActP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ActDem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Demand" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DPowr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DemandkW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DemkW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExDman" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LdDem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gfrq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vg31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ig1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ig2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ig3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vb31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mfrq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vm1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vm2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vm3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vm12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vm23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Vm31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pmns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Qmns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MPF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MVS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SRO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VRO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UBat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPUT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Amb" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GasP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SBO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThrPos" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="kVarho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OilB4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OilP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GasVol" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ThrPoB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylA10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CylB10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LTHWrT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LTHWfT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OilB4F" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CCpres" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OilLev" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CH4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OilT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AirInT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RecAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JWTout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JWTin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JWGKin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JWTTin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JkTout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JKTin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JKGKin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="JWTemp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TWTemp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LTHWFl" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BOUT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI11" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BI12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BO1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BO3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BO4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HeatMe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Chille" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GasMet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HtMet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChMet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="H2S" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GFlwRte" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GFlwM3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HWRtn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HWFlo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TotRunPact" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TotRunPnomAll" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SumMWh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PwrDem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Availability_GetById" Method="ed_Availability_GetById">
+    <Parameter Name="location" Type="System.Int32" DbType="Int" />
+    <Parameter Name="begin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="end" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="ed_Availability_GetByIdResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdLocation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUnavailable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdAvailable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DtUnavailable" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DtAvailable" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeDifference" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsExempt" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="YesNo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Exclude" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Availability_UpdateIsExcludedById" Method="ed_Availability_UpdateIsExcludedById">
+    <Parameter Name="IdAvailability" Parameter="idAvailability" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Exclude" Parameter="exclude" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Availability_GetUpDownTimes" Method="ed_Availability_GetUpDownTimes">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ed_Availability_GetUpDownTimesResult">
+      <Column Name="DtUnavailable" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DtAvailable" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ed_Availability_Update" Method="ed_Availability_Update">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NEWDT" Parameter="nEWDT" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DIFF" Parameter="dIFF" Type="System.Int32" DbType="Int" />
+    <Parameter Name="REASON" Parameter="rEASON" Type="System.String" DbType="NVarChar(18)" />
+    <Parameter Name="DTUPDOWN" Parameter="dTUPDOWN" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Availability_Reset" Method="ed_Availability_Reset">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Availability_UpdateDetailsById" Method="ed_Availability_UpdateDetailsById">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DETAILS" Parameter="dETAILS" Type="System.String" DbType="NVarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Availability_UpdateIsExemptById" Method="ed_Availability_UpdateIsExemptById">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IsExempt" Parameter="isExempt" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

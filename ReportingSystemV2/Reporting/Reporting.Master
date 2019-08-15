@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Reporting.master.cs" Inherits="ReportingSystemV2.Reporting.Reporting" %>
+
+<%@ Register Src="~/DateRangeSelect.ascx" TagPrefix="uc" TagName="DateRangeSelect" %>
+
+<asp:Content ID="ReportingContent" ContentPlaceHolderID="MainContent" runat="server">
+
+    <%--Side Nav--%>
+    <%--<div class="col-sm-3 col-md-2 hidden-xs sidebar">
+        <div id="SideNav" class="sidebar-scroll" role="navigation">
+            <ul id="menu" class="nav nav-sidebar">--%>
+    <div class="col-sm-3 col-md-2 hidden-xs sidebar">
+        <div class="slimScroll">
+            <ul id="menu" class="nav">
+                <li class="active"><a href="ReportingOverview.aspx">Overview</a></li>
+                <li class="nav-header">Your Sites</li>
+                <asp:ListView ID="categoryList"
+                    ItemType="ReportingSystemV2.HL_Location"
+                    runat="server"
+                    SelectMethod="GetSites">
+                    <ItemTemplate>
+                        <li class="panel" style="margin: 0px;">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#menu" data-target="#DDL-nav<%#: Item.ID %>"><%#: Item.SITENAME %></a>
+                            <ul class="collapse" id="DDL-nav<%#: Item.ID %>" style="height: auto;">
+                                <asp:HiddenField runat="server" ID="SiteName" Value="<%# Item.SITENAME %>" />
+                                <asp:ListView ID="categoryList"
+                                    ItemType="ReportingSystemV2.HL_Location"
+                                    runat="server"
+                                    SelectMethod="GetSiteGenerators">
+                                    <ItemTemplate>
+                                        <li><a href="/Reporting/GensetReport.aspx?id=<%#: Item.ID %>"><%#: Item.GENSETNAME %></a></li>
+                                    </ItemTemplate>
+                                </asp:ListView>
+                            </ul>
+                        </li>
+                    </ItemTemplate>
+                </asp:ListView>
+            </ul>
+        </div>
+    </div>
+
+    <%--Mobile Side Nav--%>
+    <div class="container hidden-sm hidden-md hidden-lg">
+        <div id="wrapper">
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">Your Sites</a>
+                    </li>
+                    <asp:ListView ID="ListView1"
+                        ItemType="ReportingSystemV2.HL_Location"
+                        runat="server"
+                        SelectMethod="GetGenerators">
+                        <ItemTemplate>
+                            <li>
+                                <a href="/Reporting/GensetReport.aspx?id=<%#: Item.ID %>">
+                                    <%#: Item.SITENAME %>
+                                </a>
+                            </li>
+                        </ItemTemplate>
+                    </asp:ListView>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <%--Sub Page Content--%>
+    <div class="container-fluid">
+        <div class="col-sm-9 col-md-10 col-xs-12 content">
+            <% if (!System.IO.Path.GetFileName(Request.Path).Contains("ReportingOverview")) // Hide the Sub Nav
+               { %>
+            <%--Sub Nav Bar--%>
+            <nav id="SubNav" class="navbar navbar-default hidden-xs" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a id="SubNav_Brand" runat="server" class="navbar-brand" href="#"></a>
+                    </div>
+                    <asp:UpdatePanel ID="updSubNav" runat="server">
+                        <ContentTemplate>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="GensetReport.aspx?id=<%#:IdLocation %>&dtstart=<%#: String.Format("{0:yyyy-MM-dd}", startDate) %>&dtend=<%#: String.Format("{0:yyyy-MM-dd}", endDate) %>">Summary</a></li>
+                                    
+                                    <% if (IsEfficencyReportsEnabled()) // If this section is enabled show the nav links
+                                       { %>
+                                    <li><a href="GensetElectPerf.aspx?id=<%#:IdLocation %>&dtstart=<%#: String.Format("{0:yyyy-MM-dd}", startDate) %>&dtend=<%#: String.Format("{0:yyyy-MM-dd}", endDate) %>">Electrical Efficency</a></li>
+                                    <li><a href="GensetThermPerf.aspx?id=<%#:IdLocation %>&dtstart=<%#: String.Format("{0:yyyy-MM-dd}", startDate) %>&dtend=<%#: String.Format("{0:yyyy-MM-dd}", endDate) %>">Thermal Efficency</a></li>
+                                    <% } %>
+
+                                    <li><a href="GensetDowntime.aspx?id=<%#:IdLocation %>&dtstart=<%#: String.Format("{0:yyyy-MM-dd}", startDate) %>&dtend=<%#: String.Format("{0:yyyy-MM-dd}", endDate) %>">Shutdowns</a></li>
+                                    
+                                     <% if (IsStartupTimesEnabled()) // If this section is enabled show the nav links
+                                       { %>
+                                    <li><a href="GensetStartupTime.aspx?id=<%#:IdLocation %>&dtstart=<%#: String.Format("{0:yyyy-MM-dd}", startDate) %>&dtend=<%#: String.Format("{0:yyyy-MM-dd}", endDate) %>">Startups</a></li>
+                                    <% } %>
+
+                                    <% if (IsAvailabilityEnabled()) // If this section is enabled show the nav links
+                                       { %>
+                                    <li><a href="GensetAvailability.aspx?id=<%#:IdLocation %>&dtstart=<%#: String.Format("{0:yyyy-MM-dd}", startDate) %>&dtend=<%#: String.Format("{0:yyyy-MM-dd}", endDate) %>">Availability</a></li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+            </nav>
+            <% } %>
+
+            <%--Error message--%>
+            <div id="alert_placeholder"></div>
+
+            <%--Header & DatePicker--%>
+            <div class="row">
+                <div class="page-header content-header-margin">
+                    <div class="pull-left">
+                        <h1 class="page-header"><%: Page.Title %> <small id="lblsubHeader" runat="server"></small></h1>
+                    </div>
+                    <div class="pull-right btn-toolbar">
+                        <asp:ContentPlaceHolder ID="ReportingToolbarButtons" runat="server"></asp:ContentPlaceHolder>
+                        <%--Date Range Selection--%>
+                        <uc:DateRangeSelect runat="server" ID="DateRangeSelect" />
+                    </div>
+                </div>
+            </div>
+
+            <asp:ContentPlaceHolder ID="ReportingSubContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+    </div>
+</asp:Content>

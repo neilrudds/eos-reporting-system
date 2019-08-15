@@ -1,0 +1,7 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Mobile.Master" AutoEventWireup="true" CodeBehind="Dashboard.Mobile.master.cs" Inherits="ReportingSystemV2.Dashboard.Dashboard_Mobile" %>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+
+     <asp:ContentPlaceHolder ID="DashboardSubContent" runat="server">
+           </asp:ContentPlaceHolder>
+
+</asp:Content>
