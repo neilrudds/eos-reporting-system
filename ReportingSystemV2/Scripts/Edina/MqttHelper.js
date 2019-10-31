@@ -1,4 +1,4 @@
-﻿/*
+﻿﻿/*
  Edina Helper JS v1.0.1 (2016-02-01)
 
  (c) 2015-2016 Neil Rutherford
@@ -94,33 +94,37 @@ function clearLog() {
 function updateOverview(destination, payload) {
 
     var myEpoch = new Date().getTime(); //get current epoch time
+    
+    // Subscribe to; CHP/#/MEASUREMENTS
+    var obj = JSON.parse(payload);
 
     // Get the serial number
-    var serialsplit = destination.split("/");
-    var serial = serialsplit[1];
+    //var serialsplit = destination.split("/");
+    //var serial = serialsplit[1];
+    
 
     // Split the payload
-    var cleanup = payload.replace(/^\D+/g, ''); // remove any text spaces from the message
-    var datasplit = cleanup.split(",");
-    var power = datasplit[0];
-    var rpm = datasplit[1];
-    var state;
+    //var cleanup = payload.replace(/^\D+/g, ''); // remove any text spaces from the message
+    //var datasplit = cleanup.split(",");
+    //var power = datasplit[0];
+    //var rpm = datasplit[1];
+    //var state;
 
     // Update the array
     // check if it is a new serial, if not add it to the array
-    if (arrayObjectIndexOf(GensetArr, serial, "id") == -1) {
+    if (arrayObjectIndexOf(GensetArr, obj.Header.Serial, "id") == -1) {
 
-        GensetArr.push({ id: serial, site: getGensetSitename(serial), powerVal: power, rpmVal: rpm, time: myEpoch }); //add new serial and data to array
+        GensetArr.push({ id: obj.Header.Serial, site: getGensetSitename(obj.Header.Serial), powerVal: obj.Values.POWER_OUTPUT, rpmVal: obj.Values.RPM, time: myEpoch }); //add new serial and data to array
         console.log('genset added');
 
     } else {
         // serial exists, update it
         if (serial != "-1") {
-            var y = arrayObjectIndexOf(GensetArr, serial, "id"); //get the index no of the topic from the array
+            var y = arrayObjectIndexOf(GensetArr, obj.Header.Serial, "id"); //get the index no of the topic from the array
             
             // Update the values
-            GensetArr[y].powerVal = power;
-            GensetArr[y].rpmVal = rpm;
+            GensetArr[y].powerVal = obj.Values.POWER_OUTPUT;
+            GensetArr[y].rpmVal = obj.Values.RPM;
             GensetArr[y].time = myEpoch;
 
             //console.log('genset updated');
@@ -156,55 +160,55 @@ function updateOverview(destination, payload) {
     // Get the state from options
     try {
 
-        var dvStatus = document.getElementById('Status_' + serial);
-        var gdWidget = document.getElementById('GridWidget_' + serial);
+        var dvStatus = document.getElementById('Status_' + obj.Header.Serial);
+        var gdWidget = document.getElementById('GridWidget_' + obj.Header.Serial);
 
         var message = '';
         
-        if (datasplit[2] == 21) {
+        if (obj.Status.BOUT_INDICATOR == 21) {
             dvStatus.innerHTML = 'Alarm';
             dvStatus.style.color = 'Red';
             gdWidget.className = 'tile tile-stats bg-red';
             message = 'Alarm'
-        } else if (datasplit[2] == 20) {
+        } else if (obj.Status.BOUT_INDICATOR == 20) {
             dvStatus.innerHTML = 'Warning';
             dvStatus.style.color = "Orange";
             gdWidget.className = 'tile tile-stats bg-orange';
             message = 'Warning'
-        } else if (datasplit[2] == 1) {
+        } else if (obj.Status.BOUT_INDICATOR == 1) {
             dvStatus.innerHTML = 'Ready';
             dvStatus.style.color = "LightSkyBlue";
             gdWidget.className = 'tile tile-stats bg-blue';
             message = 'Ready'
-        } else if (datasplit[2] == 8) {
+        } else if (obj.Status.BOUT_INDICATOR == 8) {
             dvStatus.innerHTML = 'Loaded';
             dvStatus.style.color = "Green";
             gdWidget.className = 'tile tile-stats bg-green';
            message = 'Loaded'
-        } else if (datasplit[2] == 14 || 16) {
+        } else if (obj.Status.BOUT_INDICATOR == 14 || 16) {
             dvStatus.innerHTML = 'Unloaded';
             dvStatus.style.color = "Gray";
             gdWidget.className = 'tile tile-stats bg-purple';
             message = 'Unloaded'
         } else {
             // Unknown
-            state = datasplit[2];
+            state = obj.Status.BOUT_INDICATOR;
         }
 
         // Update the relevant div's
-        var dvComms = document.getElementById('Comms_' + serial);
-        var dvPwr = document.getElementById('Power_' + serial);
-        var gdPwr = document.getElementById('GridPower_' + serial);
-        var gdMsg = document.getElementById('GridMsg_' + serial);
-        var dvRPM = document.getElementById('RPM_' + serial);
+        var dvComms = document.getElementById('Comms_' + obj.Header.Serial);
+        var dvPwr = document.getElementById('Power_' + obj.Header.Serial);
+        var gdPwr = document.getElementById('GridPower_' + obj.Header.Serial);
+        var gdMsg = document.getElementById('GridMsg_' + obj.Header.Serial);
+        var dvRPM = document.getElementById('RPM_' + obj.Header.Serial);
 
         
         // Check the numbers are valid
-        if (isNumber(power) && power != -32768 && power != 32768 && isNumber(rpm) && rpm != -32768 && rpm != 32768) {
-            dvPwr.innerHTML = power;
-            gdPwr.innerHTML = power + ' kW' + ' - ' + message;
-            gdMsg.innerHTML = rpm + ' rpm';
-            dvRPM.innerHTML = rpm;
+        if (isNumber(obj.Values.POWER_OUTPUT) && obj.Values.POWER_OUTPUT != -32768 && obj.Values.POWER_OUTPUT != 32768 && isNumber(RPM) && obj.Values.RPM != -32768 && obj.Values.RPM != 32768) {
+            dvPwr.innerHTML = obj.Values.POWER_OUTPUT;
+            gdPwr.innerHTML = obj.Values.POWER_OUTPUT + ' kW' + ' - ' + message;
+            gdMsg.innerHTML = obj.Values.RPM + ' rpm';
+            dvRPM.innerHTML = obj.Values.RPM;
             dvComms.innerHTML = 'Online';
             dvComms.style.color = "Green";
         } else {
@@ -278,177 +282,91 @@ function getGensetSitename(serial) {
 // Update the relevant div's based on the topic destination value
 function updateControl(destination, payload) {
 
-    if (destination.indexOf("UNIT_STATUS") > -1) {
-        // Datalogger Status
-        var paysplit = payload.split(",");
-
-        // Loop items
-        paysplit.forEach(function (entry) {
-
-            var datasplit = entry.split(":");
-            var dataname = datasplit[0];
-            var num = datasplit[1];
-
-            if (isNumber(num)) {
-                switch (dataname) {
-                    case "GSMSig":
-                        $('#gsmSig').text(num + ' %');
-                        break;
-                    case "CLink":
-                        if (num == 1)
-                        {
-                            $('#unitLink').text('Online');
-                        }
-                        else
-                        {
-                            $('#unitLink').text('Error');
-                        }
-                        break;
-                    case "SuppType":
-                        if (num == 1) {
-                            $('#unitSupply').text('Operating on internal battery');
-                        }
-                        else if (num == 2) {
-                            $('#unitSupply').text('Operating on external DC power');
-                        }
-                        else if (num == 3) {
-                            $('#unitSupply').text('Operating on external AC power');
-                        }
-                        else {
-                            $('#unitSupply').text('Unknown');
-                        }
-                        break;
-                    case "BattLev":
-                        $('#unitBatt').text((num * 20) + ' %');
-                        break;
-                    default:
-                        //console.log('no placeholder for the value')
-                }
-            }
-        });
+    // Subscribe to; CHP/#/MEASUREMENTS AND RTCU/#/RTCUREPORT AND CHP/#/GENERATORALARMS
+    var obj = JSON.parse(payload);
+    
+    if (destination == '')
+    {
+    
+    $('#gsmSig').text(obj.Network.GSMSignal + ' %');
+    
+    if (obj.Info.ComApLink == 1)
+    { $('#unitLink').text('Online'); }
+    else
+    { $('#unitLink').text('Error'); }
+    
+    if (obj.Info.SupplyType == 1) {
+    $('#unitSupply').text('Operating on internal battery');
+    }
+    else if (obj.Info.SupplyType == 2) {
+    $('#unitSupply').text('Operating on external DC power');
+    }
+    else if (obj.Info.SupplyType == 3) {
+    $('#unitSupply').text('Operating on external AC power');
     }
     else {
+    $('#unitSupply').text('Unknown');
+    }
+    
+    $('#unitBatt').text((obj.Info.BattCharge * 20) + ' %');
+    }
 
-        // CHP Values
-        var thenum = payload.replace(/^\D+/g, ''); // remove any text spaces from the message
-        var destsplit = destination.split("/");
-        var name = destsplit[3];
+    // CHP Values
+    // Communications are ok
+    $('#unitComm').text('Online');
+    $('#unitUpdateTime').text(((new Date()).toISOString().split("T"))[1].substr(0, 12));
+    
+    document.getElementById('chpPower').innerHTML = obj.Values.POWER_OUTPUT;
+    
+    // Update the chart array - max points = 20
+    kWh.push(obj.Values.POWER_OUTPUT);
+    if (kWh.length >= 20) {
+        kWh.shift()
+    }
 
-        //console.log(destsplit[3]);
+    $('#sparkline').sparkline(kWh, {
+        type: 'line',
+        width: '160',
+        height: '30'
+    });
 
-        // Check if it is a real number and not text
-        if (isNumber(thenum)) {
+    document.getElementById('chpRPM').innerHTML = obj.Values.RPM;
+    $('#GenV1').text(obj.Values.GENVOLTS1 + ' V');
+    $('#GenV2').text(obj.Values.GENVOLTS2 + ' V');
+    $('#GenV3').text(obj.Values.GENVOLTS3 + ' V');
+    $('#GenI1').text(obj.Values.GENCURR1 + ' A');
+    $('#GenI2').text(obj.Values.GENCURR2 + ' A');
+    $('#GenI3').text(obj.Values.GENCURR3 + ' A');
+    $('#MainsV1').text(obj.Values.MAINVOLTS1 + ' V');
+    $('#MainsV2').text(obj.Values.MAINVOLTS2 + ' V');
+    $('#MainsV3').text(obj.Values.MAINVOLTS3 + ' V');
+    $('#chpFreq').text(obj.Values.GENFREQ);
+    $('#chpBattVolts').text(obj.Values.BATT_VOLT);
+    $('#chpPF').text(obj.Values.GEN_PF);
+    $('#chpkWh').text(commafy(obj.Statistics.TOTAL_KWH));
+    $('#chpRunHours').text(commafy(obj.Statistics.TOTAL_RUNHRS));
+    $('#chpNumStarts').text(commafy(obj.Statistics.NUM_STARTS));
+    $('#chpAlarms').text(commafy(obj.Status.ACTIVE_ALARM_COUNT));
+    $('#chpEngState').text(getEngineState(obj.Status.ENGINE));
+    $('#chpBreakerState').text(getBreakerState(obj.Status.BREAKER));
+    $('#chpConMode').text(getControllerMode(obj.Status.CONTROLLER));
 
-            // Communications are ok
-            $('#unitComm').text('Online');
-            $('#unitUpdateTime').text(((new Date()).toISOString().split("T"))[1].substr(0, 12));
+    if (obj.Values.GEN_LCHAR.replace(/\s+/g, '').length > 0) {
+       $('#chpLChar').text(obj.Values.GEN_LCHAR); }
+    else { $('#chpLChar').text('-');
+    }
+     
+    for(var i = 0; i < json.length; i++) {
+    var obj = json[i];
+    
+    // Clear the box
+    $("#alarmContents").html("");
+    
+    var data = obj.Alarms.AlarmList;
 
-            //Value to correct DIV
-            switch (name) {
-                case "POWER_OUTPUT":
-                    document.getElementById('chpPower').innerHTML = thenum;
-
-                    // Update the chart array - max points = 20
-                    kWh.push(thenum);
-                    if (kWh.length >= 20) {
-                        kWh.shift()
-                    }
-
-                    $('#sparkline').sparkline(kWh, {
-                        type: 'line',
-                        width: '160',
-                        height: '30'
-                    });
-
-                    break;
-                case "RPM":
-                    document.getElementById('chpRPM').innerHTML = thenum;
-                    break;
-                case "GENVOLTAGE1":
-                    $('#GenV1').text(thenum + ' V');
-                    break;
-                case "GENVOLTAGE2":
-                    $('#GenV2').text(thenum + ' V');
-                    break;
-                case "GENVOLTAGE3":
-                    $('#GenV3').text(thenum + ' V');
-                    break;
-                case "GENCURR1":
-                    $('#GenI1').text(thenum + ' A');
-                    break;
-                case "GENCURR2":
-                    $('#GenI2').text(thenum + ' A');
-                    break;
-                case "GENCURR3":
-                    $('#GenI3').text(thenum + ' A');
-                    break;
-                case "MAINSVOLTAGE1":
-                    $('#MainsV1').text(thenum + ' V');
-                    break;
-                case "MAINSVOLTAGE2":
-                    $('#MainsV2').text(thenum + ' V');
-                    break;
-                case "MAINSVOLTAGE3":
-                    $('#MainsV3').text(thenum + ' V');
-                    break;
-                case "MAINS_FREQ":
-                    $('#chpFreq').text(thenum);
-                    break;
-                case "BATT_VOLT":
-                    $('#chpBattVolts').text(thenum);
-                    break;
-                case "MAINS_PF":
-                    $('#chpPF').text(thenum);
-                    break;
-                case "TOTAL_KWH":
-                    $('#chpkWh').text(commafy(thenum));
-                    break;
-                case "TOTAL_RUNHRS":
-                    $('#chpRunHours').text(commafy(thenum));
-                    break;
-                case "NUM_STARTS":
-                    $('#chpNumStarts').text(commafy(thenum));
-                    break;
-                case "ACTIVE_ALARM_COUNT":
-                    $('#chpAlarms').text(commafy(thenum));
-                    break;
-                case "ENGINE":
-                    $('#chpEngState').text(getEngineState(thenum));
-                    break;
-                case "BREAKER":
-                    $('#chpBreakerState').text(getBreakerState(thenum));
-                    break;
-                case "CONTROLLER":
-                    $('#chpConMode').text(getControllerMode(thenum));
-                default:
-                    //console.log('no placeholder for the value')
-            }
-        }
-        else {
-            // Not Numbers
-            switch (name) {
-                case "MAINS_LCHAR":
-                    //console.log(payload);
-                    if (payload.replace(/\s+/g, '').length > 0) {
-                        $('#chpLChar').text(payload);
-                    }
-                    else {
-                        $('#chpLChar').text('-');
-                    }
-                    break;
-                case "ALARM_LIST":
-                    // Clear the box
-                    $("#alarmContents").html("");
-                    // Re-add items
-                    var array = thenum.split(',');
-                    for (var i = 1; i < array.length; i++) {
-                        $("#alarmContents").append(array[i] + "\n");
-                    }
-                    break;
-                default:
-                    //console.log('no placeholder for the value')
-            }
-        };
+    for (var i in data)
+    {
+        $("#alarmContents").append(data.Name + "\n");
     }
 }
 
