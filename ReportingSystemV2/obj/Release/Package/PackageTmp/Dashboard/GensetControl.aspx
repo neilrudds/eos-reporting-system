@@ -292,14 +292,13 @@
 
         function OnSuccess(res, userContext, methodName) {
             // Subscribe to the dataloggers status topic
-            client.subscribe('RTCU/' + res + '/UNIT_STATUS/#', { qos: 1 });
-            console.log('subscribed to: RTCU/' + res + '/UNIT_STATUS/#');
+            client.subscribe('RTCU/' + res + '/RTCUREPORT', { qos: 1 });
+            console.log('subscribed to: RTCU/' + res + '/RTCUREPORT');
         }
 
         // Topics
-        var MQTTsubTopic1 = 'CHP/' + CHP_Serial + '/VALUES/#';
-        var MQTTsubTopic2 = 'CHP/' + CHP_Serial + '/STATISTICS/#';
-        var MQTTsubTopic3 = 'CHP/' + CHP_Serial + '/STATE/#';
+        var MQTTsubTopic1 = 'CHP/' + CHP_Serial + '/MEASUREMENTS';
+        var MQTTsubTopic2 = 'CHP/' + CHP_Serial + '/GENERATORALARMS';
 
         // Broker setup
         var x = new GetMQTTServerSettings();
@@ -320,8 +319,6 @@
                 console.log("subscribed to: " + MQTTsubTopic1);
                 client.subscribe(MQTTsubTopic2, { qos: 1 });
                 console.log("subscribed to: " + MQTTsubTopic2);
-                client.subscribe(MQTTsubTopic3, { qos: 1 });
-                console.log("subscribed to: " + MQTTsubTopic3);
 
             },
             onFailure: function (message) {
@@ -342,9 +339,9 @@
 
             var decryptedPayload = decryptPayload(message.payloadBytes);
 
-            updateControl(message.destinationName, decryptedPayload);
-
             console.log(message.destinationName, '', decryptedPayload);
+
+            updateControl(message.destinationName, decryptedPayload);
         };
     </script>
 

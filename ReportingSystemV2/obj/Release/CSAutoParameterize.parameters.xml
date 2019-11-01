@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="users_db-Web.config Connection String" description="users_db Connection String used in web.config by the application to access the database." defaultValue="Data Source=EDLIS-EOS-02;Initial Catalog=ReportingSystem_Identity;User=webuser;Password=3d1na" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\neil-rutherford\\OneDrive\ -\ Edina\ Group\\Edina\\Visual\ Studio\\Visual\ Studio\ 2013\\Projects\\ReportingSystemV2\\ReportingSystemV2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='users_db']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\neil-rutherford\\Documents\\ReportingSystem\\ReportingSystemV2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='users_db']/@connectionString" />
   </parameter>
   <parameter name="ReportingSystemProdConnectionString-Web.config Connection String" description="ReportingSystemProdConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:edina-datastore-prod-01.database.windows.net,1433;Initial Catalog=ReportingSystemProd;Persist Security Info=False;User ID=kevin_creategravity;Password=&quot;c6o0a?h2plwRuda+p=tr&quot;;MultipleActiveResultSets=False;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\neil-rutherford\\OneDrive\ -\ Edina\ Group\\Edina\\Visual\ Studio\\Visual\ Studio\ 2013\\Projects\\ReportingSystemV2\\ReportingSystemV2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ReportingSystemProdConnectionString']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\neil-rutherford\\Documents\\ReportingSystem\\ReportingSystemV2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ReportingSystemProdConnectionString']/@connectionString" />
   </parameter>
   <parameter name="ReportingSystemV2.Models.SiteContext-Web.config Connection String" description="ReportingSystemV2.Models.SiteContext Connection String used in web.config by the application to access the database." defaultValue="ReportingSystemV2.Models.SiteContext_ConnectionString" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\neil-rutherford\\OneDrive\ -\ Edina\ Group\\Edina\\Visual\ Studio\\Visual\ Studio\ 2013\\Projects\\ReportingSystemV2\\ReportingSystemV2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ReportingSystemV2.Models.SiteContext']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\neil-rutherford\\Documents\\ReportingSystem\\ReportingSystemV2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ReportingSystemV2.Models.SiteContext']/@connectionString" />
   </parameter>
 </parameters>

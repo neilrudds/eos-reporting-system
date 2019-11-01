@@ -93,78 +93,37 @@ function clearLog() {
 // Update a specific div for the serial of the genset
 function updateOverview(destination, payload) {
 
-    var myEpoch = new Date().getTime(); //get current epoch time
-    
-    // Subscribe to; CHP/#/MEASUREMENTS
-    var obj = JSON.parse(payload);
-
-    // Get the serial number
-    //var serialsplit = destination.split("/");
-    //var serial = serialsplit[1];
-    
-
-    // Split the payload
-    //var cleanup = payload.replace(/^\D+/g, ''); // remove any text spaces from the message
-    //var datasplit = cleanup.split(",");
-    //var power = datasplit[0];
-    //var rpm = datasplit[1];
-    //var state;
-
-    // Update the array
-    // check if it is a new serial, if not add it to the array
-    if (arrayObjectIndexOf(GensetArr, obj.Header.Serial, "id") == -1) {
-
-        GensetArr.push({ id: obj.Header.Serial, site: getGensetSitename(obj.Header.Serial), powerVal: obj.Values.POWER_OUTPUT, rpmVal: obj.Values.RPM, time: myEpoch }); //add new serial and data to array
-        console.log('genset added');
-
-    } else {
-        // serial exists, update it
-        if (serial != "-1") {
-            var y = arrayObjectIndexOf(GensetArr, obj.Header.Serial, "id"); //get the index no of the topic from the array
-            
-            // Update the values
-            GensetArr[y].powerVal = obj.Values.POWER_OUTPUT;
-            GensetArr[y].rpmVal = obj.Values.RPM;
-            GensetArr[y].time = myEpoch;
-
-            //console.log('genset updated');
-        }
-    }
-
-    //console.log('object evt: %O', GensetArr);
-
-    //try
-    //{
-    //    var result = DataGrouper.sum(GensetArr, ["site"])
-    //    console.log('object evt: %O', result);
-
-    //    result.forEach(function (arrayItem) {
-
-    //        console.log('GridPower_' + arrayItem.site + '(' + arrayItem.Value + ')');
-
-    //        try
-    //        {
-    //            var dvTest = document.getElementById('GridPower_' + arrayItem.site);
-    //            dvTest.innerHTML = arrayItem.Value;
-    //        }
-    //        catch (err)
-    //        {
-    //            // do nothing
-    //        }
-    //    });
-
-    //} catch (err) {
-    //    console.log(err);
-    //}
-
     // Get the state from options
     try {
+
+        var myEpoch = new Date().getTime(); //get current epoch time
+
+        // Subscribe to; CHP/#/MEASUREMENTS
+        var obj = JSON.parse(payload);
+        var state;
+
+
+        // Update the array
+        // check if it is a new serial, if not add it to the array
+        if (arrayObjectIndexOf(GensetArr, obj.Header.Serial, "id") == -1) {
+            GensetArr.push({ id: obj.Header.Serial, site: getGensetSitename(obj.Header.Serial), powerVal: obj.Values.POWER_OUTPUT, rpmVal: obj.Values.RPM, time: myEpoch }); //add new serial and data to array
+        } else {
+            // serial exists, update it
+            if (obj.Header.Serial != "-1") {
+                var y = arrayObjectIndexOf(GensetArr, obj.Header.Serial, "id"); //get the index no of the topic from the array
+
+                // Update the values
+                GensetArr[y].powerVal = obj.Values.POWER_OUTPUT;
+                GensetArr[y].rpmVal = obj.Values.RPM;
+                GensetArr[y].time = myEpoch;
+            }
+        }
 
         var dvStatus = document.getElementById('Status_' + obj.Header.Serial);
         var gdWidget = document.getElementById('GridWidget_' + obj.Header.Serial);
 
         var message = '';
-        
+
         if (obj.Status.BOUT_INDICATOR == 21) {
             dvStatus.innerHTML = 'Alarm';
             dvStatus.style.color = 'Red';
@@ -184,7 +143,7 @@ function updateOverview(destination, payload) {
             dvStatus.innerHTML = 'Loaded';
             dvStatus.style.color = "Green";
             gdWidget.className = 'tile tile-stats bg-green';
-           message = 'Loaded'
+            message = 'Loaded'
         } else if (obj.Status.BOUT_INDICATOR == 14 || 16) {
             dvStatus.innerHTML = 'Unloaded';
             dvStatus.style.color = "Gray";
@@ -202,9 +161,9 @@ function updateOverview(destination, payload) {
         var gdMsg = document.getElementById('GridMsg_' + obj.Header.Serial);
         var dvRPM = document.getElementById('RPM_' + obj.Header.Serial);
 
-        
+
         // Check the numbers are valid
-        if (isNumber(obj.Values.POWER_OUTPUT) && obj.Values.POWER_OUTPUT != -32768 && obj.Values.POWER_OUTPUT != 32768 && isNumber(RPM) && obj.Values.RPM != -32768 && obj.Values.RPM != 32768) {
+        if (isNumber(obj.Values.POWER_OUTPUT) && obj.Values.POWER_OUTPUT != -32768 && obj.Values.POWER_OUTPUT != 32768 && isNumber(obj.Values.RPM) && obj.Values.RPM != -32768 && obj.Values.RPM != 32768) {
             dvPwr.innerHTML = obj.Values.POWER_OUTPUT;
             gdPwr.innerHTML = obj.Values.POWER_OUTPUT + ' kW' + ' - ' + message;
             gdMsg.innerHTML = obj.Values.RPM + ' rpm';
@@ -221,7 +180,7 @@ function updateOverview(destination, payload) {
         // Sum individual gensets and update the badge & sparkline
         var GensetSum = GensetArr.sum("powerVal");
         $('#totalkWh').text(commafy(GensetSum.toString()) + ' kWh');
-        
+
         // Update the chart array - max points = 20
         kWhTotal.push(GensetSum);
         if (kWhTotal.length >= 100) {
@@ -233,9 +192,8 @@ function updateOverview(destination, payload) {
             width: '160',
             height: '30'
         });
-        
-    }
 
+    }
     catch (err) {
         console.log(err);
     }
@@ -281,93 +239,106 @@ function getGensetSitename(serial) {
 
 // Update the relevant div's based on the topic destination value
 function updateControl(destination, payload) {
+    try {
+        // Subscribe to; CHP/#/MEASUREMENTS AND RTCU/#/RTCUREPORT AND CHP/#/GENERATORALARMS
+        var obj = JSON.parse(payload);
 
-    // Subscribe to; CHP/#/MEASUREMENTS AND RTCU/#/RTCUREPORT AND CHP/#/GENERATORALARMS
-    var obj = JSON.parse(payload);
-    
-    if (destination == '')
-    {
-    
-    $('#gsmSig').text(obj.Network.GSMSignal + ' %');
-    
-    if (obj.Info.ComApLink == 1)
-    { $('#unitLink').text('Online'); }
-    else
-    { $('#unitLink').text('Error'); }
-    
-    if (obj.Info.SupplyType == 1) {
-    $('#unitSupply').text('Operating on internal battery');
+        if (destination.indexOf("RTCUREPORT") > -1) {
+
+            $('#gsmSig').text(obj.Network.GSMSignal + ' %');
+
+            if (obj.Info.ComApLink == 1) { $('#unitLink').text('Online'); }
+            else { $('#unitLink').text('Error'); }
+
+            if (obj.Info.SupplyType == 1) {
+                $('#unitSupply').text('Operating on internal battery');
+            }
+            else if (obj.Info.SupplyType == 2) {
+                $('#unitSupply').text('Operating on external DC power');
+            }
+            else if (obj.Info.SupplyType == 3) {
+                $('#unitSupply').text('Operating on external AC power');
+            }
+            else {
+                $('#unitSupply').text('Unknown');
+            }
+
+            $('#unitBatt').text((obj.Info.BattCharge * 20) + ' %');
+        }
+
+
+        if (destination.indexOf("MEASUREMENTS") > -1) {
+            // CHP Values
+            // Communications are ok
+            $('#unitComm').text('Online');
+            $('#unitUpdateTime').text(((new Date()).toISOString().split("T"))[1].substr(0, 12));
+
+            document.getElementById('chpPower').innerHTML = obj.Values.POWER_OUTPUT;
+
+            // Update the chart array - max points = 20
+            kWh.push(obj.Values.POWER_OUTPUT);
+            if (kWh.length >= 20) {
+                kWh.shift()
+            }
+
+            $('#sparkline').sparkline(kWh, {
+                type: 'line',
+                width: '160',
+                height: '30'
+            });
+
+            document.getElementById('chpRPM').innerHTML = obj.Values.RPM;
+            $('#GenV1').text(obj.Values.GENVOLTS1 + ' V');
+            $('#GenV2').text(obj.Values.GENVOLTS2 + ' V');
+            $('#GenV3').text(obj.Values.GENVOLTS3 + ' V');
+            $('#GenI1').text(obj.Values.GENCURR1 + ' A');
+            $('#GenI2').text(obj.Values.GENCURR2 + ' A');
+            $('#GenI3').text(obj.Values.GENCURR3 + ' A');
+            $('#MainsV1').text(obj.Values.MAINSVOLTS1 + ' V');
+            $('#MainsV2').text(obj.Values.MAINSVOLTS2 + ' V');
+            $('#MainsV3').text(obj.Values.MAINSVOLTS3 + ' V');
+            $('#chpFreq').text(obj.Values.GENFREQ);
+            $('#chpBattVolts').text(obj.Values.BATT_VOLT);
+            $('#chpPF').text(obj.Values.GEN_PF);
+            $('#chpkWh').text(commafy(obj.Statistics.TOTAL_KWH.toString()));
+            $('#chpRunHours').text(commafy(obj.Statistics.TOTAL_RUNHRS.toString()));
+            $('#chpNumStarts').text(commafy(obj.Statistics.NUM_STARTS));
+            $('#chpAlarms').text(obj.Status.ACTIVE_ALARM_COUNT);
+            $('#chpEngState').text(getEngineState(obj.Status.ENGINE));
+            $('#chpBreakerState').text(getBreakerState(obj.Status.BREAKER));
+            $('#chpConMode').text(getControllerMode(obj.Status.CONTROLLER));
+
+            if (obj.Values.GEN_LCHAR != null) {
+                $('#chpLChar').text(obj.Values.GEN_LCHAR);
+            }
+            else {
+                $('#chpLChar').text('-');
+            }
+
+        }
+
+        if (destination.indexOf("GENERATORALARMS") > -1) {
+
+            if (obj.Alarms.Count > 0) {
+
+                // Clear the box
+                $("#alarmContents").html("");
+
+                for (var i = 0; i < obj.Alarms.Count; i++) {
+                    $("#alarmContents").append(obj.Alarms.AlarmList[i].Name + "\n");
+                }
+            }
+            else {
+                $("#alarmContents").html("");
+            }
+
+        }
+
     }
-    else if (obj.Info.SupplyType == 2) {
-    $('#unitSupply').text('Operating on external DC power');
-    }
-    else if (obj.Info.SupplyType == 3) {
-    $('#unitSupply').text('Operating on external AC power');
-    }
-    else {
-    $('#unitSupply').text('Unknown');
-    }
-    
-    $('#unitBatt').text((obj.Info.BattCharge * 20) + ' %');
+    catch (err) {
+        console.log(err);
     }
 
-    // CHP Values
-    // Communications are ok
-    $('#unitComm').text('Online');
-    $('#unitUpdateTime').text(((new Date()).toISOString().split("T"))[1].substr(0, 12));
-    
-    document.getElementById('chpPower').innerHTML = obj.Values.POWER_OUTPUT;
-    
-    // Update the chart array - max points = 20
-    kWh.push(obj.Values.POWER_OUTPUT);
-    if (kWh.length >= 20) {
-        kWh.shift()
-    }
-
-    $('#sparkline').sparkline(kWh, {
-        type: 'line',
-        width: '160',
-        height: '30'
-    });
-
-    document.getElementById('chpRPM').innerHTML = obj.Values.RPM;
-    $('#GenV1').text(obj.Values.GENVOLTS1 + ' V');
-    $('#GenV2').text(obj.Values.GENVOLTS2 + ' V');
-    $('#GenV3').text(obj.Values.GENVOLTS3 + ' V');
-    $('#GenI1').text(obj.Values.GENCURR1 + ' A');
-    $('#GenI2').text(obj.Values.GENCURR2 + ' A');
-    $('#GenI3').text(obj.Values.GENCURR3 + ' A');
-    $('#MainsV1').text(obj.Values.MAINVOLTS1 + ' V');
-    $('#MainsV2').text(obj.Values.MAINVOLTS2 + ' V');
-    $('#MainsV3').text(obj.Values.MAINVOLTS3 + ' V');
-    $('#chpFreq').text(obj.Values.GENFREQ);
-    $('#chpBattVolts').text(obj.Values.BATT_VOLT);
-    $('#chpPF').text(obj.Values.GEN_PF);
-    $('#chpkWh').text(commafy(obj.Statistics.TOTAL_KWH));
-    $('#chpRunHours').text(commafy(obj.Statistics.TOTAL_RUNHRS));
-    $('#chpNumStarts').text(commafy(obj.Statistics.NUM_STARTS));
-    $('#chpAlarms').text(commafy(obj.Status.ACTIVE_ALARM_COUNT));
-    $('#chpEngState').text(getEngineState(obj.Status.ENGINE));
-    $('#chpBreakerState').text(getBreakerState(obj.Status.BREAKER));
-    $('#chpConMode').text(getControllerMode(obj.Status.CONTROLLER));
-
-    if (obj.Values.GEN_LCHAR.replace(/\s+/g, '').length > 0) {
-       $('#chpLChar').text(obj.Values.GEN_LCHAR); }
-    else { $('#chpLChar').text('-');
-    }
-     
-    for(var i = 0; i < json.length; i++) {
-    var obj = json[i];
-    
-    // Clear the box
-    $("#alarmContents").html("");
-    
-    var data = obj.Alarms.AlarmList;
-
-    for (var i in data)
-    {
-        $("#alarmContents").append(data.Name + "\n");
-    }
 }
 
 // Add commas for every 3 digits
@@ -381,73 +352,73 @@ function commafy(str_num) {
 // Control mode options
 function getEngineState(id) {
     switch (id) {
-        case "0":
+        case 0:
             return "Init";
             break;
-        case "1":
+        case 1:
             return "Ready";
             break;
-        case "2":
+        case 2:
             return "NotReady";
             break;
-        case "3":
+        case 3:
             return "Prestart";
             break;
-        case "4":
+        case 4:
             return "Cranking";
             break;
-        case "5":
+        case 5:
             return "Pause";
             break;
-        case "6":
+        case 6:
             return "Starting";
             break;
-        case "7":
+        case 7:
             return "Running";
             break;
-        case "8":
+        case 8:
             return "Loaded";
             break;
-        case "9":
+        case 9:
             return "Soft unld";
             break;
-        case "10":
+        case 10:
             return "Cooling";
             break;
-        case "11":
+        case 11:
             return "Stop";
             break;
-        case "12":
+        case 12:
             return "Shutdown";
             break;
-        case "13":
+        case 13:
             return "Ventil";
             break;
-        case "14":
+        case 14:
             return "EmergMan";
             break;
-        case "15":
+        case 15:
             return "Cooldown";
             break;
-        case "16":
+        case 16:
             return "Offload";
             break;
-        case "17":
+        case 17:
             return "Soft load";
             break;
-        case "18":
+        case 18:
             return "WaitStop";
             break;
-        case "19":
+        case 19:
             return "Warming";
             break;
-        case "20":
+        case 20:
             return "SDVentil";
             break;
-        case "21":
+        case 21:
             return "Alarm";
             break;
-        case "22":
+        case 22:
             return "Warning";
             break;
         default:
@@ -458,46 +429,46 @@ function getEngineState(id) {
 function getBreakerState(id) {
 
     switch (id) {
-        case "0":
+        case 0:
             return "Init";
             break;
-        case "1":
+        case 1:
             return "BrksOff";
             break;
-        case "2":
+        case 2:
             return "IslOper";
             break;
-        case "3":
+        case 3:
             return "MainsOper";
             break;
-        case "4":
+        case 4:
             return "ParalOper";
             break;
-        case "5":
+        case 5:
             return "RevSync";
             break;
-        case "6":
+        case 6:
             return "Synchro";
             break;
-        case "7":
+        case 7:
             return "MainsFlt";
             break;
-        case "8":
+        case 8:
             return "ValidFlt";
             break;
-        case "9":
+        case 9:
             return "MainsRet";
             break;
-        case "10":
+        case 10:
             return "MultIslOp";
             break;
-        case "11":
+        case 11:
             return "MultParOp";
             break;
-        case "12":
+        case 12:
             return "EmergMan";
             break;
-        case "13":
+        case 13:
             return "StrUpSync";
             break;
         default:
@@ -507,19 +478,19 @@ function getBreakerState(id) {
 
 function getControllerMode(id) {
     switch (id) {
-        case "0":
+        case 0:
             return "OFF";
             break;
-        case "1":
+        case 1:
             return "MAN";
             break;
-        case "2":
+        case 2:
             return "SEM";
             break;
-        case "3":
+        case 3:
             return "AUT";
             break;
-        case "4":
+        case 4:
             return "TEST";
             break;
         default:

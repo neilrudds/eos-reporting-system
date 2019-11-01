@@ -131,16 +131,16 @@
                     </GroupTemplate>
                     <ItemTemplate>
                         <div class="col-md-3 col-sm-6" runat="server">
-                            <div id="GridWidget_<%#: Item.SITENAME %>" class="widget widget-stats bg-black">
+                            <div id="GridWidget_<%#: Item.GENSET_SN %>" class="widget widget-stats bg-black">
                                 <div class="stats-icon stats-icon-lg">
                                     <i class="fa fa-bolt"></i>
                                 </div>
                                 <div class="stats-title"><%#:Item.SITENAME%></div>
-                                <div class="stats-number" id="GridPower_<%#: Item.SITENAME %>">-</div>
+                                <div class="stats-number" id="GridPower_<%#: Item.GENSET_SN %>">-</div>
                                 <div class="stats-progress progress">
                                     <div class="progress-bar" style="width: 100%;"></div>
                                 </div>
-                                <div id="GridMsg_<%#: Item.SITENAME %>" class="stats-desc">No Communications</div>
+                                <div id="GridMsg_<%#: Item.GENSET_SN %>" class="stats-desc">No Communications</div>
                             </div>
                         </div>
                     </ItemTemplate>
@@ -209,7 +209,7 @@
         });
 
         // Topics
-        var MQTTsubTopic = 'CHP/+/STATUS/#';
+        var MQTTsubTopic = 'CHP/+/MEASUREMENTS';
 
         // Sparkline Array
         //var kWhTotal = new Array();
