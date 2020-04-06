@@ -65,17 +65,17 @@ namespace ReportingSystemV2.GlobalReports
 
             var userSites = RsDc.HL_Locations.Where(l => l.GensetEnabled == true).Where(l => gens.Contains(l.ID.ToString()));
 
-            // Join HL_Location & HL_Logs, then select latest records grouped by location
+            // Join HL_Location & GeneratorContents, then select latest records grouped by location
 
             if (f.startDate.Date == f.endDate.Date)
             {
                 var result = (from site in userSites
-                          join log in RsDc.HL_Logs on site.ID equals log.ID_Location
-                          where log.Time_Stamp.Date == f.startDate.Date
+                          join log in RsDc.GeneratorContents on site.ID equals log.IdLocation
+                          where log.TimeStamp.Date == f.startDate.Date
                           select new
                           {
                               Generator = site.GENSETNAME,
-                              Date = log.Time_Stamp,
+                              Date = log.TimeStamp,
                               Runhours = log.Runhrs,
                               kW = log.kWhour
                           }).GroupBy(s => s.Generator)
@@ -89,26 +89,26 @@ namespace ReportingSystemV2.GlobalReports
             {
 
                 var result1 = (from s in userSites
-                              join log in RsDc.HL_Logs on s.ID equals log.ID_Location
-                              where log.Time_Stamp.Date == f.startDate.Date
+                              join log in RsDc.GeneratorContents on s.ID equals log.IdLocation
+                              where log.TimeStamp.Date == f.startDate.Date
                               select new
                               {
                                   Id = s.ID,
                                   Generator = s.GENSETNAME,
-                                  Date = log.Time_Stamp,
+                                  Date = log.TimeStamp,
                                   Runhours = log.Runhrs,
                                   kW = log.kWhour
                               }).GroupBy(s => s.Generator)
                              .Select(s => s.OrderByDescending(x => x.Date).FirstOrDefault());
 
                 var result2 = (from s in userSites
-                               join log in RsDc.HL_Logs on s.ID equals log.ID_Location
-                               where log.Time_Stamp.Date == f.endDate.Date
+                               join log in RsDc.GeneratorContents on s.ID equals log.IdLocation
+                               where log.TimeStamp.Date == f.endDate.Date
                                select new
                               {
                                   Id = s.ID,
                                   Generator = s.GENSETNAME,
-                                  Date = log.Time_Stamp,
+                                  Date = log.TimeStamp,
                                   Runhours = log.Runhrs,
                                   kW = log.kWhour
                               }).GroupBy(s => s.Generator)
@@ -165,12 +165,12 @@ namespace ReportingSystemV2.GlobalReports
                 
 
                 query = (from site in userSites
-                          join log in RsDc.HL_Logs on site.ID equals log.ID_Location
-                          where log.Time_Stamp.Date == f.startDate.Date
+                          join log in RsDc.GeneratorContents on site.ID equals log.IdLocation
+                          where log.TimeStamp.Date == f.startDate.Date
                           select new
                           {
                               Generator = site.GENSETNAME,
-                              Date = log.Time_Stamp,
+                              Date = log.TimeStamp,
                               Runhours = log.Runhrs,
                               kW = log.kWhour
                           }).GroupBy(s => s.Generator)
@@ -180,26 +180,26 @@ namespace ReportingSystemV2.GlobalReports
             {
 
                     var result1 = (from s in userSites
-                              join log in RsDc.HL_Logs on s.ID equals log.ID_Location
-                              where log.Time_Stamp.Date == f.startDate.Date
+                              join log in RsDc.GeneratorContents on s.ID equals log.IdLocation
+                              where log.TimeStamp.Date == f.startDate.Date
                               select new
                               {
                                   Id = s.ID,
                                   Generator = s.GENSETNAME,
-                                  Date = log.Time_Stamp,
+                                  Date = log.TimeStamp,
                                   Runhours = log.Runhrs,
                                   kW = log.kWhour
                               }).GroupBy(s => s.Generator)
                              .Select(s => s.OrderByDescending(x => x.Date).FirstOrDefault());
 
                 var result2 = (from s in userSites
-                               join log in RsDc.HL_Logs on s.ID equals log.ID_Location
-                               where log.Time_Stamp.Date == f.endDate.Date
+                               join log in RsDc.GeneratorContents on s.ID equals log.IdLocation
+                               where log.TimeStamp.Date == f.endDate.Date
                                select new
                               {
                                   Id = s.ID,
                                   Generator = s.GENSETNAME,
-                                  Date = log.Time_Stamp,
+                                  Date = log.TimeStamp,
                                   Runhours = log.Runhrs,
                                   kW = log.kWhour
                               }).GroupBy(s => s.Generator)

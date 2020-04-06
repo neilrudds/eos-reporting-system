@@ -2,6 +2,10 @@ using System.Data.Linq;
 using System.Reflection;
 namespace ReportingSystemV2
 {
+    partial class GeneratorContent
+    {
+    }
+
     partial class ReportingSystemDataContext
     {
         // Custom ed_EnergyMeters_GetColumnDifferenceByDays
@@ -109,21 +113,21 @@ namespace ReportingSystemV2
         }
 
         // Custom get Difference of any ComAp column by Day
-        [global::System.Data.Linq.Mapping.FunctionAttribute(Name = "dbo.ed_Genset_GetColumnDifferenceByDays")]
-        public ISingleResult<ed_Genset_GetColumnDifferenceByDaysResult> ed_Genset_GetColumnDifferenceByDays([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "ID_Location", DbType = "Int")] System.Nullable<int> iD_Location, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Column_Name", DbType = "NVarChar(10)")] string column_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Start_Date", DbType = "DateTime")] System.Nullable<System.DateTime> start_Date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "End_Date", DbType = "DateTime")] System.Nullable<System.DateTime> end_Date)
+        [global::System.Data.Linq.Mapping.FunctionAttribute(Name = "dbo.ed_Genset_GetColumnDifferenceByDays_GeneratorContent")]
+        public ISingleResult<ed_Genset_GetColumnDifferenceByDays_GeneratorContentResult> ed_Genset_GetColumnDifferenceByDays_GeneratorContent([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "IdLocation", DbType = "Int")] System.Nullable<int> idLocation, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Column_Name", DbType = "NVarChar(10)")] string column_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Start_Date", DbType = "DateTime")] System.Nullable<System.DateTime> start_Date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "End_Date", DbType = "DateTime")] System.Nullable<System.DateTime> end_Date)
         {
-            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_Location, column_Name, start_Date, end_Date);
-            return ((ISingleResult<ed_Genset_GetColumnDifferenceByDaysResult>)(result.ReturnValue));
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idLocation, column_Name, start_Date, end_Date);
+            return ((ISingleResult<ed_Genset_GetColumnDifferenceByDays_GeneratorContentResult>)(result.ReturnValue));
         }
 
-        public partial class ed_Genset_GetColumnDifferenceByDaysResult
+        public partial class ed_Genset_GetColumnDifferenceByDays_GeneratorContentResult
         {
 
             private System.Nullable<double> _TotalEnergy;
 
-            private string _TIME_STAMP;
+            private string _TimeStamp;
 
-            public ed_Genset_GetColumnDifferenceByDaysResult()
+            public ed_Genset_GetColumnDifferenceByDays_GeneratorContentResult()
             {
             }
 
@@ -143,32 +147,32 @@ namespace ReportingSystemV2
                 }
             }
 
-            [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_TIME_STAMP", DbType = "VarChar(30)")]
-            public string TIME_STAMP
+            [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_TimeStamp", DbType = "VarChar(30)")]
+            public string TimeStamp
             {
                 get
                 {
-                    return this._TIME_STAMP;
+                    return this._TimeStamp;
                 }
                 set
                 {
-                    if ((this._TIME_STAMP != value))
+                    if ((this._TimeStamp != value))
                     {
-                        this._TIME_STAMP = value;
+                        this._TimeStamp = value;
                     }
                 }
             }
         }
 
         // Custom get Difference of any ComAp column by Hour
-        [global::System.Data.Linq.Mapping.FunctionAttribute(Name = "dbo.ed_Genset_GetColumnDifferenceByHoursofDays")]
-        public ISingleResult<ed_Genset_GetColumnDifferenceByHoursofDaysResult> ed_Genset_GetColumnDifferenceByHoursofDays([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "ID_Location", DbType = "Int")] System.Nullable<int> iD_Location, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Column_Name", DbType = "NVarChar(10)")] string column_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Start_Date", DbType = "DateTime")] System.Nullable<System.DateTime> start_Date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "End_Date", DbType = "DateTime")] System.Nullable<System.DateTime> end_Date)
+        [global::System.Data.Linq.Mapping.FunctionAttribute(Name = "dbo.ed_Genset_GetColumnDifferenceByHoursofDays_GeneratorContent")]
+        public ISingleResult<ed_Genset_GetColumnDifferenceByHoursofDays_GeneratorContentResult> ed_Genset_GetColumnDifferenceByHoursofDays_GeneratorContent([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "IdLocation", DbType = "Int")] System.Nullable<int> idLocation, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Column_Name", DbType = "NVarChar(10)")] string column_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Start_Date", DbType = "DateTime")] System.Nullable<System.DateTime> start_Date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "End_Date", DbType = "DateTime")] System.Nullable<System.DateTime> end_Date)
         {
-            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_Location, column_Name, start_Date, end_Date);
-            return ((ISingleResult<ed_Genset_GetColumnDifferenceByHoursofDaysResult>)(result.ReturnValue));
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idLocation, column_Name, start_Date, end_Date);
+            return ((ISingleResult<ed_Genset_GetColumnDifferenceByHoursofDays_GeneratorContentResult>)(result.ReturnValue));
         }
 
-        public partial class ed_Genset_GetColumnDifferenceByHoursofDaysResult
+        public partial class ed_Genset_GetColumnDifferenceByHoursofDays_GeneratorContentResult
         {
 
             private System.Nullable<double> _TotalEnergy;
@@ -181,7 +185,7 @@ namespace ReportingSystemV2
 
             private int _YR;
 
-            public ed_Genset_GetColumnDifferenceByHoursofDaysResult()
+            public ed_Genset_GetColumnDifferenceByHoursofDays_GeneratorContentResult()
             {
             }
 
@@ -267,14 +271,14 @@ namespace ReportingSystemV2
         }
 
         // Custom get Difference of any ComAp column by Month
-        [global::System.Data.Linq.Mapping.FunctionAttribute(Name = "dbo.ed_Genset_GetColumnDifferenceByMonthsOfYear")]
-        public ISingleResult<ed_Genset_GetColumnDifferenceByMonthsOfYearResult> ed_Genset_GetColumnDifferenceByMonthsOfYear([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "ID_Location", DbType = "Int")] System.Nullable<int> iD_Location, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Column_Name", DbType = "NVarChar(10)")] string column_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Start_Date", DbType = "DateTime")] System.Nullable<System.DateTime> start_Date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "End_Date", DbType = "DateTime")] System.Nullable<System.DateTime> end_Date)
+        [global::System.Data.Linq.Mapping.FunctionAttribute(Name = "dbo.ed_Genset_GetColumnDifferenceByMonthsOfYear_GeneratorContent")]
+        public ISingleResult<ed_Genset_GetColumnDifferenceByMonthsOfYear_GeneratorContentResult> ed_Genset_GetColumnDifferenceByMonthsOfYear_GeneratorContent([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "IdLocation", DbType = "Int")] System.Nullable<int> idLocation, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Column_Name", DbType = "NVarChar(10)")] string column_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Start_Date", DbType = "DateTime")] System.Nullable<System.DateTime> start_Date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "End_Date", DbType = "DateTime")] System.Nullable<System.DateTime> end_Date)
         {
-            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_Location, column_Name, start_Date, end_Date);
-            return ((ISingleResult<ed_Genset_GetColumnDifferenceByMonthsOfYearResult>)(result.ReturnValue));
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idLocation, column_Name, start_Date, end_Date);
+            return ((ISingleResult<ed_Genset_GetColumnDifferenceByMonthsOfYear_GeneratorContentResult>)(result.ReturnValue));
         }
 
-        public partial class ed_Genset_GetColumnDifferenceByMonthsOfYearResult
+        public partial class ed_Genset_GetColumnDifferenceByMonthsOfYear_GeneratorContentResult
         {
 
             private System.Nullable<double> _TotalEnergy;
@@ -283,7 +287,7 @@ namespace ReportingSystemV2
 
             private int _YR;
 
-            public ed_Genset_GetColumnDifferenceByMonthsOfYearResult()
+            public ed_Genset_GetColumnDifferenceByMonthsOfYear_GeneratorContentResult()
             {
             }
 
@@ -337,26 +341,26 @@ namespace ReportingSystemV2
         }
 
 
-        [global::System.Data.Linq.Mapping.FunctionAttribute(Name = "dbo.ed_Genset_GetColumnOverTimePlot")]
-        public ISingleResult<ed_Genset_GetColumnOverTimePlotResult> ed_Genset_GetColumnOverTimePlot([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "ID_Location", DbType = "Int")] System.Nullable<int> iD_Location, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Column_Name", DbType = "NVarChar(10)")] string column_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Start_Date", DbType = "DateTime")] System.Nullable<System.DateTime> start_Date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "End_Date", DbType = "DateTime")] System.Nullable<System.DateTime> end_Date)
+        [global::System.Data.Linq.Mapping.FunctionAttribute(Name = "dbo.ed_Genset_GetColumnOverTimePlot_GeneratorContent")]
+        public ISingleResult<ed_Genset_GetColumnOverTimePlot_GeneratorContentResult> ed_Genset_GetColumnOverTimePlot_GeneratorContent([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "IdLocation", DbType = "Int")] System.Nullable<int> idLocation, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Column_Name", DbType = "NVarChar(10)")] string column_Name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Start_Date", DbType = "DateTime")] System.Nullable<System.DateTime> start_Date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "End_Date", DbType = "DateTime")] System.Nullable<System.DateTime> end_Date)
         {
-            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_Location, column_Name, start_Date, end_Date);
-            return ((ISingleResult<ed_Genset_GetColumnOverTimePlotResult>)(result.ReturnValue));
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idLocation, column_Name, start_Date, end_Date);
+            return ((ISingleResult<ed_Genset_GetColumnOverTimePlot_GeneratorContentResult>)(result.ReturnValue));
         }
 
-        public partial class ed_Genset_GetColumnOverTimePlotResult
+        public partial class ed_Genset_GetColumnOverTimePlot_GeneratorContentResult
         {
 
-            private string _Data;
+            private System.Nullable<double> _Data;
 
-            private System.Nullable<System.DateTime> _Time_stamp;
+            private System.Nullable<System.DateTime> _TimeStamp;
 
-            public ed_Genset_GetColumnOverTimePlotResult()
+            public ed_Genset_GetColumnOverTimePlot_GeneratorContentResult()
             {
             }
 
-            [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Data", DbType = "NVarChar(50)")]
-            public string Data
+            [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Data", DbType = "Float")]
+            public System.Nullable<double> Data
             {
                 get
                 {
@@ -371,18 +375,18 @@ namespace ReportingSystemV2
                 }
             }
 
-            [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_Time_stamp", DbType = "DateTime")]
-            public System.Nullable<System.DateTime> Time_stamp
+            [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_TimeStamp", DbType = "DateTime")]
+            public System.Nullable<System.DateTime> TimeStamp
             {
                 get
                 {
-                    return this._Time_stamp;
+                    return this._TimeStamp;
                 }
                 set
                 {
-                    if ((this._Time_stamp != value))
+                    if ((this._TimeStamp != value))
                     {
-                        this._Time_stamp = value;
+                        this._TimeStamp = value;
                     }
                 }
             }

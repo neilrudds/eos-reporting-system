@@ -1265,13 +1265,13 @@ namespace ReportingSystemV2.CPanel
 
                                 dt.Rows.Add(_record);
 
-                                if (columns[i] != "Unknown") // Ignore the unknown columns as they are valid
+                                if (columns[i] == "Unknown") // Only intrested in unknown columns now as these are invalid.
                                 {
-                                    if (!checkIfColumnIsValid(columns[i]))
-                                    {
+                                    //if (!checkIfColumnIsValid(columns[i]))
+                                    //{
                                         // Invalid
                                         InvalidColumns++;
-                                    }
+                                    //}
                                 }
                             }
 
@@ -1384,11 +1384,16 @@ namespace ReportingSystemV2.CPanel
                 }
                 else
                 {
-                    if (Name == "Unknown")
+                    string headerString = (from x in db.Blackboxes
+                                           where x.BB_SerialNo == lblHistoryUnitSerial.Text
+                                           select x.CFG_HistoryColNameStr).FirstOrDefault();
+
+                    if (headerString.IndexOf(Name) > 0 && Name != "Unknown")
                     {
                         ddl.SelectedValue = "-2";
-                        lbl.Text = "Column will not be imported";
-                        lbl.ForeColor = Color.Orange;
+                        ddl.SelectedItem.Text = Name;
+                        lbl.Text = "Custom column, please check for an alternative";
+                        lbl.ForeColor = Color.Violet;
                     }
                     else
                     {
@@ -1468,8 +1473,16 @@ namespace ReportingSystemV2.CPanel
             }
             else if (ddl.SelectedValue == "-2")
             {
-                lbl.Text = "Column will not be imported";
-                lbl.ForeColor = Color.Orange;
+                if (ddl.Text.IndexOf("Unknown") > 0)
+                {
+                    lbl.Text = "Column will not be imported";
+                    lbl.ForeColor = Color.Orange;
+                }
+                else
+                {
+                    lbl.Text = "Custom column, please check for an alternative";
+                    lbl.ForeColor = Color.Violet;
+                }
             }
             else
             {
@@ -1740,9 +1753,10 @@ namespace ReportingSystemV2.CPanel
                 }
                 else
                 {
-                    ddl.SelectedValue = "-1";
-                    lbl.Text = "Please select a valid header";
-                    lbl.ForeColor = Color.Red;
+                    ddl.SelectedValue = "-2";
+                    ddl.SelectedItem.Text = Name;
+                    lbl.Text = "Custom column, please check for an alternative";
+                    lbl.ForeColor = Color.Violet;
                 }
 
                 // These fields cannot be changed
@@ -1791,8 +1805,8 @@ namespace ReportingSystemV2.CPanel
             }
             else if (ddl.SelectedValue == "-2")
             {
-                lbl.Text = "Column will not be imported";
-                lbl.ForeColor = Color.Orange;
+                lbl.Text = "Custom column, please check for an alternative";
+                lbl.ForeColor = Color.Violet;
             }
             else
             {
@@ -1978,18 +1992,18 @@ namespace ReportingSystemV2.CPanel
                     {
                         //Invalid
                     }
-                    else if (ddl.SelectedValue == "-2")
-                    {
-                        if (firstRow)
-                        {
-                            result = result + "Unknown";
-                            firstRow = false;
-                        }
-                        else
-                        {
-                            result = result + "," + "Unknown";
-                        }
-                    }
+                    //else if (ddl.SelectedValue == "-2")
+                    //{
+                    //    if (firstRow)
+                    //    {
+                    //        result = result + "Unknown";
+                    //        firstRow = false;
+                    //    }
+                    //    else
+                    //    {
+                    //        result = result + "," + "Unknown";
+                    //    }
+                    //}
                     else
                     {
                         if (firstRow)

@@ -141,15 +141,13 @@ namespace ReportingSystemV2.Reporting
         protected void bindPerformance(int location, DateTime startDate, DateTime endDate)
         {
             // Get the Values
-            decimal hrsRun = Convert.ToInt32(RsDc.ed_Genset_GetActualHoursRunById(location, startDate, endDate).FirstOrDefault().Hrs);
-            decimal kwh = Convert.ToInt32(RsDc.ed_Genset_GetActualkWhProducedById(location, startDate, endDate).FirstOrDefault().kWh);
-            decimal TotHrsRun = Convert.ToInt32(RsDc.ed_Genset_GetTotalHoursRunById(location).FirstOrDefault().Hrs);
-            decimal TotkWh = Convert.ToInt32(RsDc.ed_Genset_GetTotalkWhProducedById(location).FirstOrDefault().kWh);
+            decimal Runhrs = db.GetActualHoursRun(location, startDate, endDate);
+            decimal kWhours = db.GetActualkWhProduced(location, startDate, endDate);
 
-            decimal avgOutput = 0;
-            if (hrsRun != 0)
+            decimal? avgOutput = 0;
+            if (Runhrs != 0)
             {
-                avgOutput = kwh / hrsRun;
+                avgOutput = kWhours / Runhrs;
             }
 
             // What type of report, Shutdowns or Availibility
@@ -180,8 +178,8 @@ namespace ReportingSystemV2.Reporting
             // Set the Values
             lblPeriodDays.Text = (endDate.AddDays(1) - startDate).TotalDays.ToString();
             lblPeriodHours.Text = (endDate.AddDays(1) - startDate).TotalHours.ToString();
-            lblHrsRun.Text = hrsRun.ToString();
-            lblkWh.Text = kwh.ToString();
+            lblHrsRun.Text = Runhrs.ToString();
+            lblkWh.Text = kWhours.ToString();
             lblAvgOutput.Text = string.Format("{0:0.00}", avgOutput);
 
             Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "contractPerformance();", true);
@@ -325,12 +323,12 @@ namespace ReportingSystemV2.Reporting
                 Response.AppendHeader("content-disposition", "attachment;filename=" + GetGeneratorNameById(f.IdLocation) + "_" + GetTimeStamp(DateTime.Now) + ".pdf");
                 Response.AddHeader("Content-Length", content.Length.ToString());
                 Response.OutputStream.Write(content, 0, content.Length);
-            }
+        }
             catch (Exception ex)
             {
                 LogMe.LogSystemException(ex.Message);
                 Page.ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "bootstrap_alert.warning('warning', 'Oops!', 'The PDF Report could not be generated, please try again later. If the problem persists then contact an administrator..');", true);
-            }
         }
+    }
     }
 }

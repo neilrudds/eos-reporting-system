@@ -54,18 +54,6 @@ namespace ReportingSystemV2.Dashboard
             }
         }
 
-        protected DataTable FormatComApDT(DataTable dt)
-        {
-            // Format Table
-            if (dt.Rows.Count > 0)
-            {
-                dt.Columns.Remove("ID");
-                dt.Columns["Time_stamp"].ColumnName = "Date";
-            }
-
-            return dt;
-        }
-
         protected DataTable FormatDirisA20DT(DataTable dt)
         {
             // Format Table
@@ -195,15 +183,15 @@ namespace ReportingSystemV2.Dashboard
             // ComAp History
             if (type == -1)
             {
-                Tuple<IEnumerable<ed_Genset_GetHistoryByIdResult>, int> result = db.SelectComApQuery(IdLocation, startDate, endDate);
+                Tuple<IEnumerable<DB.GeneratorContentHistory>, int> result = db.SelectComApQuery(IdLocation, startDate, endDate);
 
                 if (startRowIndex != -1 && maximumRows != -1)
                 {
-                    tmpDT = FormatComApDT(db.LINQToDataTable(result.Item1.Skip(startRowIndex).Take(maximumRows)));
+                    tmpDT = db.LINQToDataTable(result.Item1.Skip(startRowIndex).Take(maximumRows));
                 }
                 else
                 {
-                    tmpDT = FormatComApDT(db.LINQToDataTable(result.Item1));
+                    tmpDT = db.LINQToDataTable(result.Item1);
                 }
 
                 totalRecordsCount = result.Item2;

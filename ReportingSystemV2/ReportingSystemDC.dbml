@@ -1,256 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ReportingSystemProd" Class="ReportingSystemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=edina-datastore-prod-01.database.windows.net;Initial Catalog=ReportingSystemProd;Persist Security Info=True;User ID=kevin_creategravity;Encrypt=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ReportingSystemProdConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.HL_Logs" Member="HL_Logs">
-    <Type Name="HL_Log">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Time_Stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_Event" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="EVENT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
-      <Column Name="RPM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Pwr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Gfrq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Ig1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Ig2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Ig3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BOUT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Mode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LTHWrT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LTHWfT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OilB4F" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CCpres" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OilLev" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ActPfi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ExPlim" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ActDem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CH4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OilT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="AirInT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RecAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JWTout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JWTin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JWGKin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Demand" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="kWhour" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Runhrs" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Numstr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NumUns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Servic" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TotalD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DnTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Q" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LChr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Mfrq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vm1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vm2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vm3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vm12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vm23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vm31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Pmns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Qmns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MPF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MVS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SRO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="VRO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="UBat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CPUT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JWTTin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Runho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Numst" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ActPwr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DPowr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Amb" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GasP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ActP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HeatMe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Chille" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GasMet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SBO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DemandkW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="H2S" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NKOutT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HeatFlo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HeatRtn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ThrPos" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Hrsx1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="kVarho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI11" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BO1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BO3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[100thmwh]" Member="_100thmwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[10thm3]" Member="_10thm3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GasVol" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SHBI1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SHBO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Hrsx10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SteamP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JkTout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JKTin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JKGKin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TEMv" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="VPI1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MLChr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ExhAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OilB4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ThrPoB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ExhATu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LoadR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OilP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Wtmp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Flev" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SWtmp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GroKwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BO4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="EngRPM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LTHW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DT_Processed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Bfrq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HtWtrV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="IcOut" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GasBpr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ExtKW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="setNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TEMLod" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SBI3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Tank" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SBI4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SBO1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JWTemp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TWTemp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SBI1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaxVec" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DemkW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="groskwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ExDman" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="AirP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Runhrsnull" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[D+]" Member="D_" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="U" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="V" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="W" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Run Hrs x10000]" Member="Run_Hrs_x10000" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[VPIO BOUT1]" Member="VPIO_BOUT1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Bus freq]" Member="Bus_freq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Actual pwr Fil]" Member="Actual_pwr_Fil" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Spply Vlts Tem]" Member="Spply_Vlts_Tem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HWFl" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HWRet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="nkout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="lthwflo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GFlwRte" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GFlwM3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="kVAr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GasFlo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Heat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Plimit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="kVAHrs" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OilPres" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Spare" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[GK Outlet Temp]" Member="GK_Outlet_Temp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ThroPos" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[kWh Pulse]" Member="kWh_Pulse" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TotDnT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BrgAt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BrgBt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="L1temp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="L2temp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="L3temp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ICrout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JWrout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NetkW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="IM3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ThrPosB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HWFlo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HWRtn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="VPIOBO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="kVArhour" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GasFl" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LTHWFl" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OilBF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HtMet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ChMet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CustHt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="VPIO1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="VPIO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="VPIO3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BO5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BO6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BO7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BO8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OLFS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OLFS2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OLFS3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ILFS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ILFS2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ILFS3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[PulseCounter 2]" Member="PulseCounter_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Ch42" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DnTiime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="grosskwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="AI37" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LdDem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DisO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="FdrA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="FdrB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ExATu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ExhBTu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SHBOUT1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SHBIN2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Demand KW]" Member="Demand_KW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Hrs Run x1]" Member="Hrs_Run_x1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GasInPres" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="[Run Hrs X1000]" Member="Run_Hrs_X1000" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="HL_Event_HL_Log" Member="HL_Event" ThisKey="ID_Event" OtherKey="ID" Type="HL_Event" IsForeignKey="true" />
-      <Association Name="HL_Location_HL_Log" Member="HL_Location" ThisKey="ID_Location" OtherKey="ID" Type="HL_Location" IsForeignKey="true" />
-    </Type>
-  </Table>
+  <Connection Mode="WebSettings" ConnectionString="Data Source=edina-datastore-prod-01.database.windows.net;Initial Catalog=ReportingSystemProd;Persist Security Info=True;User ID=kevin_creategravity;Encrypt=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ReportingSystemProdConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BB_LiveAlarms" Member="BB_LiveAlarms">
     <Type Name="BB_LiveAlarm">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
@@ -305,48 +54,6 @@
       <Column Name="LD_CylTempMin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.HL_Logs" Member="HL_Log_Charts">
-    <Type Name="HL_Log_Charts">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Time_Stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_Event" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="EVENT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
-      <Column Name="RPM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Pwr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Gfrq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Ig1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Ig2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Ig3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BOUT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Mode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ActPwr" Type="System.String" CanBeNull="false" />
-      <Column Name="ActDem" Type="System.String" CanBeNull="false" />
-      <Column Name="Runhrs" Type="System.String" CanBeNull="false" />
-      <Column Name="kWhour" Type="System.String" CanBeNull="false" />
-      <Column Name="Vm1" Type="System.String" CanBeNull="false" />
-      <Column Name="Vm2" Type="System.String" CanBeNull="false" />
-      <Column Name="Vm3" Type="System.String" CanBeNull="false" />
-      <Column Name="UBat" Type="System.String" CanBeNull="false" />
-      <Column Name="OilB4F" Type="System.String" CanBeNull="false" />
-      <Column Name="Wtmp" Type="System.String" CanBeNull="false" />
-      <Association Name="HL_Event_HL_Log_Charts" Member="HL_Event" ThisKey="ID_Event" OtherKey="ID" Type="HL_Event" IsForeignKey="true" />
-      <Association Name="HL_Location_HL_Log_Charts" Member="HL_Location" ThisKey="ID_Location" OtherKey="ID" Type="HL_Location" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.ComAp_Wildcard" Member="ComAp_Wildcards">
     <Type Name="ComAp_Wildcard">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -374,8 +81,6 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="REASON" Type="System.String" DbType="NVarChar(18) NOT NULL" CanBeNull="false" />
       <Column Name="Label" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="HL_Event_HL_Log" Member="HL_Logs" ThisKey="ID" OtherKey="ID_Event" Type="HL_Log" />
-      <Association Name="HL_Event_HL_Log_Charts" Member="HL_Log_Charts" ThisKey="ID" OtherKey="ID_Event" Type="HL_Log_Charts" />
     </Type>
   </Table>
   <Table Name="dbo.EnergyMeters_Mapping" Member="EnergyMeters_Mappings">
@@ -464,8 +169,6 @@
       <Column Name="ID_SMS_Group" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="GensetEnabled" Storage="_showMonitor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="ID_EngineType" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="HL_Location_HL_Log" Member="HL_Logs" ThisKey="ID" OtherKey="ID_Location" Type="HL_Log" />
-      <Association Name="HL_Location_HL_Log_Charts" Member="HL_Log_Charts" ThisKey="ID" OtherKey="ID_Location" Type="HL_Log_Charts" />
       <Association Name="HL_Location_GasTypes_Mapping" Member="GasTypes_Mappings" ThisKey="ID" OtherKey="ID_Location" Type="GasTypes_Mapping" />
     </Type>
   </Table>
@@ -986,34 +689,143 @@
       <Column Name="Custom" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
-  <Function Name="dbo.ed_Genset_GetActualkWhProducedById" Method="ed_Genset_GetActualkWhProducedById">
-    <Parameter Name="ID_LOCATION" Parameter="iD_LOCATION" Type="System.Int32" DbType="Int" />
-    <Parameter Name="STARTDATE" Parameter="sTARTDATE" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="ENDDATE" Parameter="eNDDATE" Type="System.DateTime" DbType="Date" />
-    <ElementType Name="ed_Genset_GetActualkWhProducedByIdResult">
-      <Column Name="kWh" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.ed_Genset_GetTotalHoursRunById" Method="ed_Genset_GetTotalHoursRunById">
-    <Parameter Name="ID_LOCATION" Parameter="iD_LOCATION" Type="System.Int32" DbType="Int" />
-    <ElementType Name="ed_Genset_GetTotalHoursRunByIdResult">
-      <Column Name="Hrs" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.ed_Genset_GetTotalkWhProducedById" Method="ed_Genset_GetTotalkWhProducedById">
-    <Parameter Name="ID_LOCATION" Parameter="iD_LOCATION" Type="System.Int32" DbType="Int" />
-    <ElementType Name="ed_Genset_GetTotalkWhProducedByIdResult">
-      <Column Name="kWh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.ed_Genset_GetActualHoursRunById" Method="ed_Genset_GetActualHoursRunById">
-    <Parameter Name="ID_LOCATION" Parameter="iD_LOCATION" Type="System.Int32" DbType="Int" />
-    <Parameter Name="STARTDATE" Parameter="sTARTDATE" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="ENDDATE" Parameter="eNDDATE" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="ed_Genset_GetActualHoursRunByIdResult">
-      <Column Name="Hrs" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </ElementType>
-  </Function>
+  <Table Name="dbo.GeneratorContentUpdates" Member="GeneratorContentUpdates">
+    <Type Name="GeneratorContentUpdate">
+      <Column Name="IdLocation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UtcRecieved" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UtcGenerated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GeneratorContent" Member="GeneratorContents">
+    <Type Name="GeneratorContent">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdLocation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UtcRecieved" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UtcGenerated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdEvent" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Event" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="Extended" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="[_ShutdownProcessed]" Member="_ShutdownProcessed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[_StartupProcessed]" Member="_StartupProcessed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[_AvailabilityProcessed]" Member="_AvailabilityProcessed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="[_UpdateProcessed]" Member="_UpdateProcessed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RPM" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Pwr" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PF" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Gfrq" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Vg1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Vg2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Vg3" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Vg12" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Vg23" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Vg31" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Ig1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Ig2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Ig3" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Mfrq" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Vm1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Vm2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Vm3" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Vm12" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Vm23" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Vm31" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MPF" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SRO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VRO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Mode" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="kWhour" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Runhrs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ActPwr" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ActDem" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylA1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylA2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylA3" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylA4" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylA5" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylA6" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylA7" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylA8" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylA9" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylA10" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylB1" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylB2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylB3" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylB4" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylB5" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylB6" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylB7" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylB8" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylB9" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CylB10" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="BIN" Type="System.String" DbType="NChar(16)" CanBeNull="true" />
+      <Column Name="BOUT" Type="System.String" DbType="NChar(16)" CanBeNull="true" />
+      <Column Name="MVS" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ActPwrReq" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Ubat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CPUT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TEMv" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LChr" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="OilB4F" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OilLev" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OilT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CCPres" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="AirInT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="RecAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ThrPos" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CH4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="JWTin" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="JWTout" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Numstr" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="BI1" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BI2" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BI3" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BI4" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BI5" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BI6" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BI7" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BI8" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BI9" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BI10" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BI11" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BI12" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BO1" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BO2" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BO3" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BO4" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="BO5" Type="System.String" DbType="NChar(8)" CanBeNull="true" />
+      <Column Name="Pmns" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Qmns" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ActPfi" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MLChr" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Amb" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="kVarho" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GasP" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LTHWfT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LTHWrT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GFlwRte" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GFlwM3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="H2S" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="NumUns" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="PwrDem" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="JWGKin" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HWFlo" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="HWRtn" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GasMet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IcOut" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ImpLoad" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Q" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="U" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="V" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="W" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Grokwh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Auxkwh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotRunPact" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotRunPnomAll" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SumMWh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.ed_Genset_Add" Method="ed_Genset_Add">
     <Parameter Name="GensetSN" Parameter="gensetSN" Type="System.String" DbType="NVarChar(8)" />
     <Parameter Name="GensetName" Parameter="gensetName" Type="System.String" DbType="NVarChar(25)" />
@@ -1226,17 +1038,6 @@
       <Column Name="Notes" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.ed_Genset_GetEvents" Method="ed_Genset_GetEvents">
-    <Parameter Name="IDLOC" Parameter="iDLOC" Type="System.Int32" DbType="Int" />
-    <Parameter Name="DTDOWN" Parameter="dTDOWN" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="DTUP" Parameter="dTUP" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="ed_Genset_GetEventsResult">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TIME_STAMP" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="REASON" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="EVENT" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.ed_History_GetColumnNames" Method="ed_History_GetColumnNames">
     <ElementType Name="ed_History_GetColumnNamesResult">
       <Column Name="COLUMN_NAME" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
@@ -1321,24 +1122,6 @@
     <Parameter Name="ID_Location" Parameter="iD_Location" Type="System.Int32" DbType="Int" />
     <ElementType Name="ed_Genset_GetPrimaryGensetIdByGensetIdResult">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.ed_Genset_GetkWhPerDayByIdGraph" Method="ed_Genset_GetkWhPerDayByIdGraph">
-    <Parameter Name="BEGIN" Parameter="bEGIN" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="END" Parameter="eND" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
-    <ElementType Name="ed_Genset_GetkWhPerDayByIdGraphResult">
-      <Column Name="KWHOUR" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TIME_STAMP" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.ed_Genset_GetRunHoursPerDayByIdGraph" Method="ed_Genset_GetRunHoursPerDayByIdGraph">
-    <Parameter Name="BEGIN" Parameter="bEGIN" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="END" Parameter="eND" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
-    <ElementType Name="ed_Genset_GetRunHoursPerDayByIdGraphResult">
-      <Column Name="RUNHO" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TIME_STAMP" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.ed_ComapWildcard_Insert" Method="ed_ComapWildcard_Insert">
@@ -1452,155 +1235,6 @@
     <Parameter Name="BinaryType" Parameter="binaryType" Type="System.String" DbType="NVarChar(15)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.ed_Genset_GetHistoryById" Method="ed_Genset_GetHistoryById">
-    <Parameter Name="location" Type="System.Int32" DbType="Int" />
-    <Parameter Name="begin" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="end" Type="System.DateTime" DbType="DateTime" />
-    <ElementType Name="ed_Genset_GetHistoryByIdResult">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Time_stamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Genset" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
-      <Column Name="Reason" Type="System.String" DbType="NVarChar(18)" CanBeNull="true" />
-      <Column Name="EVENT" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
-      <Column Name="RPM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Pwr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Q" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LChr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Mode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Runhrs" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Runho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Runhrsnull" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Hrsx1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="kWhour" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GroKwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ExtKW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="groskwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NetkW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="grosskwh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ActPfi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ActPwr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ActP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ActDem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Demand" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DPowr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DemandkW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DemkW" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ExDman" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LdDem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Gfrq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vg31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Ig1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Ig2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Ig3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vb31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Mfrq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vm1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vm2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vm3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vm12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vm23" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Vm31" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Pmns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Qmns" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MPF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MVS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SRO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="VRO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="UBat" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CPUT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Amb" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GasP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SBO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ThrPos" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="kVarho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OilB4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OilP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GasVol" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ThrPoB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylA10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CylB10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LTHWrT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LTHWfT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OilB4F" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CCpres" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OilLev" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CH4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="OilT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="AirInT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="RecAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JWTout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JWTin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JWGKin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JWTTin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JkTout" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JKTin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JKGKin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="JWTemp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TWTemp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LTHWFl" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BOUT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI6" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI7" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI9" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI10" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI11" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BI12" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BO1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BO2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BO3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BO4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HeatMe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Chille" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GasMet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HtMet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ChMet" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="H2S" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GFlwRte" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GFlwM3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HWRtn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="HWFlo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TotRunPact" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TotRunPnomAll" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SumMWh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PwrDem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.ed_Availability_GetById" Method="ed_Availability_GetById">
     <Parameter Name="location" Type="System.Int32" DbType="Int" />
     <Parameter Name="begin" Type="System.DateTime" DbType="DateTime" />
@@ -1652,5 +1286,16 @@
     <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="IsExempt" Parameter="isExempt" Type="System.Boolean" DbType="Bit" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ed_Genset_GetEvents" Method="ed_Genset_GetEvents">
+    <Parameter Name="IDLOC" Parameter="iDLOC" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DTDOWN" Parameter="dTDOWN" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DTUP" Parameter="dTUP" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="ed_Genset_GetEventsResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="REASON" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EVENT" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

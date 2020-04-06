@@ -38,22 +38,387 @@ namespace ReportingSystemV2
             public string YesNo { get; set; }
         }
 
+        public class GeneratorContentHistory
+        {
+            public System.DateTime Date { get; set; }
+
+            public string Generator { get; set; }
+
+            public string Reason { get; set; }
+
+            public string Event { get; set; }
+
+            public System.Nullable<short> RPM { get; set; }
+
+            public System.Nullable<short> Pwr { get; set; }
+
+            public System.Nullable<double> PF { get; set; }
+
+            public System.Nullable<double> Gfrq { get; set; }
+
+            public System.Nullable<short> Vg1 { get; set; }
+
+            public System.Nullable<short> Vg2 { get; set; }
+
+            public System.Nullable<short> Vg3 { get; set; }
+
+            public System.Nullable<short> Vg12 { get; set; }
+
+            public System.Nullable<short> Vg23 { get; set; }
+
+            public System.Nullable<short> Vg31 { get; set; }
+
+            public System.Nullable<short> Ig1 { get; set; }
+
+            public System.Nullable<short> Ig2 { get; set; }
+
+            public System.Nullable<short> Ig3 { get; set; }
+
+            public System.Nullable<double> Mfrq { get; set; }
+
+            public System.Nullable<short> Vm1 { get; set; }
+
+            public System.Nullable<short> Vm2 { get; set; }
+
+            public System.Nullable<short> Vm3 { get; set; }
+
+            public System.Nullable<short> Vm12 { get; set; }
+
+            public System.Nullable<short> Vm23 { get; set; }
+
+            public System.Nullable<short> Vm31 { get; set; }
+
+            public System.Nullable<double> MPF { get; set; }
+
+            public System.Nullable<double> SRO { get; set; }
+
+            public System.Nullable<double> VRO { get; set; }
+
+            public string Mode { get; set; }
+
+            public System.Nullable<int> kWhour { get; set; }
+
+            public System.Nullable<int> Runhrs { get; set; }
+
+            public System.Nullable<short> ActPwr { get; set; }
+
+            public System.Nullable<short> ActDem { get; set; }
+
+            public System.Nullable<short> CylA1 { get; set; }
+
+            public System.Nullable<short> CylA2 { get; set; }
+
+            public System.Nullable<short> CylA3 { get; set; }
+
+            public System.Nullable<short> CylA4 { get; set; }
+
+            public System.Nullable<short> CylA5 { get; set; }
+
+            public System.Nullable<short> CylA6 { get; set; }
+
+            public System.Nullable<short> CylA7 { get; set; }
+
+            public System.Nullable<short> CylA8 { get; set; }
+
+            public System.Nullable<short> CylA9 { get; set; }
+
+            public System.Nullable<short> CylA10 { get; set; }
+
+            public System.Nullable<short> CylB1 { get; set; }
+
+            public System.Nullable<short> CylB2 { get; set; }
+
+            public System.Nullable<short> CylB3 { get; set; }
+
+            public System.Nullable<short> CylB4 { get; set; }
+
+            public System.Nullable<short> CylB5 { get; set; }
+
+            public System.Nullable<short> CylB6 { get; set; }
+
+            public System.Nullable<short> CylB7 { get; set; }
+
+            public System.Nullable<short> CylB8 { get; set; }
+
+            public System.Nullable<short> CylB9 { get; set; }
+
+            public System.Nullable<short> CylB10 { get; set; }
+
+            public string BIN { get; set; }
+
+            public string BOUT { get; set; }
+
+            public System.Nullable<double> MVS { get; set; }
+
+            public System.Nullable<short> ActPwrReq { get; set; }
+
+            public System.Nullable<double> Ubat { get; set; }
+
+            public System.Nullable<double> CPUT { get; set; }
+
+            public System.Nullable<double> TEMv { get; set; }
+
+            public System.Nullable<char> LChr { get; set; }
+
+            public System.Nullable<double> OilB4F { get; set; }
+
+            public System.Nullable<double> OilLev { get; set; }
+
+            public System.Nullable<double> OilT { get; set; }
+
+            public System.Nullable<double> CCPres { get; set; }
+
+            public System.Nullable<double> AirInT { get; set; }
+
+            public System.Nullable<double> RecAT { get; set; }
+
+            public System.Nullable<double> ThrPos { get; set; }
+
+            public System.Nullable<double> CH4 { get; set; }
+
+            public System.Nullable<double> JWTin { get; set; }
+
+            public System.Nullable<double> JWTout { get; set; }
+
+            public System.Nullable<short> Numstr { get; set; }
+
+            public string BI1 { get; set; }
+
+            public string BI2 { get; set; }
+
+            public string BI3 { get; set; }
+
+            public string BI4 { get; set; }
+
+            public string BI5 { get; set; }
+
+            public string BI6 { get; set; }
+
+            public string BI7 { get; set; }
+
+            public string BI8 { get; set; }
+
+            public string BI9 { get; set; }
+
+            public string BI10 { get; set; }
+
+            public string BI11 { get; set; }
+
+            public string BI12 { get; set; }
+
+            public string BO1 { get; set; }
+
+            public string BO2 { get; set; }
+
+            public string BO3 { get; set; }
+
+            public string BO4 { get; set; }
+
+            public string BO5 { get; set; }
+
+            public System.Nullable<short> Pmns { get; set; }
+
+            public System.Nullable<short> Qmns { get; set; }
+
+            public System.Nullable<short> ActPfi { get; set; }
+
+            public System.Nullable<char> MLChr { get; set; }
+
+            public System.Nullable<double> Amb { get; set; }
+
+            public System.Nullable<int> kVarho { get; set; }
+
+            public System.Nullable<double> GasP { get; set; }
+
+            public System.Nullable<double> LTHWfT { get; set; }
+
+            public System.Nullable<double> LTHWrT { get; set; }
+
+            public System.Nullable<double> GFlwRte { get; set; }
+
+            public System.Nullable<int> GFlwM3 { get; set; }
+
+            public System.Nullable<short> H2S { get; set; }
+
+            public System.Nullable<short> NumUns { get; set; }
+
+            public System.Nullable<short> PwrDem { get; set; }
+
+            public System.Nullable<double> JWGKin { get; set; }
+
+            public System.Nullable<double> HWFlo { get; set; }
+
+            public System.Nullable<double> HWRtn { get; set; }
+
+            public System.Nullable<int> GasMet { get; set; }
+
+            public System.Nullable<short> IcOut { get; set; }
+
+            public System.Nullable<short> ImpLoad { get; set; }
+
+            public System.Nullable<double> Q { get; set; }
+
+            public System.Nullable<double> U { get; set; }
+
+            public System.Nullable<double> V { get; set; }
+
+            public System.Nullable<double> W { get; set; }
+
+            public System.Nullable<int> Grokwh { get; set; }
+
+            public System.Nullable<int> Auxkwh { get; set; }
+
+            public System.Nullable<int> TotRunPact { get; set; }
+
+            public System.Nullable<int> TotRunPnomAll { get; set; }
+
+            public System.Nullable<int> SumMWh { get; set; }
+
+            public string Extended { get; set; }
+
+        }
+
         #region History Data
 
-        // IEnumerable result is required for the LINQToDataTable function
-        public Tuple<IEnumerable<ed_Genset_GetHistoryByIdResult>, int> SelectComApQuery(int IdLocation, DateTime startDate, DateTime endDate)
+        public Tuple<IEnumerable<GeneratorContentHistory>, int> SelectComApQuery(int IdLocation, DateTime startDate, DateTime endDate)
         {
-            var result = RsDc.ed_Genset_GetHistoryById(IdLocation, startDate.Date, endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)).ToList();
+            //var result = RsDc.ed_Genset_GetHistoryById_GeneratorContent(IdLocation, startDate.Date, endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)).ToList();
 
-            int count = result.Count();
+            var result = (from t1 in RsDc.GeneratorContents
+                          join t2 in RsDc.HL_Locations on t1.IdLocation equals t2.ID
+                          join t3 in RsDc.HL_Events on t1.IdEvent equals t3.ID
+            where t1.IdLocation == IdLocation && t1.TimeStamp > startDate.Date && t1.TimeStamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
+            orderby t1.TimeStamp descending
+            select new GeneratorContentHistory
+            {
+                Date = t1.TimeStamp,
+                Generator = t2.GENSETNAME,
+                Reason = t3.REASON,
+                Event = t1.Event,
+                RPM = t1.RPM,
+                Pwr = t1.Pwr,
+                PF = t1.PF,
+                Gfrq = t1.Gfrq,
+                Vg1 = t1.Vg1,
+                Vg2 = t1.Vg2,
+                Vg3 = t1.Vg3,
+                Vg12 = t1.Vg12,
+                Vg23 = t1.Vg23,
+                Vg31 = t1.Vg31,
+                Ig1 = t1.Ig1,
+                Ig2 = t1.Ig2,
+                Ig3 = t1.Ig3,
+                Mfrq = t1.Mfrq,
+                Vm1 = t1.Vm1,
+                Vm2 = t1.Vm2,
+                Vm3 = t1.Vm3,
+                Vm12 = t1.Vm12,
+                Vm23 = t1.Vm23,
+                Vm31 = t1.Vm31,
+                MPF = t1.MPF,
+                SRO = t1.SRO,
+                VRO = t1.VRO,
+                Mode = t1.Mode,
+                kWhour = t1.kWhour,
+                Runhrs = t1.Runhrs,
+                ActPwr = t1.ActPwr,
+                ActDem = t1.ActDem,
+                CylA1 = t1.CylA1,
+                CylA2 = t1.CylA2,
+                CylA3 = t1.CylA3,
+                CylA4 = t1.CylA4,
+                CylA5 = t1.CylA5,
+                CylA6 = t1.CylA6,
+                CylA7 = t1.CylA7,
+                CylA8 = t1.CylA8,
+                CylA9 = t1.CylA9,
+                CylA10 = t1.CylA10,
+                CylB1 = t1.CylB1,
+                CylB2 = t1.CylB2,
+                CylB3 = t1.CylB3,
+                CylB4 = t1.CylB4,
+                CylB5 = t1.CylB5,
+                CylB6 = t1.CylB6,
+                CylB7 = t1.CylB7,
+                CylB8 = t1.CylB8,
+                CylB9 = t1.CylB9,
+                CylB10 = t1.CylB10,
+                BIN = t1.BIN,
+                BOUT = t1.BOUT,
+                MVS = t1.MVS,
+                ActPwrReq = t1.ActPwrReq,
+                Ubat = t1.Ubat,
+                CPUT = t1.CPUT,
+                TEMv = t1.TEMv,
+                LChr = t1.LChr,
+                OilB4F = t1.OilB4F,
+                OilLev = t1.OilLev,
+                OilT = t1.OilT,
+                CCPres = t1.CCPres,
+                AirInT = t1.AirInT,
+                RecAT = t1.RecAT,
+                ThrPos = t1.ThrPos,
+                CH4 = t1.CH4,
+                JWTin = t1.JWTin,
+                JWTout = t1.JWTout,
+                Numstr = t1.Numstr,
+                BI1 = t1.BI1,
+                BI2 = t1.BI2,
+                BI3 = t1.BI3,
+                BI4 = t1.BI4,
+                BI5 = t1.BI5,
+                BI6 = t1.BI6,
+                BI7 = t1.BI7,
+                BI8 = t1.BI8,
+                BI9 = t1.BI9,
+                BI10 = t1.BI10,
+                BI11 = t1.BI11,
+                BI12 = t1.BI12,
+                BO1 = t1.BO1,
+                BO2 = t1.BO2,
+                BO3 = t1.BO3,
+                BO4 = t1.BO4,
+                BO5 = t1.BO5,
+                Pmns = t1.Pmns,
+                Qmns = t1.Qmns,
+                ActPfi = t1.ActPfi,
+                MLChr = t1.MLChr,
+                Amb = t1.Amb,
+                kVarho = t1.kVarho,
+                GasP = t1.GasP,
+                LTHWfT = t1.LTHWfT,
+                LTHWrT = t1.LTHWrT,
+                GFlwRte = t1.GFlwRte,
+                GFlwM3 = t1.GFlwM3,
+                H2S = t1.H2S,
+                NumUns = t1.NumUns,
+                PwrDem = t1.PwrDem,
+                JWGKin = t1.JWGKin,
+                HWFlo = t1.HWFlo,
+                HWRtn = t1.HWRtn,
+                GasMet = t1.GasMet,
+                IcOut = t1.IcOut,
+                ImpLoad = t1.ImpLoad,
+                Q = t1.Q,
+                U = t1.U,
+                V = t1.V,
+                W = t1.W,
+                Grokwh = t1.Grokwh,
+                Auxkwh = t1.Auxkwh,
+                TotRunPact = t1.TotRunPact,
+                TotRunPnomAll = t1.TotRunPnomAll,
+                SumMWh = t1.SumMWh,
+                Extended = t1.Extended
+            }).ToList();
 
-            return Tuple.Create(result.AsEnumerable(), count);
+            return Tuple.Create(result.AsEnumerable(), result.Count());
         }
 
         public Tuple<IEnumerable<EnergyMeters_Diris_A20>, int> SelectDirisA20Query(string serial, DateTime startDate, DateTime endDate)
         {
             var query = (from m in RsDc.EnergyMeters_Diris_A20s
                         where m.Serial == serial && m.Timestamp > startDate.Date && m.Timestamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
+                        orderby m.Timestamp descending
                         select m).ToList();
 
             int count = query.Count();
@@ -65,6 +430,7 @@ namespace ReportingSystemV2
         {
             var query = (from m in RsDc.EnergyMeters_LG_E650s
                         where m.Serial == serial && m.Timestamp > startDate.Date && m.Timestamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
+                        orderby m.Timestamp descending
                         select m).ToList();
 
             int count = query.Count();
@@ -76,6 +442,7 @@ namespace ReportingSystemV2
         {
             var query = (from m in RsDc.EnergyMeters
                         where m.ID_Location == IdLocation && m.Timestamp > startDate.Date && m.Timestamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
+                        orderby m.Timestamp descending
                         select m).ToList();
 
 
@@ -88,6 +455,7 @@ namespace ReportingSystemV2
         {
             var query = (from m in RsDc.GasMeters
                          where m.ID_Location == IdLocation && m.Timestamp > startDate.Date && m.Timestamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
+                         orderby m.Timestamp descending
                          select m).ToList();
 
 
@@ -318,23 +686,23 @@ namespace ReportingSystemV2
 
             var dt = new DataTable();
 
-            var q = (
-            from a in db.GetTable<HL_Log>()
-            where a.Time_Stamp > DateTime.Now.AddDays(-1)
+            var result = (
+            from a in db.GeneratorContents
+            where a.TimeStamp > DateTime.Now.AddDays(-1)
             select new
             {
-                a.ID_Location,
-                Runhours = a.Runhrs.Max() - a.Runhrs.Min()
+                a.IdLocation,
+                a.Runhrs
             });
 
             dt.Columns.Add("Genset Name");
             dt.Columns.Add("Run Hours");
 
-            foreach (var item in q)
+            foreach (var item in result)
             {
                 DataRow row = dt.NewRow();
-                row["Genset Name"] = item.ID_Location;
-                row["Run Hours"] = item.Runhours;
+                row["Genset Name"] = item.IdLocation;
+                row["Run Hours"] = result.Max(x => x.Runhrs) - result.Min(x => x.Runhrs);
                 dt.Rows.Add(row);
             }
 
@@ -349,8 +717,8 @@ namespace ReportingSystemV2
                          select new
                          {
                              ExemptId = ExemptId, // Append the Exempt Id to the table
-                             Id = s.ID,
-                             Timestamp = s.TIME_STAMP,
+                             Id = s.Id,
+                             Timestamp = s.TimeStamp,
                              Reason = s.REASON,
                              Event = s.EVENT
                          };
@@ -366,8 +734,8 @@ namespace ReportingSystemV2
                          select new
                          {
                              StartUpId = StartUpId, // Append the Exempt Id to the table
-                             Id = s.ID,
-                             Timestamp = s.TIME_STAMP,
+                             Id = s.Id,
+                             Timestamp = s.TimeStamp,
                              Reason = s.REASON,
                              Event = s.EVENT
                          };
@@ -383,8 +751,8 @@ namespace ReportingSystemV2
                          select new
                          {
                              IdAvailability = IdAvailability, // Append the Exempt Id to the table
-                             Id = s.ID,
-                             Timestamp = s.TIME_STAMP,
+                             Id = s.Id,
+                             Timestamp = s.TimeStamp,
                              Reason = s.REASON,
                              Event = s.EVENT
                          };
@@ -433,6 +801,53 @@ namespace ReportingSystemV2
             }
         }
 
+        public decimal GetActualHoursRun(int IdLocation, DateTime startDate, DateTime endDate)
+        {
+            var x = (from row in RsDc.GeneratorContents
+                     where row.IdLocation == IdLocation && row.TimeStamp >= startDate && row.TimeStamp < endDate.AddHours(23).AddMinutes(59).AddSeconds(59)
+                     select new { TimeStamp = row.TimeStamp, Runhrs = row.Runhrs }).AsEnumerable();
+
+            var Max = x.Max(p => p.Runhrs);
+            var Min = x.Min(p => p.Runhrs);
+
+            return x != null ? Convert.ToDecimal(Max - Min) : 0;
+        }
+
+        public decimal GetActualkWhProduced(int IdLocation, DateTime startDate, DateTime endDate)
+        {
+            var x = (from row in RsDc.GeneratorContents
+                     where row.IdLocation == IdLocation && row.TimeStamp >= startDate && row.TimeStamp < endDate.AddHours(23).AddMinutes(59).AddSeconds(59)
+                     select new { TimeStamp = row.TimeStamp, kWhours = row.kWhour }).AsEnumerable();
+
+            var Max = x.Max(p => p.kWhours);
+            var Min = x.Min(p => p.kWhours);
+
+            return x != null ? Convert.ToDecimal(Max - Min) : 0;
+        }
+
+        //public decimal GetTotalHoursRun(int IdLocation, DateTime startDate, DateTime? endDate = null)
+        //{
+        //    endDate = endDate != null ? endDate.Value.AddHours(23).AddMinutes(59).AddSeconds(59) : DateTime.Now;
+
+        //    var x = (from row in RsDc.GeneratorContents
+        //             where row.IdLocation == IdLocation && row.TimeStamp >= startDate && row.TimeStamp < endDate
+        //             group row by true into r
+        //             select new { Runhrs = r.Max(z => z.Runhrs) }).FirstOrDefault();
+
+        //    return Convert.ToDecimal(x != null ? x.Runhrs : 0);
+        //}
+
+        //public decimal GetTotalkWhProduced(int IdLocation, DateTime startDate, DateTime? endDate = null)
+        //{
+        //    endDate = endDate != null ? endDate.Value.AddHours(23).AddMinutes(59).AddSeconds(59) : DateTime.Now;
+
+        //    var x = (from row in RsDc.GeneratorContents
+        //             where row.IdLocation == IdLocation && row.TimeStamp >= startDate && row.TimeStamp < endDate
+        //             group row by true into r
+        //             select new { kWhour = r.Max(z => z.kWhour) }).FirstOrDefault();
+
+        //    return Convert.ToDecimal(x != null ? x.kWhour : 0);
+        //}
 
         #endregion
 
@@ -1992,7 +2407,7 @@ namespace ReportingSystemV2
 
             using (SqlConnection conn = new SqlConnection(Connection.ConnectionString))
             {
-                SqlCommand cmd = new SqlCommand("dbo.ed_Genset_GetSummaryByUserGensetIds", conn);
+                SqlCommand cmd = new SqlCommand("dbo.ed_Genset_GetSummaryByUserGensetIds_GeneratorContent", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter p = cmd.Parameters.AddWithValue("@IDS", sitesTable);
@@ -2056,7 +2471,7 @@ namespace ReportingSystemV2
 
         public class generatorSummary
         {
-            private int _ID_LOCATION;
+            private int _IdLocation;
 
             private string _GENSETNAME;
 
@@ -2071,18 +2486,18 @@ namespace ReportingSystemV2
             private System.Nullable<System.DateTime> _LASTSTOP;
 
 
-            [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_ID_LOCATION", DbType = "Int NOT NULL")]
-            public int ID_LOCATION
+            [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_IdLocation", DbType = "Int NOT NULL")]
+            public int IdLocation
             {
                 get
                 {
-                    return this._ID_LOCATION;
+                    return this._IdLocation;
                 }
                 set
                 {
-                    if ((this._ID_LOCATION != value))
+                    if ((this._IdLocation != value))
                     {
-                        this._ID_LOCATION = value;
+                        this._IdLocation = value;
                     }
                 }
             }

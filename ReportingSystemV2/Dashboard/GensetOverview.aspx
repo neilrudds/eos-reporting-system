@@ -245,7 +245,7 @@
         // Handle the messages
         function onMessageArrived(message) {
 
-            var decryptedPayload = decryptPayload(message.payloadBytes);
+            var decryptedPayload = decryptPayload(message.payloadBytes).slice(0, -2);
             console.log(message.destinationName, '', decryptedPayload);
 
             // Update the grid

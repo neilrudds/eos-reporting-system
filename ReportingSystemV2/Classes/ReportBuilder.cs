@@ -47,10 +47,10 @@ namespace ReportingSystemV2
             var contract = (from c in RsDc.ContractInformations where c.ID == Generator.ID_ContractInformation select c).FirstOrDefault();
 
             // Get Performance Data
-            decimal hrsRun = Convert.ToInt32(RsDc.ed_Genset_GetActualHoursRunById(IdLocation, StartDate, EndDate).FirstOrDefault().Hrs);
-            decimal kWh = Convert.ToInt32(RsDc.ed_Genset_GetActualkWhProducedById(IdLocation, StartDate, EndDate).FirstOrDefault().kWh);
-            decimal TotHrsRun = Convert.ToInt32(RsDc.ed_Genset_GetTotalHoursRunById(IdLocation).FirstOrDefault().Hrs);
-            decimal TotkWh = Convert.ToInt32(RsDc.ed_Genset_GetTotalkWhProducedById(IdLocation).FirstOrDefault().kWh);
+            decimal hrsRun = db.GetActualHoursRun(IdLocation, StartDate, EndDate);
+            decimal kWh = db.GetActualkWhProduced(IdLocation, StartDate, EndDate);
+            //decimal TotHrsRun = db.GetTotalHoursRun(IdLocation, StartDate, EndDate);
+            //decimal TotkWh = db.GetTotalkWhProduced(IdLocation, StartDate, EndDate);
 
             // Calc Average Output
             decimal avgOutput = 0;
@@ -156,10 +156,10 @@ namespace ReportingSystemV2
             var contract = (from c in RsDc.ContractInformations where c.ID == Generator.ID_ContractInformation select c).FirstOrDefault();
 
             // Get Performance Data
-            decimal hrsRun = Convert.ToInt32(RsDc.ed_Genset_GetActualHoursRunById(IdLocation, StartDate, EndDate).FirstOrDefault().Hrs);
-            decimal kWh = Convert.ToInt32(RsDc.ed_Genset_GetActualkWhProducedById(IdLocation, StartDate, EndDate).FirstOrDefault().kWh);
-            decimal TotHrsRun = Convert.ToInt32(RsDc.ed_Genset_GetTotalHoursRunById(IdLocation).FirstOrDefault().Hrs);
-            decimal TotkWh = Convert.ToInt32(RsDc.ed_Genset_GetTotalkWhProducedById(IdLocation).FirstOrDefault().kWh);
+            decimal hrsRun = db.GetActualHoursRun(IdLocation, StartDate, EndDate);
+            decimal kWh = db.GetActualkWhProduced(IdLocation, StartDate, EndDate);
+            //decimal TotHrsRun = db.GetTotalHoursRun(IdLocation, StartDate, EndDate);
+            //decimal TotkWh = db.GetTotalkWhProduced(IdLocation, StartDate, EndDate);
 
             // Get the hours available
             int? minsUnavailable = RsDc.GeneratorAvailabilities

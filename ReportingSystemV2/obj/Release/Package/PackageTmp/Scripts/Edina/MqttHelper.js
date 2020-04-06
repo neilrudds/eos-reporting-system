@@ -514,90 +514,36 @@ function plot(point, chartno) {
 };
 
 // Update the chart, add a new data series if necessary and plot the value
-function updateLiveChart(destination, payload)
-{
-    // Reformat the topic name
-    var destsplit = destination.split("/");
-    var name = destsplit[3];
+function updateLiveChart(destination, jsonData) {
 
-    switch (name) {
-        case "POWER_OUTPUT":
-            name = "Act Power";
-            break;
-        case "RPM":
-            name = "RPM";
-            break;
-        case "GENVOLTAGE1":
-            name = "Gen V L1-N";
-            break;
-        case "GENVOLTAGE2":
-            name = "Gen V L2-N";
-            break;
-        case "GENVOLTAGE3":
-            name = "Gen V L3-N";
-            break;
-        case "GENCURR1":
-            name = "Gen curr L1";
-            break;
-        case "GENCURR2":
-            name = "Gen curr L2";
-            break;
-        case "GENCURR3":
-            name = "Gen curr L3";
-            break;
-        case "MAINSVOLTAGE1":
-            name = "Mains V L1-N";
-            break;
-        case "MAINSVOLTAGE2":
-            name = "Mains V L2-N";
-            break;
-        case "MAINSVOLTAGE3":
-            name = "Mains V L3-N";
-            break;
-        case "MAINS_FREQ":
-            name = "Mains freq";
-            break;
-        case "BATT_VOLT":
-            name = "Ubat";
-            break;
-        case "POWER_DEMAND":
-            name = "Demand";
-            break;
-        case "MAINS_PF":
-            name = "Mains PF";
-            break;
-        default:
-            name = "-1"; // Invalid
-            break;
-    }
+    Object.keys(jsonData.Values).forEach(function (key) {
+        console.log(key + ' - ' + jsonData.Values[key]);
 
-    //check if it is a new topic, if not add it to the array
-    if ((dataTopics.indexOf(name) < 0) && (name != "-1")) {
+        //check if it is a new topic, if not add it to the array
+        if (dataTopics.indexOf(key) < 0) {
 
-        dataTopics.push(name); //add new topic to array
-        var y = dataTopics.indexOf(name); //get the index no
+            dataTopics.push(key); //add new topic to array
+            var idx = dataTopics.indexOf(key); //get the index no
 
-        //create new data series for the chart
-        var newseries = {
-            id: y,
-            name: name,
-            data: []
-        };
+            //create new data series for the chart
+            var newseries = {
+                id: idx,
+                name: key,
+                data: []
+            };
+            chart.addSeries(newseries); //add the series
+        }
 
-        chart.addSeries(newseries); //add the series
-
-    };
-
-    if (name != "-1") {
-        var y = dataTopics.indexOf(name); //get the index no of the topic from the array
+        // Plot data
+        var idx = dataTopics.indexOf(key); //get the index no of the topic from the array
         var myEpoch = new Date().getTime(); //get current epoch time
 
-        var thenum = payload.replace(/^\D+/g, ''); //remove any text spaces from the message
-        var plotMqtt = [myEpoch, Number(thenum)]; //create the array
-        if (isNumber(thenum)) { //check if it is a real number and not text
-            plot(plotMqtt, y);	//send it to the plot function
-        };
-    };
+        //var thenum = payload.replace(/^\D+/g, ''); //remove any text spaces from the message
+        var plotMqtt = [myEpoch, Number(jsonData.Values[key])]; //create the array
+        if (isNumber(jsonData.Values[key])) { //check if it is a real number and not text
+            plot(plotMqtt, idx);	//send it to the plot function
+        }
+    });
 }
 
 /*

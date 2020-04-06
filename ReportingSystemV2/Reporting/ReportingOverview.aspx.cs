@@ -59,7 +59,7 @@ namespace ReportingSystemV2.Reporting
                         orderby h.GENSETNAME
                         select new
                         {
-                            Id = h.ID_LOCATION,
+                            Id = h.IdLocation,
                             GensetName = h.GENSETNAME,
                             HoursRun = h.HOURSRUN,
                             KwProduced = h.KWPRODUCED,
@@ -73,9 +73,13 @@ namespace ReportingSystemV2.Reporting
             gridSummary.DataSource = query.ToList();
             gridSummary.DataBind();
 
+
             //CSS Header Sytle
-            gridSummary.UseAccessibleHeader = true;
-            gridSummary.HeaderRow.TableSection = TableRowSection.TableHeader;
+            if (gridSummary.Rows.Count > 0)
+            {
+                gridSummary.UseAccessibleHeader = true;
+                gridSummary.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
         }
 
         #region Gridview Links

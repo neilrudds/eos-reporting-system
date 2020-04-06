@@ -65,7 +65,7 @@
 
         // Topics
         var CHP_Serial = "<%= this.GensetSerial %>";
-        var MQTTsubTopic = 'CHP/' + CHP_Serial + '/VALUES/#';
+        var MQTTsubTopic = 'CHP/' + CHP_Serial + '/MEASUREMENTS';
 
         // Broker setup
         var x = new GetMQTTServerSettings();
@@ -98,11 +98,43 @@
         // Handle messages
         function onMessageArrived(message) {
 
-            var decryptedPayload = decryptPayload(message.payloadBytes);
+            try {
 
-            updateLiveChart(message.destinationName, decryptedPayload);
+                var payload = decryptPayload(message.payloadBytes).slice(0, -2);
+                var obj = JSON.parse(payload);
 
-            console.log(message.destinationName, '', decryptedPayload);
+                Object.keys(obj.Values).forEach(function(key) {
+                    console.log(key, obj.Values[key]);
+
+                    // Check if it is a new topic, if not add it to the array
+                    if (dataTopics.indexOf(key) < 0) {
+
+                        dataTopics.push(key); // add new topic to array
+                        var idx = dataTopics.indexOf(key); // get the index no
+
+                        // Create new data series for the chart
+                        var newseries = {
+                            id: idx,
+                            name: key,
+                            data: []
+                        };
+                        chart.addSeries(newseries); // add the series
+                    }
+
+                    // Plot data
+                    var idx = dataTopics.indexOf(key); // get the index no of the topic from the array
+                    var myEpoch = new Date(obj.Header.UtcGenerated).getTime(); // get current epoch time
+
+                    var plotMqtt = [myEpoch, Number(obj.Values[key])]; // create the array
+                    if (isNumber(obj.Values[key])) { // check if it is a real number and not text
+                        plot(plotMqtt, idx);	// send it to the plot function
+                    }
+                });
+
+            } catch (err) {
+                console.log(err);
+            }
         };
+
     </script>
 </asp:Content>

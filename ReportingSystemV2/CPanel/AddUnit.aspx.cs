@@ -188,9 +188,9 @@ namespace ReportingSystemV2.CPanel
                 ddlEthernetEnabled.SelectedIndex = 0;
                 ddlEthernetEnabled.Enabled = true;
             }
-            else if (ddlUnitModel.SelectedIndex == 2)
+            else if (ddlUnitModel.SelectedIndex == 2 || ddlUnitModel.SelectedIndex == 3)
             {
-                // Ax9 Turbo
+                // Ax9 Turbo or NX-900
                 // RS485 1 = 2, RS485 2 = 0
                 rblPort.Items.Clear();
                 rblPort.Items.Add(new ListItem("RS232-2", "1"));
@@ -324,9 +324,9 @@ namespace ReportingSystemV2.CPanel
                 ddlEthernetEnabled.SelectedIndex = 0;
                 ddlEthernetEnabled.Enabled = true;
             }
-            else if (ddl.SelectedIndex == 2)
+            else if (ddlUnitModel.SelectedIndex == 2 || ddlUnitModel.SelectedIndex == 3)
             {
-                // Ax9 Turbo
+                // Ax9 Turbo or NX-900
                 // RS485 1 = 2, RS485 2 = 0
                 rblPort.Items.Clear();
                 rblPort.Items.Add(new ListItem("RS232-2", "1"));
@@ -398,7 +398,7 @@ namespace ReportingSystemV2.CPanel
                 String Name = e.Row.Cells[0].Text as string;
                 Label lbl = e.Row.FindControl("lblDescription") as Label;
 
-                //Does the name exist in the wildcard table
+                // Does the name exist in the wildcard table
                 int HeaderID = (
                     from q in db.ComAp_Wildcards
                     where q.CommsObj_Name == Name && q.Approved == true
@@ -412,9 +412,10 @@ namespace ReportingSystemV2.CPanel
                 }
                 else
                 {
-                    ddl.SelectedValue = "-1";
-                    lbl.Text = "Please select a valid header";
-                    lbl.ForeColor = Color.Red;
+                    ddl.SelectedValue = "-2";
+                    ddl.SelectedItem.Text = Name;
+                    lbl.Text = "Custom column, please check for an alternative";
+                    lbl.ForeColor = Color.Violet;
                 }
 
                 //These fields cannot be changed
@@ -463,8 +464,8 @@ namespace ReportingSystemV2.CPanel
             }
             else if (ddl.SelectedValue == "-2")
             {
-                lbl.Text = "Column will not be imported";
-                lbl.ForeColor = Color.Orange;
+                lbl.Text = "Custom column, please check for an alternative";
+                lbl.ForeColor = Color.Violet;
             }
             else
             {
@@ -1002,7 +1003,7 @@ namespace ReportingSystemV2.CPanel
                     lblCommPort.Text = "RS485 (Rear)";
                 }
             }
-            else if (ddlUnitModel.SelectedIndex == 2) // AX9
+            else if (ddlUnitModel.SelectedIndex == 2 || ddlUnitModel.SelectedIndex == 3) // AX9 or NX-900
             {
                 if (rblPort.SelectedValue == "2")
                 {
@@ -1318,18 +1319,18 @@ namespace ReportingSystemV2.CPanel
                     {
                         //Invalid
                     }
-                    else if (ddl.SelectedValue == "-2")
-                    {
-                        if (firstRow)
-                        {
-                            result = result + "Unknown";
-                            firstRow = false;
-                        }
-                        else
-                        {
-                            result = result + "," + "Unknown";
-                        }
-                    }
+                    //else if (ddl.SelectedValue == "-2")
+                    //{
+                    //    if (firstRow)
+                    //    {
+                    //        result = result + "Unknown";
+                    //        firstRow = false;
+                    //    }
+                    //    else
+                    //    {
+                    //        result = result + "," + "Unknown";
+                    //    }
+                    //}
                     else
                     {
                         if (firstRow)
@@ -1636,6 +1637,10 @@ namespace ReportingSystemV2.CPanel
             else if (ddlUnitModel.SelectedIndex == 2)
             {
                 model = 2; //AX9 Turbo
+            }
+            else if (ddlUnitModel.SelectedIndex == 3)
+            {
+                model = 3; //NX-900
             }
 
             if (ddlEthernetEnabled.SelectedIndex == 0)

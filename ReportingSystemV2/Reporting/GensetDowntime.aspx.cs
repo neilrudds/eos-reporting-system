@@ -81,16 +81,16 @@ namespace ReportingSystemV2.Reporting
             ReportingBase f = (ReportingBase)Page.Master;
 
             // Binds the summary at the top of the page for the user to see the downtime at a glance
-            int hrsRun = 0;
+            decimal hrsRun = 0;
             TimeSpan tsGrossHours = (f.endDate.AddDays(1) - f.startDate);
 
             if (f.startDate.Date == f.endDate.Date)
             {
-                hrsRun = Convert.ToInt32(RsDc.ed_Genset_GetActualHoursRunById(f.IdLocation, f.startDate, f.endDate).FirstOrDefault().Hrs);
+                hrsRun = db.GetActualHoursRun(f.IdLocation, f.startDate, f.endDate);
             }
             else
             {
-                hrsRun = Convert.ToInt32(RsDc.ed_Genset_GetActualHoursRunById(f.IdLocation, f.startDate, f.endDate).FirstOrDefault().Hrs);
+                hrsRun = db.GetActualHoursRun(f.IdLocation, f.startDate, f.endDate);
             }
 
             lblSumGrossHrs.Text = tsGrossHours.TotalHours.ToString();

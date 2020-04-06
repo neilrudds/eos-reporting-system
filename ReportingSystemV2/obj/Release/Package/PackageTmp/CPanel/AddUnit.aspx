@@ -66,6 +66,7 @@
                                     <asp:ListItem>Mx2i Pro (Silver)</asp:ListItem>
                                     <asp:ListItem>Mx2i Turbo (Gold)</asp:ListItem>
                                     <asp:ListItem>AX9 Turbo</asp:ListItem>
+                                    <asp:ListItem>NX-900</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>

@@ -42,19 +42,32 @@ namespace ReportingSystemV2
             // Get the site access array to list for query
             list = currentUser.SiteAccessArray.Split(',').ToList();
 
-            var userSites = db.HL_Locations.Where(l => l.GensetEnabled == true)
-                                           .Where(l => list.Contains(l.ID.ToString()));
+            var updateTimes = from l in db.HL_Locations
+                              join t in db.GeneratorContentUpdates
+                              on l.ID equals t.IdLocation
+                              into GeneratorTimeGroup
+                              from time in GeneratorTimeGroup.DefaultIfEmpty()
+                              where l.GensetEnabled == true
+                              select new { l.ID, l.GENSETNAME, l.SITENAME, l.GENSET_SN, TimeStamp = ((DateTime?)time.TimeStamp != null ? time.TimeStamp : l.LASTUPDATE)  };
 
-            gridUserSites.DataSource = userSites.OrderBy(s => s.GENSETNAME).ToList();
+            gridUserSites.DataSource = updateTimes.Where(l => list.Contains(l.ID.ToString()))
+                                                  .OrderBy(s => s.GENSETNAME).ToList();
             gridUserSites.DataBind();
         }
 
         protected void gridUserSites_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            // Highlight row text where generator has not updated for 24hrs +
+            //Highlight row text where generator has not updated for 24hrs +
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                if (DateTime.ParseExact(e.Row.Cells[3].Text, "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture) < DateTime.Now.AddHours(-24))
+                try
+                {
+                    if (DateTime.ParseExact(e.Row.Cells[3].Text, "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture) < DateTime.Now.AddHours(-24))
+                    {
+                        e.Row.CssClass = "info";
+                    }
+                }
+                catch
                 {
                     e.Row.CssClass = "info";
                 }

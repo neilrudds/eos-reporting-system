@@ -18,7 +18,7 @@
                         <asp:BoundField DataField="GENSETNAME" HeaderText="Generator" />
                         <asp:BoundField DataField="SITENAME" HeaderText="Site" />
                         <asp:BoundField DataField="GENSET_SN" HeaderText="Serial#" />
-                        <asp:BoundField DataField="LASTUPDATE" HeaderText="History Download" DataFormatString="{0:dd/MM/yyyy HH:mm}" />
+                        <asp:BoundField DataField="TimeStamp" HeaderText="History Download" DataFormatString="{0:dd/MM/yyyy HH:mm}" />
                     </Columns>
                 </asp:GridView>
             </div>

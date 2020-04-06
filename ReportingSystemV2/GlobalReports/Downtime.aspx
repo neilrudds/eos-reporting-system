@@ -155,7 +155,7 @@
                                     <%# Container.DataItemIndex + 1 %>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:BoundField DataField="Timestamp" DataFormatString="{0:dd/MM/yyyy HH:mm:ss.fff}" HeaderText="Time Stamp" />
+                            <asp:BoundField DataField="TimeStamp" DataFormatString="{0:dd/MM/yyyy HH:mm:ss.fff}" HeaderText="Time Stamp" />
                             <asp:BoundField DataField="Reason" HeaderText="Reason" />
                             <asp:BoundField DataField="Event" HeaderText="Event" />
                         </Columns>

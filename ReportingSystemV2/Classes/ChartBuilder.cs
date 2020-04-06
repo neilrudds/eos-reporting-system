@@ -310,13 +310,13 @@ namespace ReportingSystemV2
             }
 
             // get data from db and convert it to chart data (name, value, date)
-            var chartSeries = RsDc.HL_Logs.Where(x => x.Time_Stamp >= startDate.Date && x.Time_Stamp <= endDate.Date)
-                              .Where(x => x.ID_Location == IdLocation)
-                              .GroupBy(x => x.Time_Stamp)
+            var chartSeries = RsDc.GeneratorContents.Where(x => x.TimeStamp >= startDate.Date && x.TimeStamp <= endDate.Date)
+                              .Where(x => x.IdLocation == IdLocation)
+                              .GroupBy(x => x.TimeStamp)
                               .Select(g => new
                               {
                                   Data = g.Select(x => x.GetType().GetProperty(columnName).GetValue(x).ToString()).ToArray(),
-                                  Date = g.Select(x => x.Time_Stamp).ToArray()
+                                  Date = g.Select(x => x.TimeStamp).ToArray()
                               }).ToArray();
 
             // Set all Array values as points
@@ -585,12 +585,12 @@ namespace ReportingSystemV2
 
             // We have a valid column in comap.
             // Lets get the pulsed gas usage
-            var TotalPerDay = (from s in RsDc.ed_Genset_GetColumnDifferenceByDays(IdLocation, Col.History_Header, startDate, endDate)
+            var TotalPerDay = (from s in RsDc.ed_Genset_GetColumnDifferenceByDays_GeneratorContent(IdLocation, Col.History_Header, startDate, endDate)
                                select s).ToArray();
 
             foreach (var Day in TotalPerDay)
             {
-                objResult.Add(new DateValueObj { Date = DateTime.ParseExact(Day.TIME_STAMP, "dd/MM/yyyy", null), value = Day.TotalEnergy });
+                objResult.Add(new DateValueObj { Date = DateTime.ParseExact(Day.TimeStamp, "dd/MM/yyyy", null), value = Day.TotalEnergy });
             }
             return objResult;
         }
@@ -664,7 +664,7 @@ namespace ReportingSystemV2
 
             // We have a valid column in comap.
             // Lets get the pulsed gas usage
-            var TotalPerHour = (from s in RsDc.ed_Genset_GetColumnDifferenceByHoursofDays(IdLocation, Col.History_Header, startDate, endDate)
+            var TotalPerHour = (from s in RsDc.ed_Genset_GetColumnDifferenceByHoursofDays_GeneratorContent(IdLocation, Col.History_Header, startDate, endDate)
                                 select s).ToArray();
 
             foreach (var Hour in TotalPerHour)
@@ -744,7 +744,7 @@ namespace ReportingSystemV2
 
             // We have a valid column in comap.
             // Lets get the pulsed gas usage
-            var TotalPerMonth = (from s in RsDc.ed_Genset_GetColumnDifferenceByMonthsOfYear(IdLocation, Col.History_Header, startDate, endDate)
+            var TotalPerMonth = (from s in RsDc.ed_Genset_GetColumnDifferenceByMonthsOfYear_GeneratorContent(IdLocation, Col.History_Header, startDate, endDate)
                                  select s).ToArray();
 
             foreach (var Month in TotalPerMonth)
@@ -834,7 +834,7 @@ namespace ReportingSystemV2
             }
 
             // get data from db and convert it to chart data (name, value, date)
-            var chartSeries = (from s in RsDc.ed_Genset_GetColumnOverTimePlot(IdLocation, Col.History_Header, startDate, endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)) select s).ToArray();
+            var chartSeries = (from s in RsDc.ed_Genset_GetColumnOverTimePlot_GeneratorContent(IdLocation, Col.History_Header, startDate, endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)) select s).ToArray();
                 
             int length = chartSeries.Count();
             object[,] data = new object[length, 2];
@@ -844,10 +844,8 @@ namespace ReportingSystemV2
             {
                 if (item.Data != null)
                 {
-                    double val = 0;
-                    if (!double.TryParse(item.Data, out val)) { val = 0.0; };
-                    data[i, 0] = (item.Time_stamp.Value - new DateTime(1970, 1, 1, 0, 0, 0)).TotalMilliseconds;
-                    data[i, 1] = val;
+                    data[i, 0] = (item.TimeStamp.Value - new DateTime(1970, 1, 1, 0, 0, 0)).TotalMilliseconds;
+                    data[i, 1] = item.Data;
                 }
                 i++;
             }
@@ -909,49 +907,6 @@ namespace ReportingSystemV2
                 return chart.ToHtmlString();
             }
         }
-
-        // Used to Create a Data Object from a specified column name
-        //public object[] GetChartDatafromColumn(int IdLocation, string columnName, DateTime startDate, DateTime endDate)
-        //{
-        //    List<Series> SeriesData = new List<Series>();
-        //    List<DotNet.Highcharts.Options.Point> PointsData = new List<DotNet.Highcharts.Options.Point>();
-
-        //    ReportingSystemDataContext db = new ReportingSystemDataContext();
-
-        //    db.CommandTimeout = 60 * 3;
-
-        //    // If the startdate and enddate are the same add 24 hours
-        //    if (startDate.Date == endDate.Date)
-        //    {
-        //        endDate = endDate.AddDays(1);
-        //    }
-
-        //    // get data from db and convert it to chart data (name, value, date)
-        //    var chartSeries = db.HL_Logs.Where(x => x.Time_Stamp >= startDate.Date && x.Time_Stamp <= endDate.Date)
-        //                      .Where(x => x.ID_Location == IdLocation)
-        //                      .GroupBy(x => x.Time_Stamp)
-        //                      .Select(g => new
-        //                      {
-        //                          Data = g.Select(x => x.GetType().GetProperty(columnName).GetValue(x).ToString()).ToArray(),
-        //                          Date = g.Select(x => x.Time_Stamp).ToArray()
-        //                      }).ToArray();
-
-        //    // Set all Array values as points
-        //    foreach (var item in chartSeries)
-        //    {
-        //        int length = item.Data.Count();
-        //        //object[,] data = new object[length, 2];
-        //        for (int i = 0; i < length; i++)
-        //        {
-        //            PointsData.Add(new DotNet.Highcharts.Options.Point
-        //            {
-        //                X = (item.Date[i] - new DateTime(1970, 1, 1, 0, 0, 0)).TotalMilliseconds,
-        //                Y = Int32.Parse(item.Data[i])
-        //            });
-        //        }
-        //    }
-        //    return PointsData.ToArray();
-        //}
 
         #endregion
 
@@ -1029,8 +984,8 @@ namespace ReportingSystemV2
             var objResult = new List<DateValueObj>();
 
             //Get the Unverified reasons
-            var items = (from h in RsDc.ed_Genset_GetkWhPerDayByIdGraph(startDate, endDate.AddHours(23).AddMinutes(59).AddSeconds(59), IdLocation)
-                         select new { Day = (String)h.TIME_STAMP, kWh = (int)h.KWHOUR }
+            var items = (from h in RsDc.ed_Genset_GetColumnDifferenceByDays_GeneratorContent(IdLocation, "kWhour", startDate, endDate.AddHours(23).AddMinutes(59).AddSeconds(59))
+                         select new { Day = (String)h.TimeStamp, kWh = (int)h.TotalEnergy }
                              into s
                              orderby s.Day
                              select s).ToArray();
@@ -1047,8 +1002,8 @@ namespace ReportingSystemV2
             var obj = new List<object>();
 
             //Get the Unverified reasons
-            var items = (from h in RsDc.ed_Genset_GetRunHoursPerDayByIdGraph(startDate, endDate.AddHours(23).AddMinutes(59).AddSeconds(59), IdLocation)
-                         select new { Day = (String)h.TIME_STAMP, RunHours = (int)h.RUNHO }
+            var items = (from h in RsDc.ed_Genset_GetColumnDifferenceByDays_GeneratorContent(IdLocation, "Runhrs", startDate, endDate.AddHours(23).AddMinutes(59).AddSeconds(59))
+                         select new { Day = (String)h.TimeStamp, RunHours = (int)h.TotalEnergy }
                              into s
                              orderby s.Day
                              select s).ToArray();
@@ -1068,9 +1023,15 @@ namespace ReportingSystemV2
             int failed = 0;
 
             //Get the number of updated and non updated sites
-            updated = (from h in RsDc.HL_Locations.Where(t => us.GetUserSites_Int(HttpContext.Current.User.Identity.GetUserId()).Contains(t.ID)) // Filter Users Sites
-                         where h.LASTUPDATE.Value.Date >= DateTime.Today.Date.AddHours(-24)
-                         select h).Count();
+            var updateTimes = (from l in RsDc.HL_Locations
+                               join t in RsDc.GeneratorContentUpdates
+                               on l.ID equals t.IdLocation
+                               into GeneratorTimeGroup
+                               from time in GeneratorTimeGroup.DefaultIfEmpty()
+                               where l.GensetEnabled == true
+                               select new { l.ID, l.GENSETNAME, l.SITENAME, l.GENSET_SN, TimeStamp = ((DateTime?)time.TimeStamp != null ? time.TimeStamp : l.LASTUPDATE) }).Where(t => us.GetUserSites_Int(HttpContext.Current.User.Identity.GetUserId()).Contains(t.ID));
+
+            updated = updateTimes.Where(t => t.TimeStamp >= DateTime.Today.Date.AddHours(-24)).Count();
 
             failed = (from h in RsDc.HL_Locations.Where(t => us.GetUserSites_Int(HttpContext.Current.User.Identity.GetUserId()).Contains(t.ID)) // Filter Users Sites
                       where h.GensetEnabled == true
@@ -1292,12 +1253,12 @@ namespace ReportingSystemV2
                 {
                     // We have a valid column in comap.
                     // Lets get the pulsed gas usage
-                    var gasVolumeComAp = (from s in RsDc.ed_Genset_GetColumnDifferenceByDays(IdLocation, meterColumnName, startDate, endDate)
+                    var gasVolumeComAp = (from s in RsDc.ed_Genset_GetColumnDifferenceByDays_GeneratorContent(IdLocation, meterColumnName, startDate, endDate)
                                     select s).ToArray();
                     
                     foreach (var vol in gasVolumeComAp)
                     {
-                        objResult.Add(new DateValueObj { Date = DateTime.ParseExact(vol.TIME_STAMP, "dd/MM/yyyy", null), value = vol.TotalEnergy });
+                        objResult.Add(new DateValueObj { Date = DateTime.ParseExact(vol.TimeStamp, "dd/MM/yyyy", null), value = vol.TotalEnergy });
                     }
 
                 }
@@ -1366,12 +1327,12 @@ namespace ReportingSystemV2
                 {
                     // We have a valid column in comap.
                     // Lets get the pulsed gas usage
-                    var gasVolumeComAp = (from s in RsDc.ed_Genset_GetColumnDifferenceByDays(IdLocation, meterColumnName, startDate, endDate)
+                    var gasVolumeComAp = (from s in RsDc.ed_Genset_GetColumnDifferenceByDays_GeneratorContent(IdLocation, meterColumnName, startDate, endDate)
                                           select s).ToArray();
 
                     foreach (var vol in gasVolumeComAp)
                     {
-                        objResult.Add(new DateValueObj { Date = DateTime.ParseExact(vol.TIME_STAMP, "dd/MM/yyyy", null), value = ((Convert.ToDouble(vol.TotalEnergy) * correctionFactor) * calorificVal.Value) / 3.6 });
+                        objResult.Add(new DateValueObj { Date = DateTime.ParseExact(vol.TimeStamp, "dd/MM/yyyy", null), value = ((Convert.ToDouble(vol.TotalEnergy) * correctionFactor) * calorificVal.Value) / 3.6 });
                     }
                 }
 
@@ -2361,90 +2322,6 @@ namespace ReportingSystemV2
                 return chart.ToHtmlString();
             }
         }
-
-        //public string GetRunHoursPerDayChartPDFJS(int IdLocation, DateTime startDate, DateTime endDate)
-        //{
-        //    DotNet.Highcharts.Highcharts chart = new DotNet.Highcharts.Highcharts("RunHoursPerDay")
-        //        .InitChart(new Chart { DefaultSeriesType = ChartTypes.Column })
-        //        .SetTitle(new Title { Text = "" })
-        //        .SetSubtitle(new Subtitle { Text = "" })
-        //        .SetCredits(new Credits { Text = "" })
-        //        .SetXAxis(new XAxis { Type = AxisTypes.Datetime })
-
-        //        .SetYAxis(new YAxis
-        //        {
-        //            Min = 0,
-        //            Title = new YAxisTitle { Text = "Hours" }
-        //        })
-        //        .SetLegend(new Legend
-        //        {
-        //            Layout = Layouts.Vertical,
-        //            Align = HorizontalAligns.Left,
-        //            VerticalAlign = VerticalAligns.Top,
-        //            X = 100,
-        //            Y = 70,
-        //            Floating = true,
-        //            Shadow = true
-        //        })
-        //        .SetPlotOptions(new PlotOptions
-        //        {
-        //            Column = new PlotOptionsColumn
-        //            {
-        //                PointPadding = 0.2,
-        //                BorderWidth = 0
-        //            }
-        //        })
-        //        .SetSeries(new Series
-        //        {
-        //            Type = ChartTypes.Column,
-        //            Color = System.Drawing.ColorTranslator.FromHtml("#90ed7d"),
-        //            Name = "Run Hours",
-        //            Data = new Data(GetRunHoursPerDay(IdLocation, startDate, endDate))
-        //        });
-
-        //    return chart.ToHtmlString();
-        //}
-
-        //public string GetkWhPerDayChartPDFJS(int IdLocation, DateTime startDate, DateTime endDate)
-        //{
-        //    DotNet.Highcharts.Highcharts chart = new DotNet.Highcharts.Highcharts("kWhPerDay")
-        //        .InitChart(new Chart { DefaultSeriesType = ChartTypes.Column })
-        //        .SetTitle(new Title { Text = "" })
-        //        .SetSubtitle(new Subtitle { Text = "" })
-        //        .SetCredits(new Credits { Text = "" })
-        //        .SetXAxis(new XAxis { Type = AxisTypes.Datetime })
-        //        .SetYAxis(new YAxis
-        //        {
-        //            Min = 0,
-        //            Title = new YAxisTitle { Text = "kWh" },
-        //        })
-        //        .SetLegend(new Legend
-        //        {
-        //            Layout = Layouts.Vertical,
-        //            Align = HorizontalAligns.Left,
-        //            VerticalAlign = VerticalAligns.Top,
-        //            X = 100,
-        //            Y = 70,
-        //            Floating = true,
-        //            Shadow = true
-        //        })
-        //        .SetPlotOptions(new PlotOptions
-        //        {
-        //            Column = new PlotOptionsColumn
-        //            {
-        //                PointPadding = 0.2,
-        //                BorderWidth = 0
-        //            }
-        //        })
-        //        .SetSeries(new Series
-        //        {
-        //            Type = ChartTypes.Column,
-        //            Color = System.Drawing.ColorTranslator.FromHtml("#f7a35c"),
-        //            Name = "kWh",
-        //            Data = new Data(GetkWhProducedPerDay(IdLocation, startDate, endDate).Select(s => new object[] { s.Date, s.value }).ToArray())
-        //        });
-        //    return chart.ToHtmlString();
-        //}
 
         #endregion        
 
