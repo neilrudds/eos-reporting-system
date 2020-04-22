@@ -10,9 +10,9 @@ namespace ReportingSystemV2
     {
         // Custom ed_EnergyMeters_GetColumnDifferenceByDays
         [global::System.Data.Linq.Mapping.FunctionAttribute(Name = "dbo.ed_EnergyMeters_GetColumnDifferenceByDays")]
-        public ISingleResult<ed_EnergyMeters_GetColumnDifferenceByDaysResult> ed_EnergyMeters_GetColumnDifferenceByDays([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "ID_Location", DbType = "Int")] System.Nullable<int> iD_Location, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Modbus_Addr", DbType = "Int")] System.Nullable<int> modbus_Addr, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Start_Date", DbType = "DateTime")] System.Nullable<System.DateTime> start_Date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "End_Date", DbType = "DateTime")] System.Nullable<System.DateTime> end_Date)
+        public ISingleResult<ed_EnergyMeters_GetColumnDifferenceByDaysResult> ed_EnergyMeters_GetColumnDifferenceByDays([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "IdLocation", DbType = "Int")] System.Nullable<int> idLocation, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "MeterId", DbType = "Int")] System.Nullable<int> meterId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Startdate", DbType = "DateTime")] System.Nullable<System.DateTime> startdate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Enddate", DbType = "DateTime")] System.Nullable<System.DateTime> enddate)
         {
-            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_Location, modbus_Addr, start_Date, end_Date);
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idLocation, meterId, startdate, enddate);
             return ((ISingleResult<ed_EnergyMeters_GetColumnDifferenceByDaysResult>)(result.ReturnValue));
         }
 
@@ -62,9 +62,9 @@ namespace ReportingSystemV2
 
         // Custom ed_EnergyMeters_GetGasDifferenceByDays
         [global::System.Data.Linq.Mapping.FunctionAttribute(Name = "dbo.ed_EnergyMeters_GetGasDifferenceByDays")]
-        public ISingleResult<ed_EnergyMeters_GetGasDifferenceByDaysResult> ed_EnergyMeters_GetGasDifferenceByDays([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "ID_Location", DbType = "Int")] System.Nullable<int> iD_Location, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Modbus_Addr", DbType = "Int")] System.Nullable<int> modbus_Addr, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Start_Date", DbType = "DateTime")] System.Nullable<System.DateTime> start_Date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "End_Date", DbType = "DateTime")] System.Nullable<System.DateTime> end_Date)
+        public ISingleResult<ed_EnergyMeters_GetGasDifferenceByDaysResult> ed_EnergyMeters_GetGasDifferenceByDays([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "IdLocation", DbType = "Int")] System.Nullable<int> idLocation, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "MeterId", DbType = "Int")] System.Nullable<int> meterId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Startdate", DbType = "DateTime")] System.Nullable<System.DateTime> startdate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Enddate", DbType = "DateTime")] System.Nullable<System.DateTime> enddate)
         {
-            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_Location, modbus_Addr, start_Date, end_Date);
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idLocation, meterId, startdate, enddate);
             return ((ISingleResult<ed_EnergyMeters_GetGasDifferenceByDaysResult>)(result.ReturnValue));
         }
 

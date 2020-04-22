@@ -59,41 +59,15 @@ namespace ReportingSystemV2.Dashboard
             // Format Table
             if (dt.Rows.Count > 0)
             {
-                dt.Columns.Remove("ID");
-                dt.Columns["Timestamp"].ColumnName = "Date";
-                dt.Columns["I_1"].ColumnName = "I-1";
-                dt.Columns["I_2"].ColumnName = "I-2";
-                dt.Columns["I_3"].ColumnName = "I-3";
-                dt.Columns["I_N"].ColumnName = "I-N";
-                dt.Columns["V12"].ColumnName = "V1-V2";
-                dt.Columns["V23"].ColumnName = "V2-V3";
-                dt.Columns["V31"].ColumnName = "V3-V1";
-                dt.Columns["V1_N"].ColumnName = "V1-N";
-                dt.Columns["V2_N"].ColumnName = "V2-N";
-                dt.Columns["V3_N"].ColumnName = "V3-N";
-            }
-
-            return dt;
-        }
-
-        protected DataTable FormatLgE650DT(DataTable dt)
-        {
-            // Format Table
-            if (dt.Rows.Count > 0)
-            {
-                dt.Columns.Remove("ID");
-                dt.Columns["Timestamp"].ColumnName = "Date";
+                dt.Columns.Remove("Id");
+                dt.Columns.Remove("IdLocation");
+                dt.Columns.Remove("UtcRecieved");
+                dt.Columns.Remove("UtcGenerated");
+                dt.Columns["TimeStamp"].ColumnName = "Date";
+                dt.Columns.Remove("IdMeter");
 
                 // Tidy the names
                 var xx = new List<string>();
-                foreach (DataColumn column in dt.Columns)
-                {
-                    if (column.ColumnName != "Date")
-                    {
-                        xx.Add(column.ColumnName);
-                    }
-                }
-
                 foreach (string x in xx)
                 {
                     string[] newColName = x.Split('_');
@@ -101,11 +75,11 @@ namespace ReportingSystemV2.Dashboard
 
                     for (int i = 0; i < newColName.Length; i++)
                     {
-                        if (i < newColName.Length -1)
+                        if (i < newColName.Length - 1)
                         {
                             if (newColName[i] != "")
                             {
-                                Name = Name + newColName[i] + ".";
+                                Name = Name + newColName[i] + "-";
                             }
                             else
                             {
@@ -116,17 +90,44 @@ namespace ReportingSystemV2.Dashboard
                         {
                             Name = Name + newColName[i];
                         }
-                        
                     }
                     dt.Columns[x].ColumnName = Name;
                 }
-
             }
 
             return dt;
         }
 
-        protected DataTable FormatEhDT(DataTable dt, string ModbusId)
+        protected DataTable FormatLgE650DT(DataTable dt)
+        {
+            // Format Table
+            if (dt.Rows.Count > 0)
+            {
+                dt.Columns.Remove("Id");
+                dt.Columns.Remove("IdLocation");
+                dt.Columns.Remove("UtcRecieved");
+                dt.Columns.Remove("UtcGenerated");
+                dt.Columns["TimeStamp"].ColumnName = "Date";
+            }
+            return dt;
+        }
+
+        protected DataTable FormatEndressMeters(DataTable dt, int ModbusId)
+        {
+            if (dt.Rows.Count > 0)
+            {
+                // Table formatting
+                dt.Columns.Remove("Id");
+                dt.Columns.Remove("IdLocation");
+                dt.Columns.Remove("UtcRecieved");
+                dt.Columns.Remove("UtcGenerated");
+                dt.Columns.Remove("IdMeter");
+                dt.Columns["TimeStamp"].ColumnName = "Date";
+            }
+            return dt;
+        }
+
+        protected DataTable FormatEhDT(DataTable dt, int ModbusId)
         {
             if (dt.Rows.Count > 0)
             {
@@ -142,7 +143,7 @@ namespace ReportingSystemV2.Dashboard
                     // Split for number
                     string[] ColName = column.ColumnName.Split('_');
 
-                    if (column.ColumnName != "Date" && ColName[1] != ModbusId)
+                    if (column.ColumnName != "Date" && ColName[1] != ModbusId.ToString())
                     {
                         xx.Add(column.ColumnName);
                     }
@@ -157,7 +158,7 @@ namespace ReportingSystemV2.Dashboard
                 var yy = new List<string>();
                 foreach (DataColumn column in dt.Columns)
                 {
-                    if (column.ColumnName != "Date" && column.ColumnName.Contains(ModbusId))
+                    if (column.ColumnName != "Date" && column.ColumnName.Contains(ModbusId.ToString()))
                     {
                         yy.Add(column.ColumnName);
                     }
@@ -206,40 +207,59 @@ namespace ReportingSystemV2.Dashboard
 
                 if (category == 1) // Heat Meter, Only one table to query
                 {
-                    var ModbusId = (from m in RsDc.EnergyMeters_Mappings
+                    int ModbusId = (from m in RsDc.EnergyMeters_Mappings
                                     where m.ID_Location == IdLocation && m.ID_Type == Convert.ToInt32(type)
-                                    select m.Modbus_Addr).SingleOrDefault().ToString();
+                                    select m.Modbus_Addr).SingleOrDefault();
 
-                    Tuple<IEnumerable<EnergyMeter>, int> result = db.SelectRH33Query(primarySiteId, startDate, endDate);
+                    Tuple<IEnumerable<Heat>, int> result = db.SelectRH33Query(primarySiteId, ModbusId, startDate, endDate);
 
                     totalRecordsCount = result.Item2;
 
                     if (startRowIndex != -1 && maximumRows != -1)
                     {
-                        return FormatEhDT(db.LINQToDataTable(result.Item1.Skip(startRowIndex).Take(maximumRows)), ModbusId);
+                        return FormatEndressMeters(db.LINQToDataTable(result.Item1.Skip(startRowIndex).Take(maximumRows)), ModbusId);
                     }
                     else
                     {
-                        return FormatEhDT(db.LINQToDataTable(result.Item1), ModbusId);
+                        return FormatEndressMeters(db.LINQToDataTable(result.Item1), ModbusId);
+                    }
+                }
+                else if (category == 4) // Steam Meter
+                {
+                    int ModbusId = (from m in RsDc.EnergyMeters_Mappings
+                                    where m.ID_Location == IdLocation && m.ID_Type == Convert.ToInt32(type)
+                                    select m.Modbus_Addr).SingleOrDefault();
+
+                    Tuple<IEnumerable<Steam>, int> result = db.SelectEHSteamQuery(primarySiteId, ModbusId, startDate, endDate);
+
+                    totalRecordsCount = result.Item2;
+
+                    if (startRowIndex != -1 && maximumRows != -1)
+                    {
+                        return FormatEndressMeters(db.LINQToDataTable(result.Item1.Skip(startRowIndex).Take(maximumRows)), ModbusId);
+                    }
+                    else
+                    {
+                        return FormatEndressMeters(db.LINQToDataTable(result.Item1), ModbusId);
                     }
                 }
                 else if (category == 5) // Gas Meter
                 {
-                    var ModbusId = (from m in RsDc.GasMeters_Mappings
+                    int ModbusId = (from m in RsDc.GasMeters_Mappings
                                     where m.ID_Location == IdLocation && m.ID_Type == Convert.ToInt32(type)
-                                    select m.Modbus_Addr).SingleOrDefault().ToString();
+                                    select m.Modbus_Addr).SingleOrDefault();
 
-                    Tuple<IEnumerable<GasMeter>, int> result = db.SelectEHGasQuery(primarySiteId, startDate, endDate);
+                    Tuple<IEnumerable<Gas>, int> result = db.SelectEHGasQuery(primarySiteId, ModbusId, startDate, endDate);
 
                     totalRecordsCount = result.Item2;
 
                     if (startRowIndex != -1 && maximumRows != -1)
                     {
-                        return FormatEhDT(db.LINQToDataTable(result.Item1.Skip(startRowIndex).Take(maximumRows)), ModbusId);
+                        return FormatEndressMeters(db.LINQToDataTable(result.Item1.Skip(startRowIndex).Take(maximumRows)), ModbusId);
                     }
                     else
                     {
-                        return FormatEhDT(db.LINQToDataTable(result.Item1), ModbusId);
+                        return FormatEndressMeters(db.LINQToDataTable(result.Item1), ModbusId);
                     }
                 }
                 else
@@ -251,9 +271,9 @@ namespace ReportingSystemV2.Dashboard
                                where s.ID_Location == IdLocation && s.ID_Type == type
                                select new { Serial = s.Serial, TableName = t.DataTableName }).SingleOrDefault();
 
-                    if (Map.TableName == "dbo.EnergyMeters_Diris_A20")
+                    if (Map.TableName == "EnergyMeters.DirisA20")
                     {
-                        Tuple<IEnumerable<EnergyMeters_Diris_A20>, int> result = db.SelectDirisA20Query(Map.Serial, startDate, endDate);
+                        Tuple<IEnumerable<DirisA20>, int> result = db.SelectDirisA20Query(Map.Serial, startDate, endDate);
 
                         totalRecordsCount = result.Item2;
 
@@ -266,9 +286,9 @@ namespace ReportingSystemV2.Dashboard
                             return FormatDirisA20DT(db.LINQToDataTable(result.Item1));
                         }
                     }
-                    else if (Map.TableName == "dbo.EnergyMeters_LG_E650")
+                    else if (Map.TableName == "EnergyMeters.E650")
                     {
-                        Tuple<IEnumerable<EnergyMeters_LG_E650>, int> result = db.SelectLgE650Query(Map.Serial, startDate, endDate);
+                        Tuple<IEnumerable<E650>, int> result = db.SelectLgE650Query(Map.Serial, startDate, endDate);
 
                         totalRecordsCount = result.Item2;
 

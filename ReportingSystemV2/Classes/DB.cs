@@ -414,11 +414,11 @@ namespace ReportingSystemV2
             return Tuple.Create(result.AsEnumerable(), result.Count());
         }
 
-        public Tuple<IEnumerable<EnergyMeters_Diris_A20>, int> SelectDirisA20Query(string serial, DateTime startDate, DateTime endDate)
+        public Tuple<IEnumerable<DirisA20>, int> SelectDirisA20Query(string serial, DateTime startDate, DateTime endDate)
         {
-            var query = (from m in RsDc.EnergyMeters_Diris_A20s
-                        where m.Serial == serial && m.Timestamp > startDate.Date && m.Timestamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
-                        orderby m.Timestamp descending
+            var query = (from m in RsDc.DirisA20s
+                        where m.Serial == serial && m.TimeStamp > startDate.Date && m.TimeStamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
+                        orderby m.TimeStamp descending
                         select m).ToList();
 
             int count = query.Count();
@@ -426,11 +426,11 @@ namespace ReportingSystemV2
             return Tuple.Create(query.AsEnumerable(), count);
         }
 
-        public Tuple<IEnumerable<EnergyMeters_LG_E650>, int> SelectLgE650Query(string serial, DateTime startDate, DateTime endDate)
+        public Tuple<IEnumerable<E650>, int> SelectLgE650Query(string serial, DateTime startDate, DateTime endDate)
         {
-            var query = (from m in RsDc.EnergyMeters_LG_E650s
-                        where m.Serial == serial && m.Timestamp > startDate.Date && m.Timestamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
-                        orderby m.Timestamp descending
+            var query = (from m in RsDc.E650s
+                        where m.Serial == serial && m.TimeStamp > startDate.Date && m.TimeStamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
+                        orderby m.TimeStamp descending
                         select m).ToList();
 
             int count = query.Count();
@@ -438,12 +438,25 @@ namespace ReportingSystemV2
             return Tuple.Create(query.AsEnumerable(), count);
         }
 
-        public Tuple<IEnumerable<EnergyMeter>, int> SelectRH33Query(int IdLocation, DateTime startDate, DateTime endDate)
+        public Tuple<IEnumerable<Heat>, int> SelectRH33Query(int IdLocation, int IdMeter, DateTime startDate, DateTime endDate)
         {
-            var query = (from m in RsDc.EnergyMeters
-                        where m.ID_Location == IdLocation && m.Timestamp > startDate.Date && m.Timestamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
-                        orderby m.Timestamp descending
+            var query = (from m in RsDc.Heats
+                        where m.IdLocation == IdLocation && m.IdMeter == IdMeter && m.TimeStamp > startDate.Date && m.TimeStamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
+                        orderby m.TimeStamp descending
                         select m).ToList();
+
+            int count = query.Count();
+
+            return Tuple.Create(query.AsEnumerable(), count);
+        }
+
+        public Tuple<IEnumerable<Steam>, int> SelectEHSteamQuery(int IdLocation, int IdMeter, DateTime startDate, DateTime endDate)
+        {
+            var query = (from m in RsDc.Steams
+                         where m.IdLocation == IdLocation && m.IdMeter == IdMeter
+                         && m.TimeStamp > startDate.Date && m.TimeStamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
+                         orderby m.TimeStamp descending
+                         select m).ToList();
 
 
             int count = query.Count();
@@ -451,11 +464,12 @@ namespace ReportingSystemV2
             return Tuple.Create(query.AsEnumerable(), count);
         }
 
-        public Tuple<IEnumerable<GasMeter>, int> SelectEHGasQuery(int IdLocation, DateTime startDate, DateTime endDate)
+        public Tuple<IEnumerable<Gas>, int> SelectEHGasQuery(int IdLocation, int IdMeter, DateTime startDate, DateTime endDate)
         {
-            var query = (from m in RsDc.GasMeters
-                         where m.ID_Location == IdLocation && m.Timestamp > startDate.Date && m.Timestamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
-                         orderby m.Timestamp descending
+            var query = (from m in RsDc.Gas
+                         where m.IdLocation == IdLocation && m.IdMeter == IdMeter 
+                         && m.TimeStamp > startDate.Date && m.TimeStamp <= endDate.Date.AddHours(23).AddMinutes(59).AddSeconds(59)
+                         orderby m.TimeStamp descending
                          select m).ToList();
 
 

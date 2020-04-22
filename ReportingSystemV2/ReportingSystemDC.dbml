@@ -477,199 +477,6 @@
       <Column Name="Tooltip" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.EnergyMeters_LG_E650" Member="EnergyMeters_LG_E650s">
-    <Type Name="EnergyMeters_LG_E650">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Serial" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="F_F" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="[0_9_1]" Member="_0_9_1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="[0_9_2]" Member="_0_9_2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="[1_2_0]" Member="_1_2_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[2_2_0]" Member="_2_2_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[3_2_0]" Member="_3_2_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[4_2_0]" Member="_4_2_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[1_6_0]" Member="_1_6_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[2_6_0]" Member="_2_6_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[3_6_0]" Member="_3_6_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[4_6_0]" Member="_4_6_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[1_8_1]" Member="_1_8_1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[2_8_1]" Member="_2_8_1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[3_8_1]" Member="_3_8_1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[4_8_1]" Member="_4_8_1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[0_4_2]" Member="_0_4_2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[32_7]" Member="_32_7" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[52_7]" Member="_52_7" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[72_7]" Member="_72_7" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[1-1:32_36_0]" Member="_1_1_32_36_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[1-1:52_36_0]" Member="_1_1_52_36_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[1-1:72_36_0]" Member="_1_1_72_36_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[1-1:32_32_0]" Member="_1_1_32_32_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[1-1:52_32_0]" Member="_1_1_52_32_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[1-1:72_32_0]" Member="_1_1_72_32_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[16_7_0]" Member="_16_7_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[36_7_0]" Member="_36_7_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[56_7_0]" Member="_56_7_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[1_8_0]" Member="_1_8_0" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.EnergyMeters_Diris_A20" Member="EnergyMeters_Diris_A20s">
-    <Type Name="EnergyMeters_Diris_A20">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Serial" Type="System.String" DbType="NChar(12) NOT NULL" CanBeNull="false" />
-      <Column Name="[I-1]" Member="I_1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[I-2]" Member="I_2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[I-3]" Member="I_3" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[I-N]" Member="I_N" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="V12" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="V23" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="V31" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[V1-N]" Member="V1_N" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[V2-N]" Member="V2_N" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="[V3-N]" Member="V3_N" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="F" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="P" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Q" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="S" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="PF" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="W" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Wr" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.EnergyMeters" Member="EnergyMeters">
-    <Type Name="EnergyMeter">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_Location" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Power_1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Energy_1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FlowVol_1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempWarm_1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempCold_1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Power_2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Energy_2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FlowVol_2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempWarm_2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempCold_2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Power_3" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Energy_3" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FlowVol_3" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempWarm_3" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempCold_3" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Power_4" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Energy_4" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FlowVol_4" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempWarm_4" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempCold_4" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Power_5" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Energy_5" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FlowVol_5" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempWarm_5" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempCold_5" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Power_6" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Energy_6" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FlowVol_6" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempWarm_6" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempCold_6" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Power_7" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Energy_7" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FlowVol_7" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempWarm_7" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempCold_7" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Power_8" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Energy_8" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FlowVol_8" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempWarm_8" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempCold_8" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Power_9" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Energy_9" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FlowVol_9" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempWarm_9" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempCold_9" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Power_11" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Energy_11" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FlowVol_11" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempWarm_11" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempCold_11" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Power_16" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Energy_16" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="FlowVol_16" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempWarm_16" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TempCold_16" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.GasMeters" Member="GasMeters">
-    <Type Name="GasMeter">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="MassFlow_1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_2" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_3" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_3" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_4" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_4" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_5" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_5" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_6" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_6" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_7" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_7" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_8" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_8" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_9" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_9" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_10" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_10" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_11" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_11" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_12" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_12" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_13" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_13" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_14" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_14" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_15" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_15" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_16" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_16" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_17" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_17" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_18" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_18" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_19" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_19" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_20" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_20" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_21" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_21" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_22" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_22" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_23" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_23" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_24" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_24" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_25" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_25" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_26" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_26" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_27" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_27" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_28" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_28" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_29" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_29" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_30" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_30" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_31" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_31" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MassFlow_32" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Totaliser_32" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.GeneratorAvailability" Member="GeneratorAvailabilities">
     <Type Name="GeneratorAvailability">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -824,6 +631,116 @@
       <Column Name="TotRunPact" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TotRunPnomAll" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SumMWh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnergyMeters.Gas" Member="Gas">
+    <Type Name="Gas">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdLocation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UtcRecieved" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UtcGenerated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdMeter" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MassFlow" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Totaliser" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnergyMeters.Heat" Member="Heats">
+    <Type Name="Heat">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdLocation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UtcRecieved" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UtcGenerated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdMeter" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Power" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Flow" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempWarm" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempCold" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnergyMeters.Steam" Member="Steams">
+    <Type Name="Steam">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdLocation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UtcRecieved" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UtcGenerated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdMeter" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Power" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VolFlow" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MassFlow" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Temp" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Pressure" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Energy" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnergyMeters.E650" Member="E650s">
+    <Type Name="E650">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdLocation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UtcRecieved" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UtcGenerated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Serial" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="F_F" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="[0_9_1]" Member="_0_9_1" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="[0_9_2]" Member="_0_9_2" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="[1_2_0]" Member="_1_2_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[2_2_0]" Member="_2_2_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[3_2_0]" Member="_3_2_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[4_2_0]" Member="_4_2_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1_6_0]" Member="_1_6_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[2_6_0]" Member="_2_6_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[3_6_0]" Member="_3_6_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[4_6_0]" Member="_4_6_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1_8_1]" Member="_1_8_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[2_8_1]" Member="_2_8_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[3_8_1]" Member="_3_8_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[4_8_1]" Member="_4_8_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[0_4_2]" Member="_0_4_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[32_7]" Member="_32_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[52_7]" Member="_52_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[72_7]" Member="_72_7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1-1:32_36_0]" Member="_1_1_32_36_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1-1:52_36_0]" Member="_1_1_52_36_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1-1:72_36_0]" Member="_1_1_72_36_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1-1:32_32_0]" Member="_1_1_32_32_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1-1:52_32_0]" Member="_1_1_52_32_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1-1:72_32_0]" Member="_1_1_72_32_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[16_7_0]" Member="_16_7_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[36_7_0]" Member="_36_7_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[56_7_0]" Member="_56_7_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[1_8_0]" Member="_1_8_0" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EnergyMeters.DirisA20" Member="DirisA20s">
+    <Type Name="DirisA20">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdLocation" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UtcRecieved" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UtcGenerated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeStamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdMeter" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Serial" Type="System.String" DbType="NChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="[I-1]" Member="I_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[I-2]" Member="I_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[I-3]" Member="I_3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[I-N]" Member="I_N" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[V1-2]" Member="V1_2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[V2-3]" Member="V2_3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[V3-1]" Member="V3_1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[V1-N]" Member="V1_N" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[V2-N]" Member="V2_N" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="[V3-N]" Member="V3_N" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="F" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="P" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Q" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="S" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PF" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="W" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Wr" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.ed_Genset_Add" Method="ed_Genset_Add">
